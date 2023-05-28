@@ -4,13 +4,11 @@
         <title> AB Movers</title>
     </head>
     <body>
-        <header> <h1><span>AB </span><img src="truck.png"> Movers</h1>
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script:wght@700&family=Inconsolata&family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
+        <header> 
+            
             <link rel="stylesheet" href="style.css">
         </header>
-                   <main> <h3>Book Your Slot</h3></main>
+                   <main> <h3>Create Booking</h3></main>
              <form><label for="name">Name : </label>
                 <input type="text" pattern="[A-Za-z] required"><br>
                 <label for="phone-number">Phone Number :</label>
@@ -33,10 +31,18 @@
                 </select><br>
 
                 <label for="pickup-location">Pickup Location :</label>
-                <input type="text"><br>
+                <input type="text" placeholder="Address Line 1">
+                <input type="text" placeholder="Address Line 2">
+                <input type="text" placeholder="City">
+                <input type="text" placeholder="Province">
+                <input type="text" placeholder="Zipcode"><br>
                 <label for="drop-location">Drop Location :</label>
-                <input type="text"><br>
-                <label for="distance">Distance in miles :</label>
+                <input type="text" placeholder="Address Line 1">
+                <input type="text" placeholder="Address Line 2">
+                <input type="text" placeholder="City">
+                <input type="text" placeholder="Province">
+                <input type="text" placeholder="Zipcode"><br>
+                <label for="distance">Distance in kilometers :</label>
                 <input type="number" min="1" max="100" step="1"><br>
                 
                 <label for="load-size">Load Size :</label>
@@ -52,6 +58,14 @@
                     <option>30 mins</option>
                 </select>
                 <br>
+                <label for="parking">Are there any challenges in parking?</label>
+                <input type="radio" name="options"><label for="yes">Yes</label>
+                <input type="radio" name="options"><label for="no">No</label><br>
+                <label for="stairs">Do you have stairs/steps in the location?</label>
+                <input type="radio" name="options"><label for="yes">Yes</label>
+                <input type="radio" name="options"><label for="no">No</label><br>
+                <label for="images">Please attach the images</label>
+
             </form> 
                 <br>
                 <br>
