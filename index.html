@@ -1,76 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> AB Movers</title>
-    </head>
-    <body>
-        <header> 
-            
-            <link rel="stylesheet" href="style.css">
-        </header>
-                   <main> <h3>Create Booking</h3></main>
-             <form><label for="name">Name : </label>
-                <input type="text" pattern="[A-Za-z] required"><br>
-                <label for="phone-number">Phone Number :</label>
-                <input type="text" pattern="[0-9]" required><br>
-                <label for="email-address">Email Address :</label>
-                <input type="text" pattern="[a-z0-9]+@[a-z0-9]+ required"><br>
-                <label for="date">Date :</label>
-                <input type="date"><br>
-                <label for="time">Time :</label>
-                <select>
-                    <option>5:00am</option>
-                    <option>6:00am</option>
-                    <option>7:00am</option>
-                    <option>8:00am</option>
-                    <option>9:00am</option>
-                    <option>10:00am</option>
-                    <option>11:00am</option>
-                    <option>12:00pm</option>
-                    <option>1:00pm</option>
-                </select><br>
-
-                <label for="pickup-location">Pickup Location :</label>
-                <input type="text" placeholder="Address Line 1">
-                <input type="text" placeholder="Address Line 2">
-                <input type="text" placeholder="City">
-                <input type="text" placeholder="Province">
-                <input type="text" placeholder="Zipcode"><br>
-                <label for="drop-location">Drop Location :</label>
-                <input type="text" placeholder="Address Line 1">
-                <input type="text" placeholder="Address Line 2">
-                <input type="text" placeholder="City">
-                <input type="text" placeholder="Province">
-                <input type="text" placeholder="Zipcode"><br>
-                <label for="distance">Distance in kilometers :</label>
-                <input type="number" min="1" max="100" step="1"><br>
-                
-                <label for="load-size">Load Size :</label>
-                <input type="radio" name="answer"><label for="small">Small</label>
-                <input type="radio" name="answer"><label for="medium">Medium</label>
-                <input type="radio" name="answer"><label for="large">Large</label><br>
-                <label for="instructions">Special delivery/Pickup Instructions :</label>
-                <input type="textarea" wordlength="300" placeholder="How do you want to handle your package?"><br>
-                <label for="notification">Notification :</label>
-                <select name="minutes" id="notification">
-                    <option>10 mins</option>
-                    <option>20 mins</option>
-                    <option>30 mins</option>
-                </select>
-                <br>
-                <label for="parking">Are there any challenges in parking?</label>
-                <input type="radio" name="options"><label for="yes">Yes</label>
-                <input type="radio" name="options"><label for="no">No</label><br>
-                <label for="stairs">Do you have stairs/steps in the location?</label>
-                <input type="radio" name="options"><label for="yes">Yes</label>
-                <input type="radio" name="options"><label for="no">No</label><br>
-                <label for="images">Please attach the images</label>
-
-            </form> 
-                <br>
-                <br>
-                <input class="submit" type="submit" value="Schedule">
-        
-        
-    </body>
+  <head>
+    <title>AB Movers</title>
+  </head>
+  <body>
+    <header>
+      <img src="./assets/images/logo.jpeg" width="150px" height="100px" alt="logo image"/>
+      <button>Create Booking</button>
+      <button>Sign-in</button>
+    </header>
+    <main>
+      <section>
+        <img src="./assets/images/main1.jpeg" width="1500px" height="600px" alt="Pickup Truck image" />
+        <img src="./assets/images/main2.jpeg" width="1500px" height="600px" alt="Trailer image" />
+        <img src="./assets/images/main3.jpeg" width="1500px" height="600px" alt="Moving Vehicle image"/>
+        <img src="./assets/images/main4.jpeg" width="1500px" height="600px" alt="Moving Truck image"/>
+      </section>
+      <section>
+        <div><h2>
+            Moving Your Load With Care
+        </h2></div>
+        <div>
+            <div>
+                <img src="./assets/images/img1.jpeg" width="250px" height="250px" alt="Furniture moving image"/>
+                <p>Reliable</p>
+            </div>
+            <div>
+                <img src="./assets/images/img2.jpeg" width="250px" height="250px" alt="Mattress moving image"/>
+                <p>Loading/Unloading</p>
+            </div>
+            <div>
+                <img src="./assets/images/img3.jpeg" width="250px" height="250px" alt="Couch moving image"/>
+                <p>Professional</p>
+            </div>
+            <div>
+                <img src="./assets/images/img4.jpeg" width="250px" height="250px" alt="Mattress moving in Truck image"/>
+                <p>Available 24/7</p>
+            </div>
+            <div>
+                <img src="./assets/images/img5.jpeg" width="250px" height="250px" alt="Snowmobile moving image"/>
+                <p>Affordable</p>
+            </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <div>
+            <h3>Address</h3>
+            <p>Terra Nova Road<br>
+                St.John's, NL<br>
+                A1B1E7</p>
+        </div>
+        <div>
+            <h3>Social Media</h3>
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://mail.google.com/">Email</a>
+            <a href="https://www.linkedin.com/">Linkedin</a>
+            <a href="https://www.instagram.com/">Instagram</a>
+        </div>
+        <div>
+            <h3>Contact</h3>
+            <p>+1 (416) 271 7942</p>
+        </div>
+      </div>
+      <div><h3>Copyright © AB Movers. All Rights Reserved</h3></div>
+    </footer>
+  </body>
 </html>
