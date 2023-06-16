@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Booking</title>
+  </head>
+  <body>
+    <header>
+      <img
+        src="./assets/images/logo.jpeg"
+        width="150px"
+        height="100px"
+        alt="logo image"
+      />
+      <div>
+        <button>My Bookings</button>
+        <img
+          src="./assets/images/user.jpg"
+          width="100px"
+          height="100px"
+          alt="user image"
+        />
+        <ul>
+          <li>Profile</li>
+          <li>Log out</li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div>
+          <h2>Create Booking</h2>
+          <form>
+            <div>
+              <label for="date">Date</label>
+              <input type="date" name="date" /><br />
+            </div>
+            <div>
+              <label for="time">Time</label>
+              <input type="time" name="time" /><br />
+            </div>
+            <div>
+              <label for="address">Pickup Location</label>
+              <input
+                type="text"
+                name="address1"
+                placeholder="Street Number"
+              /><br />
+              <input
+                type="text"
+                name="address2"
+                placeholder="Street Name"
+              /><br />
+              <input type="text" name="city" /><br />
+              <input type="text" name="province" /><br />
+              <input type="text" name="zipcode" /><br />
+            </div>
+            <div>
+              <label for="d_address">Drop Location</label>
+              <input type="text" name="d_address1" /><br />
+              <input type="text" name="d_address2" /><br />
+              <input type="text" name="d_city" /><br />
+              <input type="text" name="d_province" /><br />
+              <input type="text" name="d_zipcode" /><br />
+            </div>
+            <div>
+              <label for="distance">Distance in Kilometers</label>
+              <input
+                type="number"
+                name="distance"
+                min="0"
+                max="100"
+                step="1"
+              /><br />
+            </div>
+            <div>
+              <label for="load">Load Size</label>
+              <input type="radio" name="load" value="small" />
+              <label for="load">Small</label>
+              <input type="radio" name="load" value="medium" />
+              <label for="load">Medium</label>
+              <input type="radio" name="load" value="large" />
+              <label for="load">Large</label><br />
+            </div>
+            <div>
+              <label for="instructions"
+                >Special delivery/Pickup instructions</label
+              >
+              <textarea name="instructions" rows="3" cols="30"> </textarea
+              ><br />
+            </div>
+            <div>
+              <p>Are there any challenges in parking?</p>
+              <input type="radio" name="parking" value="Yes" />
+              <label for="parking">Yes</label><br />
+              <input type="radio" name="parking" value="No" />
+              <label for="parking">No</label>
+            </div>
+
+            <div>
+              <p>Do you have stairs/steps in the location?</p>
+              <input type="radio" name="stairs" value="Yes" />
+              <label for="stairs">Yes</label><br />
+              <input type="radio" name="stairs" value="No" />
+              <label for="stairs">No</label><br />
+            </div>
+
+            <div>
+              <label for="notification">Notification</label>
+              <select>
+                <option value="10 mins">10 mins</option>
+                <option value="20 mins">20 mins</option>
+                <option value="30 mins">30 mins</option>
+                <option value="60 mins">60 mins</option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <div>
+          <h3>Address</h3>
+          <p>
+            Terra Nova Road<br />
+            St.John's, NL<br />
+            A1B1E7
+          </p>
+        </div>
+        <div>
+          <h3>Social Media</h3>
+          <a href="https://www.facebook.com/profile_name">Facebook</a>
+          <a href="mailito:email@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/profile_name">Linkedin</a>
+          <a href="https://www.instagram.com/@profile_name">Instagram</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>+1 (416) 271 7942</p>
+        </div>
+      </div>
+      <div><h3>Copyright © AB Movers. All Rights Reserved</h3></div>
+    </footer>
+  </body>
+</html>
