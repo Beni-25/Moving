@@ -1,17 +1,9 @@
-
-h3{
-    text-align: center;
-}
-header {
-    margin: 0px;
+header{
     background-color: #e4966b;
-    height: 150px; 
+    height: 140px;
 }
-.col{
-    width:80px;
-}
-.cardimg{
-    padding: 20px;
+h2{
+    text-align: center;
 }
 .container{
     background-color: #e4966b;
@@ -22,4 +14,13 @@ footer{
 }
 .copyright{
     background-color: white;
+    text-align: center;
 }
+.row{
+    padding: 20px;
+}
+.d-flex{
+    background-color: grey;
+    padding: 20px;
+    margin: 20px;
+ }

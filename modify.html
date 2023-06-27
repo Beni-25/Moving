@@ -3,36 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="modify.css">
+    <title>Modify</title>
 </head>
 <body>
     <header>
-        <img
-          src="./assets/images/logo.jpeg"
-          width="150px"
-          height="100px"
-          alt="logo image"
-        />
-        <div>
-          <button>My Bookings</button>
+      <img
+      src="./assets/images/logo.jpeg"
+      width="150px"
+      height="100px"
+      alt="logo image"
+    />
+    <div class="position-absolute top-0 end-0">
+      <button type="button" class="btn">My Bookings</button>
+
           <img
-            src="./assets/images/user.jpg"
-            width="100px"
-            height="100px"
-            alt="user image"
-          />
-          <ul>
-            <li>Profile</li>
-            <li>Log out</li>
-          </ul>
+        src="./assets/images/user.jpg"
+        width="100px"
+        height="100px"
+        alt="user image"
+        data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample"
+      />
+        </button>
+      <div style="min-height: 120px;">
+        <div class="collapse collapse-horizontal" id="collapseWidthExample">
+          <div class="card card-body" style="width: 300px;">
+            <ul>
+              <li>Profile</li>
+              <li>Log out</li>
+            </ul>
+          </div>
         </div>
+      </div>
+    </div>
       </header>
       <main>
         
         <section>
             <h2>Modify Booking</h2>
-            <div>
-               <form>
+            <div class="form">
+               <form class="container-xl">
                 <div>
                   <label for="date">Date</label>
                   <input type="date" name="date" /><br />
@@ -116,36 +127,41 @@
                     <option value="60 mins">60 mins</option>
                   </select>
                 </div>
+                <div class="d-flex justify-content-center">
+                  <input type="submit" value="Modify">
+                </div>
               </form>
             </div>
           </section>
 
       </main>
 
-    <footer>
-        <div>
-          <div>
-            <h3>Address</h3>
+      <footer>
+        <div class="container text-center">
+          <div class="row align-items-center">
+            <div class="col">
+              <h3>Address</h3>
             <p>
               Terra Nova Road<br />
               St.John's, NL<br />
               A1B1E7
             </p>
-          </div>
-          <div>
-            <h3>Social Media</h3>
+            </div>
+            <div class="col">
+              <h3>Social Media</h3>
             <a href="https://www.facebook.com/profile_name">Facebook</a>
             <a href="mailito:email@gmail.com">Email</a>
             <a href="https://www.linkedin.com/profile_name">Linkedin</a>
             <a href="https://www.instagram.com/@profile_name">Instagram</a>
-          </div>
-          <div>
-            <h3>Contact</h3>
-            <p>+1 (416) 271 7942</p>
+            </div>
+            <div class="col">
+              <h3>Contact</h3>
+              <p>+1 (416) 271 7942</p>
+            </div>
           </div>
         </div>
-        <div><h3>Copyright © AB Movers. All Rights Reserved</h3></div>
+        <div class="copyright"><h3>Copyright © AB Movers. All Rights Reserved</h3></div>
       </footer>
-
-</body>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </body>
 </html>
