@@ -1,18 +1,16 @@
-
-h3{
-    text-align: center;
-}
-header {
-    margin: 0px;
+header{
     background-color: #e4966b;
-    height: 150px; 
 }
-.col{
-    width:80px;
-}
-.cardimg{
+h2{
+    text-align: center;
     padding: 20px;
 }
+
+.container-xl{
+    background-color: gray;
+    width:600px;
+    }
+
 .container{
     background-color: #e4966b;
     color: whitesmoke;
@@ -22,4 +20,5 @@ footer{
 }
 .copyright{
     background-color: white;
+    text-align: center;
 }

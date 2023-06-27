@@ -1,0 +1,19 @@
+.position-absolute{
+background-color: #e4966b;
+height: 350px;
+width:360px;
+text-align: center;
+
+}
+.heading,.link{
+    color: white;
+    padding: 20px;
+}
+
+label{
+    width: 120px;
+    display: inline-block;
+}
+div{
+    padding: 5px;
+}
