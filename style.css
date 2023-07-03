@@ -2,10 +2,18 @@
 h3{
     text-align: center;
 }
+
+i{
+    padding: 10px;
+    color: white;
+}
 header {
     margin: 0px;
-    background-color: #e4966b;
-    height: 150px; 
+    
+
+    #navbar {
+        background-color: #e4966b;
+    }
 }
 .col{
     width:80px;
@@ -22,4 +30,5 @@ footer{
 }
 .copyright{
     background-color: white;
+    text-align:center;
 }
