@@ -1,34 +1,88 @@
+h1.carousel-title {
+  color: #e4966b;
+  font-size: 60px;
+  font-style: italic;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+p.carousel-subtitle {
+  color:white;
+  font-size: 30px;
+  font-style: italic;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+div.carousel-image1-wrapper {
+   height:700px;
+    width: 100%; 
+    background-image: url("./assets/images/main1.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  }
+  div.carousel-image2-wrapper {
+    height:700px;
+     width: 100%; 
+     background-image: url("./assets/images/main2.jpeg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: 50% 50%;
+   }
+   div.carousel-image3-wrapper {
+    height:700px;
+     width: 100%; 
+     background-image: url("./assets/images/main3.jpeg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: 50% 50%;
+   }
+   div.carousel-image4-wrapper {
+    height:700px;
+     width: 100%; 
+     background-image: url("./assets/images/main4.jpeg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: 50% 50%;
+   }
 
-h3{
-    text-align: center;
+
+
+
+
+
+h3 {
+  text-align: center;
+}
+.card-text {
+  text-align: justify;
+}
+.card-title {
+  text-align: center;
 }
 
-i{
-    padding: 10px;
-    color: white;
+i {
+  padding: 10px;
+  color: white;
 }
 header {
-    margin: 0px;
-    
+  margin: 0px;
 
-    #navbar {
-        background-color: #e4966b;
-    }
-}
-.col{
-    width:80px;
-}
-.cardimg{
-    padding: 20px;
-}
-.container{
+  #navbar {
     background-color: #e4966b;
-    color: whitesmoke;
+  }
 }
-footer{
-    background-color: #e4966b;
+.col {
+  width: 80px;
 }
-.copyright{
-    background-color: white;
-    text-align:center;
+.cardimg {
+  padding: 20px;
+}
+.container {
+  background-color: #e4966b;
+  color: whitesmoke;
+}
+footer {
+  background-color: #e4966b;
+}
+.copyright {
+  background-color: white;
+  text-align: center;
 }

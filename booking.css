@@ -1,9 +1,10 @@
 header{
     background-color: #e4966b;
 }
-.container-xl{
+form.container-fluid{
     background-color: gray;
-    width:600px;
+    width:500px;
+
     }
 .form{
     padding: 0px 20px 40px;
@@ -11,9 +12,12 @@ header{
 label{
     width:150px;
     display: inline-block;
-    padding: 5px;
+    padding: 10px;
 }
-
+i{
+    padding: 10px;
+    color: white;
+}
 h2{
     text-align: center;
     padding: 20px;

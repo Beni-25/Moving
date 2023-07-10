@@ -20,6 +20,10 @@ h2{
 footer{
     background-color: #e4966b;
 }
+i{
+    padding: 10px;
+    color: white;
+}
 .copyright{
     background-color: white;
     text-align: center;
