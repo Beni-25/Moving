@@ -5,6 +5,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="booking.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="jquery.js"></script>
+    <script src="parsley.min.js"></script>
   </head>
   <body>
     <header>
@@ -39,22 +41,150 @@
           </div>
         </div>
       </nav>
-
-   
     </header>
 
     <main>
       <section>
+
         <h2>Create Booking</h2>
-        <div class="form d-flex justify-content-center">
+
+        <form class="demo-form container-fluid">
+          <div class="form-section">
+              <label for="date" >Date:</label>
+              <input type="date" name="date"  class="form-control" />
+        
+              <label for="time">Time:</label>
+              <input type="time" name="time" class="form-control"  />
+          </div>
+        
+          <div class="form-section">
+            <label for="address" class="form-label">Pickup Location:</label>
+            <input type="text" name="address1" placeholder="Address Line 1" class="form-control"/><br />
+            <input type="text" name="address2" placeholder="Address Line 2" class="form-control"/><br />
+            <input type="text" name="city" placeholder="City"  class="form-control"/><br />
+            <input type="text" name="province" placeholder="Province"  class="form-control" /><br />
+            <input type="text" name="zipcode" placeholder="Zipcode"  class="form-control" /><br />
+
+            <label for="d_address" class="form-label">Drop Location:</label>
+            <input type="text" name="d_address1" placeholder="Address Line 1"  class="form-control" /><br />
+            <input type="text" name="d_address2" placeholder="Address Line 2"  class="form-control"/><br />
+            <input type="text" name="d_city" placeholder="City"  class="form-control"/><br />
+            <input type="text" name="d_province" placeholder="Province"  class="form-control"/><br />
+            <input type="text" name="d_zipcode" placeholder="Zipcode"  class="form-control"/><br />
+
+          </div>
+        
+          <div class="form-section">
+              <label for="distance" class="form-label" >Distance in Kilometers:</label>
+              <input type="number" name="distance" min="0" max="100" step="1" class="form-control"/><br />
+
+              <label for="load" class="form-label">Load Size:</label>
+              <div class="form-check">
+                <input type="radio" name="load" value="small" class="form-check-input"/>
+                <label for="load" class="form-check-label">Small</label>
+              </div>
+              <div class="form-check" >
+                <input type="radio" name="load" value="medium" class="form-check-input"  />
+                <label for="load"class="form-check-label" >Medium</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" name="load" value="large"  class="form-check-input"  />
+                <label for="load"class="form-check-label" >Large</label>
+              </div>
+
+              <label for="instructions" class="form-label"> Special delivery/Pickup instructions:</label>
+              <textarea name="instructions" class="form-control"> </textarea>
+          </div>
+
+          <div class="form-section">
+            <p>Are there any challenges in parking?</p>
+              <input type="radio" name="parking" value="Yes" />
+              <label for="parking">Yes</label><br />
+              <input type="radio" name="parking" value="No" />
+              <label for="parking">No</label>
+
+              <p>Do you have stairs/steps in the location?</p>
+              <input type="radio" name="stairs" value="Yes" />
+              <label for="stairs">Yes</label><br />
+              <input type="radio" name="stairs" value="No" />
+              <label for="stairs">No</label><br />
+
+              <label for="notification" class="form-label">Notification:</label>
+              <select>
+                <option value="10 mins">10 mins</option>
+                <option value="20 mins">20 mins</option>
+                <option value="30 mins">30 mins</option>
+                <option value="60 mins">60 mins</option>
+              </select>
+            
+          </div>
+
+          <div class="form-navigation">
+            <button type="button" class="previous btn btn-info pull-left">&lt; Previous</button>
+            <button type="button" class="next btn btn-info pull-right">Next &gt;</button>
+            <input type="submit" class="btn btn-default pull-right" value="Schedule">
+            <span class="clearfix"></span>
+          </div>
+        
+        </form>
+        
+        <script type="text/javascript">
+        $(function () {
+          var $sections = $('.form-section');
+        
+          function navigateTo(index) {
+            // Mark the current section with the class 'current'
+            $sections
+              .removeClass('current')
+              .eq(index)
+                .addClass('current');
+            // Show only the navigation buttons that make sense for the current section:
+            $('.form-navigation .previous').toggle(index > 0);
+            var atTheEnd = index >= $sections.length - 1;
+            $('.form-navigation .next').toggle(!atTheEnd);
+            $('.form-navigation [type=submit]').toggle(atTheEnd);
+          }
+        
+          function curIndex() {
+            // Return the current index by looking at which section has the class 'current'
+            return $sections.index($sections.filter('.current'));
+          }
+        
+          // Previous button is easy, just go back
+          $('.form-navigation .previous').click(function() {
+            navigateTo(curIndex() - 1);
+          });
+        
+          // Next button goes forward iff current block validates
+          $('.form-navigation .next').click(function() {
+            $('.demo-form').parsley().whenValidate({
+              group: 'block-' + curIndex()
+            }).done(function() {
+              navigateTo(curIndex() + 1);
+            });
+          });
+        
+          // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
+          $sections.each(function(index, section) {
+            $(section).find(':input').attr('data-parsley-group', 'block-' + index);
+          });
+          navigateTo(0); // Start at the beginning
+        });
+        </script>
+
+
+
+
+        
+        <!-- <div class="form d-flex justify-content-center">
            <form class="container-fluid  row">
             <div class="col">
               <label for="date" class="form-label" >Date:</label>
-              <input type="date" name="date"  class="form-control" /><br />
+              <input type="date" name="date"  class="form-control" />
             </div>
             <div class="col">
               <label for="time" class="form-label">Time:</label>
-              <input type="time" name="time" class="form-control"  /><br />
+              <input type="time" name="time" class="form-control"  />
             </div>
             <div class="col">
               <label for="address" class="form-label">Pickup Location:</label>
@@ -111,7 +241,7 @@
                
               </div>
             <div class="mb-3">
-              <label for="instructions" class="form-label"> Special delivery / Pickup instructions:</label>
+              <label for="instructions" class="form-label"> Special delivery/Pickup instructions:</label>
               <textarea name="instructions" class="form-control"> </textarea>
             </div>
             <div>
@@ -143,7 +273,7 @@
               <input type="submit" value="Schedule">
             </div>
           </form>
-        </div>
+        </div> -->
       </section>
     </main>
     <footer>
@@ -172,6 +302,8 @@
       </div>
       <div class="copyright"><p>Copyright © AB Movers. All Rights Reserved</p></div>
     </footer>
+   
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   </body>
 </html>

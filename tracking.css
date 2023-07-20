@@ -6,9 +6,9 @@ h2{
     padding: 20px;
 }
 
-.container-xl{
+.container-sm{
     background-color: gray;
-    width:600px;
+    width:400px;
     }
 
 .container{

@@ -11,7 +11,7 @@ p.carousel-subtitle {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 div.carousel-image1-wrapper {
-   height:700px;
+   height:500px;
     width: 100%; 
     background-image: url("./assets/images/main1.jpeg");
   background-size: cover;
@@ -19,7 +19,7 @@ div.carousel-image1-wrapper {
   background-position: 50% 50%;
   }
   div.carousel-image2-wrapper {
-    height:700px;
+    height:500px;
      width: 100%; 
      background-image: url("./assets/images/main2.jpeg");
    background-size: cover;
@@ -27,7 +27,7 @@ div.carousel-image1-wrapper {
    background-position: 50% 50%;
    }
    div.carousel-image3-wrapper {
-    height:700px;
+    height:500px;
      width: 100%; 
      background-image: url("./assets/images/main3.jpeg");
    background-size: cover;
@@ -35,7 +35,7 @@ div.carousel-image1-wrapper {
    background-position: 50% 50%;
    }
    div.carousel-image4-wrapper {
-    height:700px;
+    height:500px;
      width: 100%; 
      background-image: url("./assets/images/main4.jpeg");
    background-size: cover;
