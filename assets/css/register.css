@@ -1,0 +1,21 @@
+.position-absolute{
+    background-color: #e4966b;
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    text-align: left;
+     
+    }
+    .heading,.link{
+        color: white;
+            }
+    
+    label{
+        width: 130px;
+        display: inline-block;
+        text-align: left;
+    }
+
+    div{
+        padding: 5px;
+    }

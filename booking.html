@@ -2,43 +2,70 @@
 <html>
   <head>
     <title>Create Booking</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="booking.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <script src="jquery.js"></script>
-    <script src="parsley.min.js"></script>
+    <link rel="stylesheet" href="assets/css/booking.css">
   </head>
   <body>
     <header>
 
-      <nav id="navbar" class="navbar navbar-light">
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="./assets/images/logo.jpeg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            <img
+              src="assets/css/images/logo.jpeg"
+              alt=""
+              height="20"
+              class="d-inline-block align-text-top mt-1"
+            />
             AB Movers
           </a>
-          <div class="position-absolute top-0 end-0">
-            <button type="button" class="btn">My Bookings</button>
-    
-                <img
-              src="./assets/images/user.jpg"
-              width="60px"
-              height="60px"
-              alt="user image"
-              data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample"
-            />
-              </button>
-            <div style="min-height: 120px;">
-              <div class="collapse collapse-horizontal" id="collapseWidthExample">
-                <div class="card card-body" style="width: 300px;">
-                  <ul>
-                    <li>Profile</li>
-                    <li>Log out</li>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/booking.html"
+                  >My Bookings</a
+                >
+              </li>
+
+              
+            </ul>
+            <div class="">
+              <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropstart">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="assets/css/images/user.png"
+                      height="20px"
+                      alt="user image"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseWidthExample"
+                      aria-expanded="false"
+                      aria-controls="collapseWidthExample"
+                    />
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
                   </ul>
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
           </div>
+
         </div>
       </nav>
     </header>
@@ -48,6 +75,34 @@
 
         <h2>Create Booking</h2>
 
+        <form class="demo-form">
+          <div class="form-section">
+            <label for="firstname">First Name:</label>
+            <input type="text" class="form-control" name="firstname" required="">
+        
+            <label for="lastname">Last Name:</label>
+            <input type="text" class="form-control" name="lastname" required="">
+          </div>
+        
+          <div class="form-section">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" name="email" required="">
+          </div>
+        
+          <div class="form-section">
+            <label for="color">Favorite color:</label>
+            <input type="text" class="form-control" name="color" required="">
+          </div>
+        
+          <div class="form-navigation">
+            <button type="button" class="previous btn btn-info pull-left">&lt; Previous</button>
+            <button type="button" class="next btn btn-info pull-right">Next &gt;</button>
+            <input type="submit" class="btn btn-default pull-right">
+            <span class="clearfix"></span>
+          </div>
+        
+        </form>
+
         <form class="demo-form container-fluid">
           <div class="form-section">
               <label for="date" >Date:</label>
@@ -56,8 +111,16 @@
               <label for="time">Time:</label>
               <input type="time" name="time" class="form-control"  />
           </div>
-        
+
           <div class="form-section">
+            <label for="date" >Date:</label>
+            <input type="date" name="date"  class="form-control" />
+      
+            <label for="time">Time:</label>
+            <input type="time" name="time" class="form-control"  />
+        </div>
+        
+          <!-- <div class="form-section">
             <label for="address" class="form-label">Pickup Location:</label>
             <input type="text" name="address1" placeholder="Address Line 1" class="form-control"/><br />
             <input type="text" name="address2" placeholder="Address Line 2" class="form-control"/><br />
@@ -117,7 +180,7 @@
                 <option value="60 mins">60 mins</option>
               </select>
             
-          </div>
+          </div> -->
 
           <div class="form-navigation">
             <button type="button" class="previous btn btn-info pull-left">&lt; Previous</button>
@@ -127,153 +190,6 @@
           </div>
         
         </form>
-        
-        <script type="text/javascript">
-        $(function () {
-          var $sections = $('.form-section');
-        
-          function navigateTo(index) {
-            // Mark the current section with the class 'current'
-            $sections
-              .removeClass('current')
-              .eq(index)
-                .addClass('current');
-            // Show only the navigation buttons that make sense for the current section:
-            $('.form-navigation .previous').toggle(index > 0);
-            var atTheEnd = index >= $sections.length - 1;
-            $('.form-navigation .next').toggle(!atTheEnd);
-            $('.form-navigation [type=submit]').toggle(atTheEnd);
-          }
-        
-          function curIndex() {
-            // Return the current index by looking at which section has the class 'current'
-            return $sections.index($sections.filter('.current'));
-          }
-        
-          // Previous button is easy, just go back
-          $('.form-navigation .previous').click(function() {
-            navigateTo(curIndex() - 1);
-          });
-        
-          // Next button goes forward iff current block validates
-          $('.form-navigation .next').click(function() {
-            $('.demo-form').parsley().whenValidate({
-              group: 'block-' + curIndex()
-            }).done(function() {
-              navigateTo(curIndex() + 1);
-            });
-          });
-        
-          // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
-          $sections.each(function(index, section) {
-            $(section).find(':input').attr('data-parsley-group', 'block-' + index);
-          });
-          navigateTo(0); // Start at the beginning
-        });
-        </script>
-
-
-
-
-        
-        <!-- <div class="form d-flex justify-content-center">
-           <form class="container-fluid  row">
-            <div class="col">
-              <label for="date" class="form-label" >Date:</label>
-              <input type="date" name="date"  class="form-control" />
-            </div>
-            <div class="col">
-              <label for="time" class="form-label">Time:</label>
-              <input type="time" name="time" class="form-control"  />
-            </div>
-            <div class="col">
-              <label for="address" class="form-label">Pickup Location:</label>
-              <input
-                type="text"
-                name="address1"
-                placeholder="Address Line 1" class="form-control"
-
-              /><br />
-              <input
-                type="text"
-                name="address2"
-                placeholder="Address Line 2"
-                class="form-control"
-              /><br />
-              <input type="text" name="city" placeholder="City"  class="form-control"/><br />
-              <input type="text" name="province" placeholder="Province"  class="form-control" /><br />
-              <input type="text" name="zipcode" placeholder="Zipcode"  class="form-control" /><br />
-            </div>
-            <div class="col">
-              <label for="d_address" class="form-label">Drop Location:</label>
-              <input type="text" name="d_address1" placeholder="Address Line 1"  class="form-control" /><br />
-              <input type="text" name="d_address2" placeholder="Address Line 2"  class="form-control"/><br />
-              <input type="text" name="d_city" placeholder="City"  class="form-control"/><br />
-              <input type="text" name="d_province" placeholder="Province"  class="form-control"/><br />
-              <input type="text" name="d_zipcode" placeholder="Zipcode"  class="form-control"/><br />
-            </div>
-            <div class="col">
-              <label for="distance" class="form-label" >Distance in Kilometers:</label>
-              <input
-                type="number"
-                name="distance"
-                min="0"
-                max="100"
-                step="1"
-                class="form-control"
-              /><br />
-            </div>
-            <div class="form-check col">
-              <label for="load" class="form-label">Load Size:</label>
-              <div class="form-check">
-                <input type="radio" name="load" value="small" class="form-check-input"/>
-                <label for="load" class="form-check-label">Small</label>
-              </div>
-              <div class="form-check" >
-                <input type="radio" name="load" value="medium" class="form-check-input"  />
-                <label for="load"class="form-check-label" >Medium</label>
-              </div>
-          
-              <div class="form-check">
-                <input type="radio" name="load" value="large"  class="form-check-input"  />
-                <label for="load"class="form-check-label" >Large</label>
-              </div>
-               
-              </div>
-            <div class="mb-3">
-              <label for="instructions" class="form-label"> Special delivery/Pickup instructions:</label>
-              <textarea name="instructions" class="form-control"> </textarea>
-            </div>
-            <div>
-              <p>Are there any challenges in parking?</p>
-              <input type="radio" name="parking" value="Yes" />
-              <label for="parking">Yes</label><br />
-              <input type="radio" name="parking" value="No" />
-              <label for="parking">No</label>
-            </div>
-
-            <div>
-              <p>Do you have stairs/steps in the location?</p>
-              <input type="radio" name="stairs" value="Yes" />
-              <label for="stairs">Yes</label><br />
-              <input type="radio" name="stairs" value="No" />
-              <label for="stairs">No</label><br />
-            </div>
-
-            <div>
-              <label for="notification" class="form-label">Notification:</label>
-              <select>
-                <option value="10 mins">10 mins</option>
-                <option value="20 mins">20 mins</option>
-                <option value="30 mins">30 mins</option>
-                <option value="60 mins">60 mins</option>
-              </select>
-            </div>
-            <div class="d-flex justify-content-center">
-              <input type="submit" value="Schedule">
-            </div>
-          </form>
-        </div> -->
       </section>
     </main>
     <footer>
@@ -304,6 +220,52 @@
     </footer>
    
    
+    <script src="assets/js/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="assets/js/parsley.js"></script>
+
+    <script type="text/javascript">
+      $(function () {
+  var $sections = $('.form-section');
+
+  function navigateTo(index) {
+    // Mark the current section with the class 'current'
+    $sections
+      .removeClass('current')
+      .eq(index)
+        .addClass('current');
+    // Show only the navigation buttons that make sense for the current section:
+    $('.form-navigation .previous').toggle(index > 0);
+    var atTheEnd = index >= $sections.length - 1;
+    $('.form-navigation .next').toggle(!atTheEnd);
+    $('.form-navigation [type=submit]').toggle(atTheEnd);
+  }
+
+  function curIndex() {
+    // Return the current index by looking at which section has the class 'current'
+    return $sections.index($sections.filter('.current'));
+  }
+
+  // Previous button is easy, just go back
+  $('.form-navigation .previous').click(function() {
+    navigateTo(curIndex() - 1);
+  });
+
+  // Next button goes forward iff current block validates
+  $('.form-navigation .next').click(function() {
+    $('.demo-form').parsley().whenValidate({
+      group: 'block-' + curIndex()
+    }).done(function() {
+      navigateTo(curIndex() + 1);
+    });
+  });
+
+  // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
+  $sections.each(function(index, section) {
+    $(section).find(':input').attr('data-parsley-group', 'block-' + index);
+  });
+  navigateTo(0); // Start at the beginning
+});
+      </script>
   </body>
 </html>
