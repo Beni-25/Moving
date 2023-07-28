@@ -75,95 +75,87 @@
         
         <section>
             <h2>Modify Booking</h2>
-            <div class="form">
-               <form class="container-xl">
-                <div>
-                  <label for="date">Date</label>
-                  <input type="date" name="date" /><br />
+            <form class="booking-form p-4 mb-5 rounded">
+              <div class="form-section">
+                <label for="date">Date:</label>
+                <input type="date" name="date" class="form-control" />
+    
+                <label for="time">Time:</label>
+                <input type="time" name="time" class="form-control" />
+              </div>
+    
+              <div class="form-section">
+                <label for="address" class="form-label">Pickup Location:</label>
+                <input type="text" name="address1" placeholder="Address Line 1" class="form-control"/><br />
+                <input type="text" name="address2" placeholder="Address Line 2" class="form-control"/><br />
+                <input type="text" name="city" placeholder="City"  class="form-control"/><br />
+                <input type="text" name="province" placeholder="Province"  class="form-control" /><br />
+                <input type="text" name="zipcode" placeholder="Zipcode"  class="form-control" /><br />
+    
+                <label for="d_address" class="form-label">Drop Location:</label>
+                <input type="text" name="d_address1" placeholder="Address Line 1"  class="form-control" /><br />
+                <input type="text" name="d_address2" placeholder="Address Line 2"  class="form-control"/><br />
+                <input type="text" name="d_city" placeholder="City"  class="form-control"/><br />
+                <input type="text" name="d_province" placeholder="Province"  class="form-control"/><br />
+                <input type="text" name="d_zipcode" placeholder="Zipcode"  class="form-control"/><br />
+    
+              </div>
+    
+              <div class="form-section">
+                <label for="distance" class="form-label" >Distance in Kilometers:</label>
+                <input type="number" name="distance" min="0" max="100" step="1" class="form-control"/><br />
+    
+                <label for="load" class="form-label">Load Size:</label>
+                <div class="form-check">
+                  <input type="radio" name="load" value="small" class="form-check-input"/>
+                  <label for="load" class="form-check-label">Small</label>
                 </div>
-                <div>
-                  <label for="time">Time</label>
-                  <input type="time" name="time" /><br />
+                <div class="form-check" >
+                  <input type="radio" name="load" value="medium" class="form-check-input"  />
+                  <label for="load"class="form-check-label" >Medium</label>
                 </div>
-                <div>
-                  <label for="address">Pickup Location</label>
-                  <input
-                    type="text"
-                    name="address1"
-                    placeholder="Address Line 1"
-                  /><br />
-                  <input
-                    type="text"
-                    name="address2"
-                    placeholder="Address Line 2"
-                  /><br />
-                  <input type="text" name="city" placeholder="City"/><br />
-                  <input type="text" name="province" placeholder="Province" /><br />
-                  <input type="text" name="zipcode" placeholder="Zipcode"/><br />
-                </div>
-                <div>
-                  <label for="d_address">Drop Location</label>
-                  <input type="text" name="d_address1" placeholder="Address Line 1" /><br />
-                  <input type="text" name="d_address2" placeholder="Address Line 2"/><br />
-                  <input type="text" name="d_city" placeholder="City"/><br />
-                  <input type="text" name="d_province" placeholder="Province"/><br />
-                  <input type="text" name="d_zipcode" placeholder="Zipcode"/><br />
-                </div>
-                <div>
-                  <label for="distance">Distance in Kilometers</label>
-                  <input
-                    type="number"
-                    name="distance"
-                    min="0"
-                    max="100"
-                    step="1"
-                  /><br />
-                </div>
-                <div>
-                  <label for="load">Load Size</label>
-                  <input type="radio" name="load" value="small" />
-                  <label for="load">Small</label>
-                  <input type="radio" name="load" value="medium" />
-                  <label for="load">Medium</label>
-                  <input type="radio" name="load" value="large" />
-                  <label for="load">Large</label><br />
-                </div>
-                <div>
-                  <label for="instructions"
-                    >Special delivery/Pickup instructions</label
-                  >
-                  <textarea name="instructions" rows="3" cols="30"> </textarea
-                  ><br />
-                </div>
-                <div>
-                  <p>Are there any challenges in parking?</p>
-                  <input type="radio" name="parking" value="Yes" />
-                  <label for="parking">Yes</label><br />
-                  <input type="radio" name="parking" value="No" />
-                  <label for="parking">No</label>
+                <div class="form-check">
+                  <input type="radio" name="load" value="large"  class="form-check-input"  />
+                  <label for="load"class="form-check-label" >Large</label>
                 </div>
     
-                <div>
-                  <p>Do you have stairs/steps in the location?</p>
-                  <input type="radio" name="stairs" value="Yes" />
-                  <label for="stairs">Yes</label><br />
-                  <input type="radio" name="stairs" value="No" />
-                  <label for="stairs">No</label><br />
-                </div>
+                <label for="instructions" class="form-label"> Special delivery/Pickup instructions:</label>
+                <textarea name="instructions" class="form-control"> </textarea>
+            </div>
+            <div class="form-section">
+              <p>Are there any challenges in parking?</p>
+                <input type="radio" name="parking" value="Yes" />
+                <label for="parking">Yes</label><br />
+                <input type="radio" name="parking" value="No" />
+                <label for="parking">No</label>
     
-                <div>
-                  <label for="notification">Notification</label>
-                  <select>
-                    <option value="10 mins">10 mins</option>
-                    <option value="20 mins">20 mins</option>
-                    <option value="30 mins">30 mins</option>
-                    <option value="60 mins">60 mins</option>
-                  </select>
-                </div>
-                <div class="d-flex justify-content-center">
-                  <input type="submit" value="Modify">
-                </div>
-              </form>
+                <p>Do you have stairs/steps in the location?</p>
+                <input type="radio" name="stairs" value="Yes" />
+                <label for="stairs">Yes</label><br />
+                <input type="radio" name="stairs" value="No" />
+                <label for="stairs">No</label><br />
+    
+                <label for="notification" class="form-label">Prior Notification to send alert:</label>
+                <select>
+                  <option value="10 mins">10 mins</option>
+                  <option value="20 mins">20 mins</option>
+                  <option value="30 mins">30 mins</option>
+                  <option value="60 mins">60 mins</option>
+                </select>
+              
+            </div>
+    
+              <div class="form-navigation">
+                <button type="button" class="previous btn btn-light pull-left">
+                   Previous
+                </button>
+                <button type="button" class="next btn btn-light pull-right">
+                  Next 
+                </button>
+                <input type="submit" class="btn btn-outline-light pull-right" />
+                <span class="clearfix"></span>
+              </div>
+            </form>
             </div>
           </section>
 
@@ -195,6 +187,55 @@
         </div>
         <div class="copyright"><p>Copyright © AB Movers. All Rights Reserved</p></div>
       </footer>
+      <script src="assets/js/jquery.js"></script>
       <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/js/parsley.js"></script>
+
+      <script type="text/javascript">
+        $(function () {
+          var $sections = $(".form-section");
+  
+          function navigateTo(index) {
+            // Mark the current section with the class 'current'
+            $sections.removeClass("current").eq(index).addClass("current");
+            // Show only the navigation buttons that make sense for the current section:
+            $(".form-navigation .previous").toggle(index > 0);
+            var atTheEnd = index >= $sections.length - 1;
+            $(".form-navigation .next").toggle(!atTheEnd);
+            $(".form-navigation [type=submit]").toggle(atTheEnd);
+          }
+  
+          function curIndex() {
+            // Return the current index by looking at which section has the class 'current'
+            return $sections.index($sections.filter(".current"));
+          }
+  
+          // Previous button is easy, just go back
+          $(".form-navigation .previous").click(function () {
+            navigateTo(curIndex() - 1);
+          });
+  
+          // Next button goes forward iff current block validates
+          $(".form-navigation .next").click(function () {
+            $(".booking-form")
+              .parsley()
+              .whenValidate({
+                group: "block-" + curIndex(),
+              })
+              .done(function () {
+                navigateTo(curIndex() + 1);
+              });
+          });
+  
+          // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
+          $sections.each(function (index, section) {
+            $(section)
+              .find(":input")
+              .attr("data-parsley-group", "block-" + index);
+          });
+          navigateTo(0); // Start at the beginning
+        });
+  
+        </script>
     </body>
 </html>

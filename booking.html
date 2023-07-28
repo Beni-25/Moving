@@ -2,13 +2,15 @@
 <html>
   <head>
     <title>Create Booking</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/css/booking.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="assets/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="assets/css/booking.css" />
   </head>
   <body>
     <header>
-
       <nav id="navbar" class="navbar navbar-light navbar-expand-sm">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
@@ -20,7 +22,15 @@
             />
             AB Movers
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -30,11 +40,9 @@
                   >My Bookings</a
                 >
               </li>
-
-              
             </ul>
             <div class="">
-              <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropstart">
                   <a
                     class="nav-link dropdown-toggle"
@@ -65,62 +73,24 @@
               </ul>
             </div>
           </div>
-
         </div>
       </nav>
     </header>
 
     <main>
       <section>
-
         <h2>Create Booking</h2>
 
-        <form class="demo-form">
+        <form class="booking-form p-4 mb-5 rounded">
           <div class="form-section">
-            <label for="firstname">First Name:</label>
-            <input type="text" class="form-control" name="firstname" required="">
-        
-            <label for="lastname">Last Name:</label>
-            <input type="text" class="form-control" name="lastname" required="">
-          </div>
-        
-          <div class="form-section">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" name="email" required="">
-          </div>
-        
-          <div class="form-section">
-            <label for="color">Favorite color:</label>
-            <input type="text" class="form-control" name="color" required="">
-          </div>
-        
-          <div class="form-navigation">
-            <button type="button" class="previous btn btn-info pull-left">&lt; Previous</button>
-            <button type="button" class="next btn btn-info pull-right">Next &gt;</button>
-            <input type="submit" class="btn btn-default pull-right">
-            <span class="clearfix"></span>
-          </div>
-        
-        </form>
+            <label for="date">Date:</label>
+            <input type="date" name="date" class="form-control" />
 
-        <form class="demo-form container-fluid">
-          <div class="form-section">
-              <label for="date" >Date:</label>
-              <input type="date" name="date"  class="form-control" />
-        
-              <label for="time">Time:</label>
-              <input type="time" name="time" class="form-control"  />
-          </div>
-
-          <div class="form-section">
-            <label for="date" >Date:</label>
-            <input type="date" name="date"  class="form-control" />
-      
             <label for="time">Time:</label>
-            <input type="time" name="time" class="form-control"  />
-        </div>
-        
-          <!-- <div class="form-section">
+            <input type="time" name="time" class="form-control" />
+          </div>
+
+          <div class="form-section">
             <label for="address" class="form-label">Pickup Location:</label>
             <input type="text" name="address1" placeholder="Address Line 1" class="form-control"/><br />
             <input type="text" name="address2" placeholder="Address Line 2" class="form-control"/><br />
@@ -136,59 +106,61 @@
             <input type="text" name="d_zipcode" placeholder="Zipcode"  class="form-control"/><br />
 
           </div>
-        
-          <div class="form-section">
-              <label for="distance" class="form-label" >Distance in Kilometers:</label>
-              <input type="number" name="distance" min="0" max="100" step="1" class="form-control"/><br />
-
-              <label for="load" class="form-label">Load Size:</label>
-              <div class="form-check">
-                <input type="radio" name="load" value="small" class="form-check-input"/>
-                <label for="load" class="form-check-label">Small</label>
-              </div>
-              <div class="form-check" >
-                <input type="radio" name="load" value="medium" class="form-check-input"  />
-                <label for="load"class="form-check-label" >Medium</label>
-              </div>
-              <div class="form-check">
-                <input type="radio" name="load" value="large"  class="form-check-input"  />
-                <label for="load"class="form-check-label" >Large</label>
-              </div>
-
-              <label for="instructions" class="form-label"> Special delivery/Pickup instructions:</label>
-              <textarea name="instructions" class="form-control"> </textarea>
-          </div>
 
           <div class="form-section">
-            <p>Are there any challenges in parking?</p>
-              <input type="radio" name="parking" value="Yes" />
-              <label for="parking">Yes</label><br />
-              <input type="radio" name="parking" value="No" />
-              <label for="parking">No</label>
+            <label for="distance" class="form-label" >Distance in Kilometers:</label>
+            <input type="number" name="distance" min="0" max="100" step="1" class="form-control"/><br />
 
-              <p>Do you have stairs/steps in the location?</p>
-              <input type="radio" name="stairs" value="Yes" />
-              <label for="stairs">Yes</label><br />
-              <input type="radio" name="stairs" value="No" />
-              <label for="stairs">No</label><br />
+            <label for="load" class="form-label">Load Size:</label>
+            <div class="form-check">
+              <input type="radio" name="load" value="small" class="form-check-input"/>
+              <label for="load" class="form-check-label">Small</label>
+            </div>
+            <div class="form-check" >
+              <input type="radio" name="load" value="medium" class="form-check-input"  />
+              <label for="load"class="form-check-label" >Medium</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" name="load" value="large"  class="form-check-input"  />
+              <label for="load"class="form-check-label" >Large</label>
+            </div>
 
-              <label for="notification" class="form-label">Notification:</label>
-              <select>
-                <option value="10 mins">10 mins</option>
-                <option value="20 mins">20 mins</option>
-                <option value="30 mins">30 mins</option>
-                <option value="60 mins">60 mins</option>
-              </select>
-            
-          </div> -->
+            <label for="instructions" class="form-label"> Special delivery/Pickup instructions:</label>
+            <textarea name="instructions" class="form-control"> </textarea>
+        </div>
+        <div class="form-section">
+          <p>Are there any challenges in parking?</p>
+            <input type="radio" name="parking" value="Yes" />
+            <label for="parking">Yes</label><br />
+            <input type="radio" name="parking" value="No" />
+            <label for="parking">No</label>
+
+            <p>Do you have stairs/steps in the location?</p>
+            <input type="radio" name="stairs" value="Yes" />
+            <label for="stairs">Yes</label><br />
+            <input type="radio" name="stairs" value="No" />
+            <label for="stairs">No</label><br />
+
+            <label for="notification" class="form-label">Prior Notification to send alert:</label>
+            <select>
+              <option value="10 mins">10 mins</option>
+              <option value="20 mins">20 mins</option>
+              <option value="30 mins">30 mins</option>
+              <option value="60 mins">60 mins</option>
+            </select>
+          
+        </div>
 
           <div class="form-navigation">
-            <button type="button" class="previous btn btn-info pull-left">&lt; Previous</button>
-            <button type="button" class="next btn btn-info pull-right">Next &gt;</button>
-            <input type="submit" class="btn btn-default pull-right" value="Schedule">
+            <button type="button" class="previous btn btn-light pull-left">
+               Previous
+            </button>
+            <button type="button" class="next btn btn-light pull-right">
+              Next 
+            </button>
+            <input type="submit" class="btn btn-outline-light pull-right" />
             <span class="clearfix"></span>
           </div>
-        
         </form>
       </section>
     </main>
@@ -197,18 +169,27 @@
         <div class="row align-items-center">
           <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
             <h3>Address</h3>
-          <p>
-            55 Terra Nova Road<br />
-            St.John's, NL<br />
-            A1B1E7
-          </p>
+            <p>
+              55 Terra Nova Road<br />
+              St.John's, NL<br />
+              A1B1E7
+            </p>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
             <h3>Social Media</h3>
-            <a href="https://www.facebook.com/profile.php?id=100093111200999&mibextid=LQQJ4d"><i class="bi bi-facebook"></i></a>
-            <a  href="mailto:abmovers2023@gmail.com"><i class="bi bi-envelope"></i></a>
-            <a href="https://www.linkedin.com/profile_name"><i class="bi bi-linkedin"></i></a>
-            <a href="https://www.instagram.com/@profile_name"><i class="bi bi-instagram"></i></a>
+            <a
+              href="https://www.facebook.com/profile.php?id=100093111200999&mibextid=LQQJ4d"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="mailto:abmovers2023@gmail.com"
+              ><i class="bi bi-envelope"></i
+            ></a>
+            <a href="https://www.linkedin.com/profile_name"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+            <a href="https://www.instagram.com/@profile_name"
+              ><i class="bi bi-instagram"></i
+            ></a>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
             <h3>Contact</h3>
@@ -216,101 +197,60 @@
           </div>
         </div>
       </div>
-      <div class="copyright"><p>Copyright © AB Movers. All Rights Reserved</p></div>
+      <div class="copyright">
+        <p>Copyright © AB Movers. All Rights Reserved</p>
+      </div>
     </footer>
-   
-   
+
     <script src="assets/js/jquery.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/parsley.js"></script>
 
     <script type="text/javascript">
+      $(function () {
+        var $sections = $(".form-section");
 
-$(function () {
-  var $sections = $('.form-section');
+        function navigateTo(index) {
+          // Mark the current section with the class 'current'
+          $sections.removeClass("current").eq(index).addClass("current");
+          // Show only the navigation buttons that make sense for the current section:
+          $(".form-navigation .previous").toggle(index > 0);
+          var atTheEnd = index >= $sections.length - 1;
+          $(".form-navigation .next").toggle(!atTheEnd);
+          $(".form-navigation [type=submit]").toggle(atTheEnd);
+        }
 
-  function navigateTo(index) {
-    // Mark the current section with the class 'current'
-    $sections
-      .removeClass('current')
-      .eq(index)
-        .addClass('current');
-    // Show only the navigation buttons that make sense for the current section:
-    $('.form-navigation .previous').toggle(index > 0);
-    var atTheEnd = index >= $sections.length - 1;
-    $('.form-navigation .next').toggle(!atTheEnd);
-    $('.form-navigation [type=submit]').toggle(atTheEnd);
-  }
+        function curIndex() {
+          // Return the current index by looking at which section has the class 'current'
+          return $sections.index($sections.filter(".current"));
+        }
 
-  function curIndex() {
-    // Return the current index by looking at which section has the class 'current'
-    return $sections.index($sections.filter('.current'));
-  }
+        // Previous button is easy, just go back
+        $(".form-navigation .previous").click(function () {
+          navigateTo(curIndex() - 1);
+        });
 
-  // Previous button is easy, just go back
-  $('.form-navigation .previous').click(function() {
-    navigateTo(curIndex() - 1);
-  });
+        // Next button goes forward iff current block validates
+        $(".form-navigation .next").click(function () {
+          $(".booking-form")
+            .parsley()
+            .whenValidate({
+              group: "block-" + curIndex(),
+            })
+            .done(function () {
+              navigateTo(curIndex() + 1);
+            });
+        });
 
-  // Next button goes forward iff current block validates
-  $('.form-navigation .next').click(function() {
-    $('.demo-form').parsley().whenValidate({
-      group: 'block-' + curIndex()
-    }).done(function() {
-      navigateTo(curIndex() + 1);
-    });
-  });
+        // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
+        $sections.each(function (index, section) {
+          $(section)
+            .find(":input")
+            .attr("data-parsley-group", "block-" + index);
+        });
+        navigateTo(0); // Start at the beginning
+      });
 
-  // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
-  $sections.each(function(index, section) {
-    $(section).find(':input').attr('data-parsley-group', 'block-' + index);
-  });
-  navigateTo(0); // Start at the beginning
-});
-
-
-
-//       $(function () {
-//   var $sections = $('.form-section');
-
-//   function navigateTo(index) {
-//     // Mark the current section with the class 'current'
-//     $sections
-//       .removeClass('current')
-//       .eq(index)
-//         .addClass('current');
-//     // Show only the navigation buttons that make sense for the current section:
-//     $('.form-navigation .previous').toggle(index > 0);
-//     var atTheEnd = index >= $sections.length - 1;
-//     $('.form-navigation .next').toggle(!atTheEnd);
-//     $('.form-navigation [type=submit]').toggle(atTheEnd);
-//   }
-
-//   function curIndex() {
-//     // Return the current index by looking at which section has the class 'current'
-//     return $sections.index($sections.filter('.current'));
-//   }
-
-//   // Previous button is easy, just go back
-//   $('.form-navigation .previous').click(function() {
-//     navigateTo(curIndex() - 1);
-//   });
-
-//   // Next button goes forward iff current block validates
-//   $('.form-navigation .next').click(function() {
-//     $('.demo-form').parsley().whenValidate({
-//       group: 'block-' + curIndex()
-//     }).done(function() {
-//       navigateTo(curIndex() + 1);
-//     });
-//   });
-
-//   // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
-//   $sections.each(function(index, section) {
-//     $(section).find(':input').attr('data-parsley-group', 'block-' + index);
-//   });
-//   navigateTo(0); // Start at the beginning
-// });
       </script>
   </body>
 </html>
