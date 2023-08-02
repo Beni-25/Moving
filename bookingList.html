@@ -4,44 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Booking List</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="bookingList.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/bookingList.css" />
   </head>
   <body>
     <header>
-      <img
-        src="./assets/images/logo.jpeg"
-        width="150px"
-        height="100px"
-        alt="logo image"
-      />
-      <div class="position-absolute top-0 end-0">
-        <button type="button" class="btn">My Bookings</button>
 
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
             <img
-          src="./assets/images/user.jpg"
-          width="100px"
-          height="100px"
-          alt="user image"
-          data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample"
-        />
-        <div style="min-height: 120px;">
-          <div class="collapse collapse-horizontal" id="collapseWidthExample">
-            <div class="card card-body" style="width: 300px;">
-              <ul>
-                <li>Profile</li>
-                <li>Log out</li>
+              src="assets/css/images/logo.jpeg"
+              alt=""
+              height="20"
+              class="d-inline-block align-text-top mt-1"
+            />
+            AB Movers
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/bookingList.html"
+                  >My Bookings</a
+                >
+              </li>
+
+              
+            </ul>
+            <div class="">
+              <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropstart">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="assets/css/images/user.png"
+                      height="20px"
+                      alt="user image"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseWidthExample"
+                      aria-expanded="false"
+                      aria-controls="collapseWidthExample"
+                    />
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">View Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="/login.html">Sign out</a>
+                    </li>
+                  </ul>
+                </li>
               </ul>
             </div>
           </div>
+
         </div>
-      </div>
+      </nav>
     </header>
+  
     <main>
       <section>
         <div class="row justify-content-between">
@@ -50,7 +80,7 @@
           </div>
           <div class="col-4">
             <img
-              src="./assets/images/search.png"
+              src="assets/css/images/search.png"
               width="60px"
               height="35px"
               alt="search image"
@@ -59,79 +89,123 @@
           </div>
         </div>
 
-        <div>
-          <div class="d-flex justify-content-end">
-            <button onclick="window.location.href='tracking.html';">
-              Track
-            </button>
-            <button onclick="window.location.href='modify.html';">
-              Modify
-            </button>
-            <button>Cancel</button>
-          </div>
-          <div class="d-flex justify-content-end">
-            <button onclick="window.location.href='tracking.html';">
-              Track
-            </button>
-            <button onclick="window.location.href='modify.html';">
-              Modify
-            </button>
-            <button>Cancel</button>
-          </div>
-          <div class="d-flex justify-content-end">
-            <button onclick="window.location.href='tracking.html';">
-              Track
-            </button>
-            <button onclick="window.location.href='modify.html';">
-              Modify
-            </button>
-            <button>Cancel</button>
-          </div>
-          <div class="d-flex justify-content-end">
-            <button onclick="window.location.href='tracking.html';">
-              Track
-            </button>
-            <button onclick="window.location.href='modify.html';">
-              Modify
-            </button>
-            <button>Cancel</button>
+        <div class="list container text-center mb-3 rounded">
+          <div class="row align-items-center">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <p>NAME: BENISHA</p>
+              <p>BOOKING ID: 400001</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <p>PICKUP: ST.JOHN'S</p>
+              <p>DROP: MOUNT PEARL</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <button class="btn btn-light" onclick="window.location.href='tracking.html';">
+                  Track
+                </button>
+                <button class="btn btn-light" onclick="window.location.href='modify.html';">
+                  Modify
+                </button>
+                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Cancel</button>
+            </div>
           </div>
         </div>
+
+        <div class="list container text-center mb-3 rounded">
+          <div class="row align-items-center">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <p>NAME: ALPHIN</p>
+              <p>BOOKING ID: 400002</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <p>PICKUP: ST.JOHN'S</p>
+              <p>DROP: MOUNT PEARL</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <button class="btn btn-light" onclick="window.location.href='tracking.html';">
+                  Track
+                </button>
+                <button class="btn btn-light" onclick="window.location.href='modify.html';">
+                  Modify
+                </button>
+                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Cancel</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="list container text-center rounded">
+          <div class="row align-items-center">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <p>NAME: ATHAN</p>
+              <p>BOOKING ID: 400003</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <p>PICKUP: ST.JOHN'S</p>
+              <p>DROP: MOUNT PEARL</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <button class="btn btn-light" onclick="window.location.href='tracking.html';">
+                  Track
+                </button>
+                <button class="btn btn-light" onclick="window.location.href='modify.html';">
+                  Modify
+                </button>
+                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >Cancel</button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p> Are you sure, Do you want to delete?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+        
       </section>
     </main>
 
     <footer>
       <div class="container text-center">
         <div class="row align-items-center">
-          <div class="col">
+          <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
             <h3>Address</h3>
-            <p>
-              Terra Nova Road<br />
-              St.John's, NL<br />
-              A1B1E7
-            </p>
+          <p>
+            55 Terra Nova Road<br />
+            St.John's, NL<br />
+            A1B1E7
+          </p>
           </div>
-          <div class="col">
+          <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
             <h3>Social Media</h3>
-            <a href="https://www.facebook.com/profile_name">Facebook</a>
-            <a href="mailito:email@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/profile_name">Linkedin</a>
-            <a href="https://www.instagram.com/@profile_name">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=100093111200999&mibextid=LQQJ4d"><i class="bi bi-facebook"></i></a>
+            <a  href="mailto:abmovers2023@gmail.com"><i class="bi bi-envelope"></i></a>
+            <a href="https://www.linkedin.com/profile_name"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com/@profile_name"><i class="bi bi-instagram"></i></a>
           </div>
-          <div class="col">
+          <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
             <h3>Contact</h3>
-            <p>+1 (416) 271 7942</p>
+            <p>+1 (709) 769 4450</p>
           </div>
         </div>
       </div>
       <div class="copyright">
-        <h3>Copyright © AB Movers. All Rights Reserved</h3>
+        <p>Copyright © AB Movers. All Rights Reserved</p>
       </div>
     </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

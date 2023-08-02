@@ -4,46 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tracking</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="tracking.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/tracking.css">
+    <link rel="stylesheet" href="assets/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
   <header>
-    <img
-    src="./assets/images/logo.jpeg"
-    width="150px"
-    height="100px"
-    alt="logo image"
-  />
-  <div class="position-absolute top-0 end-0">
-    <button type="button" class="btn">My Bookings</button>
 
-        <img
-      src="./assets/images/user.jpg"
-      width="100px"
-      height="100px"
-      alt="user image"
-      data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample"
-    />
-      </button>
-    <div style="min-height: 120px;">
-      <div class="collapse collapse-horizontal" id="collapseWidthExample">
-        <div class="card card-body" style="width: 300px;">
-          <ul>
-            <li>Profile</li>
-            <li>Log out</li>
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="assets/css/images/logo.jpeg"
+            alt=""
+            height="20"
+            class="d-inline-block align-text-top mt-1"
+          />
+          AB Movers
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/bookingList.html"
+                >My Bookings</a
+              >
+            </li>
+
+            
           </ul>
+          <div class="">
+            <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropstart">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="assets/css/images/user.png"
+                    height="20px"
+                    alt="user image"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseWidthExample"
+                    aria-expanded="false"
+                    aria-controls="collapseWidthExample"
+                  />
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">View Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/login.html">Sign out</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
+
       </div>
-    </div>
-  </div>
-    </header>
+    </nav>
+ 
+  </header>
+
       <main>
             <section>
+                <br>
                 <h2> Tracking Details</h2>
 
-                <div class="container-xl">
-                    <!-- get data -->
+                <div class="container-sm pt-2 pb-2 mt-4 mb-5 rounded">
+                    <p> BOOKING ID: 400001</p>
+                    <p>PICKUP: ST.JOHN'S</p>
+                    <p>DROP: MOUNT PEARL</p>
+                    <p>DATE: 5TH JUNE 2023</p>
+                    <p>APPROXIMATE PICKUP TIME: 10:00AM</p>
+                    <P>APPROXIMATE DROP TIME: 10:30AM</P>
                 </div>
             </section>
           </main>
@@ -51,29 +92,29 @@
           <footer>
             <div class="container text-center">
               <div class="row align-items-center">
-                <div class="col">
+                <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
                   <h3>Address</h3>
                 <p>
-                  Terra Nova Road<br />
+                  55 Terra Nova Road<br />
                   St.John's, NL<br />
                   A1B1E7
                 </p>
                 </div>
-                <div class="col">
+                <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
                   <h3>Social Media</h3>
-                <a href="https://www.facebook.com/profile_name">Facebook</a>
-                <a href="mailito:email@gmail.com">Email</a>
-                <a href="https://www.linkedin.com/profile_name">Linkedin</a>
-                <a href="https://www.instagram.com/@profile_name">Instagram</a>
+                  <a href="https://www.facebook.com/profile.php?id=100093111200999&mibextid=LQQJ4d"><i class="bi bi-facebook"></i></a>
+                  <a  href="mailto:abmovers2023@gmail.com"><i class="bi bi-envelope"></i></a>
+                  <a href="https://www.linkedin.com/profile_name"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.instagram.com/@profile_name"><i class="bi bi-instagram"></i></a>
                 </div>
-                <div class="col">
+                <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
                   <h3>Contact</h3>
-                  <p>+1 (416) 271 7942</p>
+                  <p>+1 (709) 769 4450</p>
                 </div>
               </div>
             </div>
-            <div class="copyright"><h3>Copyright © AB Movers. All Rights Reserved</h3></div>
+            <div class="copyright fixed-bottom"><p>Copyright © AB Movers. All Rights Reserved</p></div>
           </footer>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+          <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
         </body>
 </html>
