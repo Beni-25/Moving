@@ -42,7 +42,15 @@ div.carousel-image1-wrapper {
    background-repeat: no-repeat;
    background-position: 50% 50%;
    }
-
+   .card-img-top{
+    background-image: url("./images/img1.jpeg");
+    background-size: 28em 15em;
+    transition: 0.2s;
+   }
+.card-img-top-active{
+  background-size: 30.8em 16.5em;
+  transition: 0.2s;
+}
 .card-text {
   text-align: justify;
 }
