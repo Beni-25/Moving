@@ -7,6 +7,10 @@ width:360px;
     color: white;
     padding: 20px;
 }
+#togglePassword{
+    margin-left: -23px; 
+    cursor: pointer;
+}
 label{
     width: 120px;
     display: inline-block;
