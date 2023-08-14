@@ -70,11 +70,11 @@ $(function () {
 
   //dropdown mouseleave event
 
-  $(document).ready(()=>{
-    $('.dropdown-menu').on('click',()=>{
-        $('.dropdown-menu').toggle();
-    })
-    $('.dropdown-menu').on('mouseleave',()=>{
-        $('.dropdown-menu').hide();
-    })
-  });
+//   $(document).ready(()=>{
+//     $('.dropdown-menu').on('click',()=>{
+//         $('.dropdown-menu').toggle();
+//     })
+//     $('.dropdown-menu').on('mouseleave',()=>{
+//         $('.dropdown-menu').toggle();
+//     })
+//   });
