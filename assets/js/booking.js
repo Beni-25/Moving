@@ -78,3 +78,17 @@ $(function () {
 //         $('.dropdown-menu').toggle();
 //     })
 //   });
+
+$( "#bookingbtn" ).on( 'mouseenter', () => {
+    $( "#bookingbtn" ).css({
+        color: 'white',
+        // backgroundColor:'#e6a481'
+    })
+  } );
+
+  $( "#bookingbtn" ).on( 'mouseleave', () => {
+    $( "#bookingbtn" ).css({
+        color: 'black', 
+        // backgroundColor:'#e4966b'
+    })
+  } );
