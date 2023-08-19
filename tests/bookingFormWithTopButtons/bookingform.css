@@ -1,0 +1,23 @@
+.form-step {
+    display: none;
+  }
+  .form-step.active {
+    display: block;
+  }
+  
+  .step-tabs {
+         margin: 20px 0;
+       }
+  
+  .step-tab {
+       display: inline-block;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .step-tab.active {
+    background-color: #6C757D;
+    color: white;
+  }
