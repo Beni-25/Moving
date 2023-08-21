@@ -1,5 +1,13 @@
-.form-step {
+.booking-form{
+    background-color: gray;
+    width:600px;
+    margin: auto;
+  }
+
+ .form-step {
     display: none;
+    padding-left: 15px;
+    border-left: 2px solid #e4966b;
   }
   .form-step.active {
     display: block;
@@ -11,13 +19,15 @@
   
   .step-tab {
        display: inline-block;
+       background-color:#e4966b ;
     margin-right: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px;
+    border-radius: 8px;
     cursor: pointer;
   }
   
   .step-tab.active {
-    background-color: #6C757D;
-    color: white;
+    background-color: white;
+    color: black;
   }

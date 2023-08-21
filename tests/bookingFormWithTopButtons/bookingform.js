@@ -9,4 +9,9 @@ function showStep(stepNumber) {
      
         formSteps.eq(stepNumber - 1).addClass('active');
    }
+
+   //tick icon hide
+   $(function (){
+    $(".bi-check").hide();
+   })
    

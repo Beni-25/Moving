@@ -70,6 +70,9 @@ header {
   background-color: #e4966b;
   color: whitesmoke;
 }
+.bi-active{
+  font-size:60px;
+}
 footer {
   background-color: #e4966b;
 }

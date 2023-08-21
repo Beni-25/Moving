@@ -1,19 +1,3 @@
-//       $('a').on( 'keyup', function( e ) { 
-//     if( e.which == 9 ) { 
-//         console.log( e.target.href ); 
-//     } 
-// } );
-
-
-// function getDate(){
-//     const bdate= document.getElementById('date');
-//     const today=new Date();
-//     const formatteDate=today.getDate() + "-"
-//     + (today.getMonth()+1)  + "-" 
-//     + today.getFullYear(); 
-//         bdate.value = formattedDate;
-// }
-
 document.addEventListener('DOMContentLoaded', function() {
         
     var bdate = document.getElementById('date');

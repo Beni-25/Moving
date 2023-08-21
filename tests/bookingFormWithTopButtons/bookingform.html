@@ -6,30 +6,37 @@
     <title>Document</title>
     <link rel="stylesheet" href="bookingform.css">
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link
+    rel="stylesheet"
+    href="/assets/bootstrap-icons/font/bootstrap-icons.css"
+  />
 </head>
 <body>
     <h1 class="text-center">Create Booking</h1>
-  
+    <div class="booking-form p-4 mt-5 mb-5 rounded">
   <ul class="step-tabs">
-    <li class="step-tab" onclick="showStep(1)">Date & Time</li>
-    <li class="step-tab" onclick="showStep(2)">Pickup Address</li>
-    <li class="step-tab" onclick="showStep(3)">Drop Address</li>
-    <li class="step-tab" onclick="showStep(4)">Distance & Load</li>
-    <li class="step-tab" onclick="showStep(5)">Information & Notification</li>
+    <li class="step-tab" onclick="showStep(1)">Time<i class="bi bi-check"></i></li>
+    <li class="step-tab" onclick="showStep(2)">Pickup<i class="bi bi-check"></i></li>
+    <li class="step-tab" onclick="showStep(3)">Drop<i class="bi bi-check"></i></li>
+    <li class="step-tab" onclick="showStep(4)">Details<i class="bi bi-check"></i></li>
+    <li class="step-tab" onclick="showStep(5)">Challenges<i class="bi bi-check"></i></li>
   </ul>
   
-  <form id="multiStepForm" action="#" method="post">
+  <form id="multiStepForm p-3 m-3" action="#" method="post">
     <!-- Step 1 -->
-    <div class="form-step step-1 active">
+    
+    <div class="form-step step-1 active mb-3">
            <label for="date">Date:</label>
             <input type="date" name="date" id="date" class="form-control" />
 
             <label for="time">Time:</label>
-            <input type="time" name="time" class="form-control" />
+            <input type="time" name="time" class="form-control" /><br>
+
+            <button type="button" class="btn btn-light" onclick="showStep(2)">Next</button>
     </div>
     
     <!-- Step 2 -->
-    <div class="form-step step-2">
+    <div class="form-step step-2 mb-3">
     
       <label for="address" class="form-label">Pickup Location:</label>
             <input
@@ -62,10 +69,13 @@
               placeholder="Zipcode"
               class="form-control"
             /><br />
+
+            <button type="button" class="btn btn-light" onclick="showStep(1)">Previous</button>
+            <button type="button" class="btn btn-light" onclick="showStep(3)">Next</button>
     </div>
     
     <!-- Step 3 -->
-    <div class="form-step step-3">
+    <div class="form-step step-3 mb-3">
            <label for="d_address" class="form-label">Drop Location:</label>
             <input
               type="text"
@@ -97,10 +107,13 @@
               placeholder="Zipcode"
               class="form-control"
             /><br />
+
+            <button type="button" class="btn btn-light" onclick="showStep(2)">Previous</button>
+            <button type="button" class="btn btn-light" onclick="showStep(4)">Next</button>
     </div>
     
      <!-- Step 4 -->
-    <div class="form-step step-4">
+    <div class="form-step step-4 mb-3">
     
      <label for="distance" class="form-label"
               >Distance in Kilometers:</label
@@ -146,11 +159,14 @@
             <label for="instructions" class="form-label">
               Special delivery/Pickup instructions:</label
             >
-            <textarea name="instructions" class="form-control"> </textarea>
+            <textarea name="instructions" class="form-control"> </textarea><br>
+
+            <button type="button" class="btn btn-light" onclick="showStep(3)">Previous</button>
+            <button type="button" class="btn btn-light" onclick="showStep(5)">Next</button>
     </div>
     
      <!-- Step 5 -->
-    <div class="form-step step-5">
+    <div class="form-step step-5 mb-3">
            <p>Are there any challenges in parking?</p>
             <input type="radio" name="parking" value="Yes" />
             <label for="parking">Yes</label><br />
@@ -172,10 +188,10 @@
               <option value="30 mins">30 mins</option>
               <option value="60 mins">60 mins</option>
             </select><br /><br />
-            <button type="button" class="btn btn-secondary">Preview</button>
-            <input type="submit" class="btn btn-secondary">
+            <button type="button" class="btn btn-light">Preview</button>
+            <input type="submit" class="btn btn-outline-light">
     </div>
-    
+</div>
   </form>
   <script src="bookingform.js"></script>
   <script src="/assets/js/jquery.js"></script>
