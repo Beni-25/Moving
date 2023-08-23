@@ -10,13 +10,14 @@
     rel="stylesheet"
     href="/assets/bootstrap-icons/font/bootstrap-icons.css"
   />
+  <script src="/assets/js/jquery.js"></script>
 </head>
 <body>
     <h1 class="text-center">Create Booking</h1>
     <div class="booking-form p-4 mt-5 mb-5 rounded">
   <ul class="step-tabs">
     <li class="step-tab" onclick="showStep(1)">Time<i class="bi bi-check step1icon"></i></li>
-    <li class="step-tab" onclick="showStep(2)">Pickup<i class="bi bi-check"></i></li>
+    <li class="step-tab step2" onclick="showStep(2)">Pickup<i class="bi bi-check"></i></li>
     <li class="step-tab" onclick="showStep(3)">Drop<i class="bi bi-check"></i></li>
     <li class="step-tab" onclick="showStep(4)">Details<i class="bi bi-check"></i></li>
     <li class="step-tab" onclick="showStep(5)">Challenges<i class="bi bi-check"></i></li>
@@ -27,12 +28,12 @@
     
     <div class="form-step step-1 active mb-3">
            <label for="date">Date:</label> 
-            <input type="date" name="date" id="date" class="form-control" />
+            <input type="date" name="date" id="date" class="form-control step1input" />
 
             <label for="time">Time:</label>
-            <input type="time" name="time" class="form-control" /><br>
+            <input type="time" name="time" class="form-control step1input" /><br>
 
-            <button type="button" class="btn btn-light" onclick="showStep(2)">Next</button>
+            <button type="button" class="btn btn-light step2" onclick="showStep(2)">Next</button>
     </div>
     
     <!-- Step 2 -->
@@ -194,7 +195,7 @@
 </div>
   </form>
   <script src="bookingform.js"></script>
-  <script src="/assets/js/jquery.js"></script>
+ 
   <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -3,9 +3,9 @@
     width:600px;
     margin: auto;
   }
-  .bi-check{
+  /* .bi-check{
     display: none;
-  }
+  } */
   .form-step {
     display: none;
     padding-left: 15px;

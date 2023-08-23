@@ -11,7 +11,7 @@ function showStep(stepNumber) {
    }
 
    //tick icon show
-   $(".step2").on("click", function() {
+   $(".bi-check").hide();
+   $(".step1input").on("click", function() {
     $(".step1icon").show();
    })
-   
