@@ -71,7 +71,7 @@ header {
   color: whitesmoke;
 }
 .bi-active{
-  font-size:60px;
+  color: grey;
 }
 footer {
   background-color: #e4966b;
