@@ -1,58 +1,55 @@
-document.addEventListener('DOMContentLoaded', function() {
-        
-    var bdate = document.getElementById('date');
-    var today = new Date();
-    var formattedDate = today.toISOString().split('T')[0];
-    bdate.value = formattedDate;
-  });
-
+document.addEventListener("DOMContentLoaded", function () {
+  var bdate = document.getElementById("date");
+  var today = new Date();
+  var formattedDate = today.toISOString().split("T")[0];
+  bdate.value = formattedDate;
+});
 
 $(function () {
-    var $sections = $(".form-section");
+  var $sections = $(".form-section");
 
-    function navigateTo(index) {
-      // Mark the current section with the class 'current'
-      $sections.removeClass("current").eq(index).addClass("current");
-      // Show only the navigation buttons that make sense for the current section:
-      $(".form-navigation .previous").toggle(index > 0);
-      var atTheEnd = index >= $sections.length - 1;
-      $(".form-navigation .next").toggle(!atTheEnd);
-      $(".form-navigation [type=submit]").toggle(atTheEnd);
-    }
+  function navigateTo(index) {
+    // Mark the current section with the class 'current'
+    $sections.removeClass("current").eq(index).addClass("current");
+    // Show only the navigation buttons that make sense for the current section:
+    $(".form-navigation .previous").toggle(index > 0);
+    var atTheEnd = index >= $sections.length - 1;
+    $(".form-navigation .next").toggle(!atTheEnd);
+    $(".form-navigation [type=submit]").toggle(atTheEnd);
+  }
 
-    function curIndex() {
-      // Return the current index by looking at which section has the class 'current'
-      return $sections.index($sections.filter(".current"));
-    }
+  function curIndex() {
+    // Return the current index by looking at which section has the class 'current'
+    return $sections.index($sections.filter(".current"));
+  }
 
-    // Previous button is easy, just go back
-    $(".form-navigation .previous").click(function () {
-      navigateTo(curIndex() - 1);
-    });
-
-    // Next button goes forward iff current block validates
-    $(".form-navigation .next").click(function () {
-      $(".booking-form")
-        .parsley()
-        .whenValidate({
-          group: "block-" + curIndex(),
-        })
-        .done(function () {
-          navigateTo(curIndex() + 1);
-        });
-    });
-
-    // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
-    $sections.each(function (index, section) {
-      $(section)
-        .find(":input")
-        .attr("data-parsley-group", "block-" + index);
-    });
-    navigateTo(0); // Start at the beginning
+  // Previous button is easy, just go back
+  $(".form-navigation .previous").click(function () {
+    navigateTo(curIndex() - 1);
   });
 
+  // Next button goes forward iff current block validates
+  $(".form-navigation .next").click(function () {
+    $(".booking-form")
+      .parsley()
+      .whenValidate({
+        group: "block-" + curIndex(),
+      })
+      .done(function () {
+        navigateTo(curIndex() + 1);
+      });
+  });
 
-  //dropdown mouseleave event
+  // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
+  $sections.each(function (index, section) {
+    $(section)
+      .find(":input")
+      .attr("data-parsley-group", "block-" + index);
+  });
+  navigateTo(0); // Start at the beginning
+});
+
+//dropdown mouseleave event
 
 //   $(document).ready(()=>{
 //     $('.dropdown-menu').on('click',()=>{
@@ -63,49 +60,55 @@ $(function () {
 //     })
 //   });
 
-$( "#bookingbtn" ).on( 'mouseenter', () => {
-    $( "#bookingbtn" ).css({
-        color: 'white',
-        // backgroundColor:'#e6a481'
-    });
-    $( "#bookingbtn" ).animate({
-        fontSize: '20px'
-            },200);
-  } );
+$("#bookingbtn").on("mouseenter", () => {
+  $("#bookingbtn").css({
+    color: "white",
+    // backgroundColor:'#e6a481'
+  });
+  $("#bookingbtn").animate(
+    {
+      fontSize: "20px",
+    },
+    200
+  );
+});
 
-  $( "#bookingbtn" ).on( 'mouseleave', () => {
-    $( "#bookingbtn" ).css({
-        color: 'black', 
-        // backgroundColor:'#e4966b'
-    });
-    $( "#bookingbtn" ).animate({
-        fontSize: '16px'
-            },200);
-  } );
+$("#bookingbtn").on("mouseleave", () => {
+  $("#bookingbtn").css({
+    color: "black",
+    // backgroundColor:'#e4966b'
+  });
+  $("#bookingbtn").animate(
+    {
+      fontSize: "16px",
+    },
+    200
+  );
+});
 
-$('.bi-facebook').on('mouseenter', ()=>{
-    $('.bi-facebook').addClass('bi-active');
-})
-$('.bi-facebook').on('mouseleave', ()=>{
-    $('.bi-facebook').removeClass('bi-active');
-})
+$(".bi-facebook").on("mouseenter", () => {
+  $(".bi-facebook").addClass("bi-active");
+});
+$(".bi-facebook").on("mouseleave", () => {
+  $(".bi-facebook").removeClass("bi-active");
+});
 
-$('.bi-envelope').on('mouseenter', ()=>{
-    $('.bi-envelope').addClass('bi-active');
-})
-$('.bi-envelope').on('mouseleave', ()=>{
-    $('.bi-envelope').removeClass('bi-active');
-})
+$(".bi-envelope").on("mouseenter", () => {
+  $(".bi-envelope").addClass("bi-active");
+});
+$(".bi-envelope").on("mouseleave", () => {
+  $(".bi-envelope").removeClass("bi-active");
+});
 
-$('.bi-linkedin').on('mouseenter', ()=>{
-    $('.bi-linkedin').addClass('bi-active');
-})
-$('.bi-linkedin').on('mouseleave', ()=>{
-    $('.bi-linkedin').removeClass('bi-active');
-})
-$('.bi-instagram').on('mouseenter', ()=>{
-    $('.bi-instagram').addClass('bi-active');
-})
-$('.bi-instagram').on('mouseleave', ()=>{
-    $('.bi-instagram').removeClass('bi-active');
-})
+$(".bi-linkedin").on("mouseenter", () => {
+  $(".bi-linkedin").addClass("bi-active");
+});
+$(".bi-linkedin").on("mouseleave", () => {
+  $(".bi-linkedin").removeClass("bi-active");
+});
+$(".bi-instagram").on("mouseenter", () => {
+  $(".bi-instagram").addClass("bi-active");
+});
+$(".bi-instagram").on("mouseleave", () => {
+  $(".bi-instagram").removeClass("bi-active");
+});
