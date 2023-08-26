@@ -17,10 +17,10 @@
         <div>
           <label for="password">Password:</label>
           <input type="password" name="password" id="id_password" placeholder="8 - 12 characters"/>
-          <i class="bi bi-eye-slash" id="togglePassword"></i>
+          <i class="bi bi-eye" id="togglePassword"></i>
           <br />
         </div><br>
-          <input class="signin-button btn btn-secondary" type="submit" value="Sign in">
+          <input class="signin-button btn btn-secondary" type="submit" value="Sign in" onclick= "signin()" >
       </form>
       <div>
         <br>
@@ -28,16 +28,8 @@
         <a href="register.html" class="link">Register</a>
       </div>
     </div>
+    <script src="assets/js/jquery.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script>
-      const togglePassword = document.querySelector('#togglePassword');
-      const password = document.querySelector('#id_password');
-
-      togglePassword.addEventListener('click', function (e) {
-      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-      password.setAttribute('type', type);
-      this.classList.toggle('bi-eye');
-});
-    </script>
+    <script src="assets/js/login.js"></script>
   </body>
 </html>
