@@ -65,12 +65,12 @@ $("#bookingbtn").on("mouseenter", () => {
     color: "white",
     // backgroundColor:'#e6a481'
   });
-  $("#bookingbtn").animate(
-    {
-      fontSize: "20px",
-    },
-    200
-  );
+  // $("#bookingbtn").animate(
+  //   {
+  //     fontSize: "20px",
+  //   },
+  //   200
+  // );
 });
 
 $("#bookingbtn").on("mouseleave", () => {
@@ -78,12 +78,12 @@ $("#bookingbtn").on("mouseleave", () => {
     color: "black",
     // backgroundColor:'#e4966b'
   });
-  $("#bookingbtn").animate(
-    {
-      fontSize: "16px",
-    },
-    200
-  );
+  // $("#bookingbtn").animate(
+  //   {
+  //     fontSize: "16px",
+  //   },
+  //   200
+  // );
 });
 
 $(".bi-facebook").on("mouseenter", () => {

@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Summary</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/summary.css" />
-    <link rel="stylesheet" href="assets/bootstrap-icons/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="assets/bootstrap-icons/font/bootstrap-icons.css"
+    />
   </head>
   <body>
     <header>
@@ -21,7 +24,15 @@
             />
             AB Movers
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -31,11 +42,9 @@
                   >My Bookings</a
                 >
               </li>
-
-              
             </ul>
             <div class="">
-              <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropstart">
                   <a
                     class="nav-link dropdown-toggle"
@@ -66,30 +75,123 @@
               </ul>
             </div>
           </div>
-
         </div>
       </nav>
     </header>
     <main>
       <section>
         <h2>Booking Summary</h2>
-        <div class="container-xl pt-2 pb-2 shadow rounded">
-          <p>BOOKING ID: 400001</p>
-          <p>NAME: BENISHA</p>
-          <p>PHONE NUMBER: +1 709 351 6971</p>
-          <p>EMAIL ADDRESS: bebj@gmail>com</p>
-          <p>DATE: 5TH JUNE 2023</p>
-          <p>TIME: 10:00AM</p>
-          <p>PICKUP LOCATION: 55 TERRA NOVA ROAD,ST.JOHN'S-A1B1E7</p>
-          <p>DROP LOCATION: 676 WHITEWAY LANE,MOUNT PEARL-A1D5E8</p>
-          <p>DISTANCE IN KILOMETERS: 8KMS</p>
-          <p>LOAD SIZE: MEDIUM</p>
-          <p>INSTRUCTIONS: LEAVE AT THE DOORSTEP</p>
-          <p>NOTIFICATION: 10 MINS</p>
-          <p>ARE THERE ANY PARKING CHALLENGES? NO</p>
-          <p>DO YOU HAVE ANY STAIRS/STEPS IN THE LOACTION? NO</p>
+
+      
+            <div class="card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="/assets/css/images/profileuser.jpg"
+                    class="img-fluid rounded-start"
+                    alt="User Icon Image"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Contact details</h5>
+                    <p class="card-text">NAME: BENISHA</p>
+                    <p class="card-text">PHONE NUMBER: +1 709 351 6971</p>
+                    <p class="card-text">EMAIL ADDRESS: bebj@gmail>com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="container text-center">
+              <div class="row g-2">
+                <div class="col-6">
+                  <div class="p-3">
+                    <div class="card mb-3" style="max-width: 540px">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="/assets/css/images/booking.png" class="img-fluid rounded-start" alt="Booking icon" />
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Booking details</h5>
+                            <p class="card-text">
+                              BOOKING ID: 400001
+                            </p>
+                            <p class="card-text">
+                              DATE: 5TH JUNE 2023
+                            </p>
+                            <p class="card-text">
+                              TIME: 10:00AM
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="p-3">
+                    <div class="card mb-3" style="max-width: 540px;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="/assets/css/images/location.jpg" class="img-fluid rounded-start" alt="location icon">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Location details</h5>
+                            <p class="card-text"><strong>PICKUP LOCATION:</strong> 55 TERRA NOVA ROAD,ST.JOHN'S-A1B1E7</p>
+                            <p class="card-text"><strong>DROP LOCATION:</strong> 676 WHITEWAY LANE,MOUNT PEARL-A1D5E8</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="p-3">
+                    <div class="card mb-3" style="max-width: 540px;">
+                      <div class="row g-0">
+                        <div class="col">
+                          <div class="card-body">
+                            <h5 class="card-title">Estimation Details</h5>
+                            <p class="card-text">TOTAL DISTANCE IN KILOMETERS: 8KMS</p>
+                            <p class="card-text">TOTAL ESTIMATED TIME IN MINS: 40 MINS</p>
+                            <p class="card-text">LOAD SIZE: SMALL</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="p-3">
+                    <div class="card mb-3" style="max-width: 540px;">
+                      <div class="row g-0">
+                        <div class="col">
+                          <div class="card-body">
+                            <h5 class="card-title">Additional details</h5>
+                            <p class="card-text">PRIOR NOTIFICATION TIME TO SEND ALERT: 10 MINS</p>
+                            <p class="card-text">ARE THERE ANY PARKING CHALLENGES? NO</p>
+                            <p class="card-text">DO YOU HAVE ANY STAIRS/STEPS IN THE LOCATION? NO</p>
+                            <p class="card-text">INSTRUCTIONS: LEAVE AT THE DOORSTEP</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>        
+
+          </div>
+
+          </div>
         </div>
-        <div class="d-flex justify-content-center">
+
+
+         <div class="d-flex justify-content-center">
           <button
             type="button"
             class="btn btn-outline-secondary btn-lg"
@@ -114,10 +216,13 @@
           </div>
           <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
             <h3>Social Media</h3>
-            <a href="https://www.facebook.com/profile.php?id=100093111200999&mibextid=LQQJ4d"
+            <a
+              href="https://www.facebook.com/profile.php?id=100093111200999&mibextid=LQQJ4d"
               ><i class="bi bi-facebook"></i
             ></a>
-            <a href="mailto:abmovers2023@gmail.com"><i class="bi bi-envelope"></i></a>
+            <a href="mailto:abmovers2023@gmail.com"
+              ><i class="bi bi-envelope"></i
+            ></a>
             <a href="https://www.linkedin.com/profile_name"
               ><i class="bi bi-linkedin"></i
             ></a>
@@ -127,8 +232,10 @@
           </div>
           <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
             <h3>Contact</h3>
-            <p>+1 (709) 769 4450<br>
-              info@abmoversnl.com</p>
+            <p>
+              +1 (709) 769 4450<br />
+              info@abmoversnl.com
+            </p>
           </div>
         </div>
       </div>
