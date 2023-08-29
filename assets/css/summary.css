@@ -48,6 +48,10 @@ i{
     color: white;
     font-size: 40px;
 }
+
+.bi-active{
+    color: gray;
+  }
 .copyright{
     background-color: white;
     text-align: center;
