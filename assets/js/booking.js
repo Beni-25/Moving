@@ -1,3 +1,4 @@
+//today's date autopopulate
 document.addEventListener("DOMContentLoaded", function () {
   var bdate = document.getElementById("date");
   var today = new Date();
@@ -5,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   bdate.value = formattedDate;
 });
 
+// Parsley Multistep Form function
 $(function () {
   var $sections = $(".form-section");
 
@@ -49,43 +51,20 @@ $(function () {
   navigateTo(0); // Start at the beginning
 });
 
-//dropdown mouseleave event
-
-//   $(document).ready(()=>{
-//     $('.dropdown-menu').on('click',()=>{
-//         $('.dropdown-menu').toggle();
-//     })
-//     $('.dropdown-menu').on('mouseleave',()=>{
-//         $('.dropdown-menu').toggle();
-//     })
-//   });
-
+//Booking Button color change on mouseenter & mouseleave
 $("#bookingbtn").on("mouseenter", () => {
   $("#bookingbtn").css({
     color: "white",
-    // backgroundColor:'#e6a481'
   });
-  // $("#bookingbtn").animate(
-  //   {
-  //     fontSize: "20px",
-  //   },
-  //   200
-  // );
 });
 
 $("#bookingbtn").on("mouseleave", () => {
   $("#bookingbtn").css({
     color: "black",
-    // backgroundColor:'#e4966b'
   });
-  // $("#bookingbtn").animate(
-  //   {
-  //     fontSize: "16px",
-  //   },
-  //   200
-  // );
 });
 
+//Social Media Icons color change on mouseenter & mouseleave
 $(".bi-facebook").on("mouseenter", () => {
   $(".bi-facebook").addClass("bi-active");
 });
