@@ -7,7 +7,7 @@ function renderBookings() {
         console.log("Creating card for booking: ", bookingObject);
         $("#list-of-bookings").append(`
     <div class="list container text-center rounded mt-4">
-        <div class="row align-items-center">
+        <div class="row align-items-center p-4">
           <div class="col-xs-12 col-sm-6 col-md-4">
             <p>NAME: ${bookingObject["name"]}</p>
             <p>BOOKING ID: ${bookingObject["id"]}</p>
@@ -38,47 +38,7 @@ function renderBookings() {
             </button>
           </div>
         </div>
-      </div>   
-      
-      <div
-          class="modal fade"
-          id="staticBackdrop"
-          data-bs-backdrop="static"
-          data-bs-keyboard="false"
-          tabindex="-1"
-          aria-labelledby="staticBackdropLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                  Delete
-                </h1>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <p>Are you sure, Do you want to delete?</p>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Cancel
-                </button>
-                <button type="button" class="btn btn-primary">Yes</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        `);
+      </div>`);
     });
 }
 

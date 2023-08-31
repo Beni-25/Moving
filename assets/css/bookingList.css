@@ -22,14 +22,14 @@ i{
 .copyright{
     background-color: white;
 }
-.row{
+/* .row{
     padding: 20px;
-}
+} */
 .list{
     background-color: grey;
     /* padding: 20px;
     margin: 20px; */
  }
- .bi-active{
-    color: grey;
-  }
+ .modal-content{
+    color: black;
+ }
