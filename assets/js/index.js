@@ -1,3 +1,5 @@
+//cards shadow increase on hover
+
 $(".lpcard").hover(
     function() {
         $( this ).addClass( "shadow-lg" );
@@ -6,6 +8,7 @@ $(".lpcard").hover(
       }
     );
 
+    //Social media icons mouse enter and leave color change
     $('.bi-facebook').on('mouseenter', ()=>{
       $('.bi-facebook').addClass('bi-active');
   })

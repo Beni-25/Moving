@@ -1,3 +1,5 @@
+// Functions
+
 $(".bi-facebook").on("mouseenter", () => {
     $(".bi-facebook").addClass("bi-active");
   });

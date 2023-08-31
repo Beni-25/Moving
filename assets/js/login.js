@@ -6,7 +6,8 @@ const togglePassword = document.querySelector("#togglePassword");
             password.setAttribute("type", type);
             this.classList.toggle("bi-eye");
         });
-
+        
+//redirect page signin to home page
 
 function signin(){
     window.location.href='./index.html'; 

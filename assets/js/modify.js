@@ -1,3 +1,5 @@
+//Parsley Multistep Form
+
 $(function () {
     var $sections = $(".form-section");
 
@@ -43,7 +45,7 @@ $(function () {
   });
 
 
-  //social media buttons grey
+  //social media buttons grey on mouse enter and leave
   $(".bi-facebook").on("mouseenter", () => {
     $(".bi-facebook").addClass("bi-active");
   });
