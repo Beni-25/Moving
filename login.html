@@ -7,28 +7,27 @@
     <link rel="stylesheet" href="assets/bootstrap-icons/font/bootstrap-icons.css">
   </head>
   <body>
+   
     <div class="position-absolute top-50 start-50 translate-middle text-center shadow rounded">
       <h2 class="heading">Sign in</h2>
       <form class="signin-form">
         <div>
-          <label for="username">Username:</label>
-          <input type="text" name="username" placeholder="eg. John Doe" /><br />
+          <!-- <label for="username" class="form-label"></label> -->
+          <input type="text" name="username" class="form-control" placeholder="Username" />
         </div>
-        <div>
-          <label for="password">Password:</label>
-          <input type="password" name="password" id="password" placeholder="8 - 12 characters"/>
-          <i class="bi bi-eye-slash" id="togglePassword"></i>
-          <br />
-        </div><br>
-          <input class="signin-button btn btn-secondary" type="submit" value="Sign in" onclick= "signin()" >
+        <div class="passwordcontainer">
+          <!-- <label for="password" class="form-label"></label> -->
+          <input type="password" name="password" class="form-control" id="password" placeholder="Password"/>
+          <i class="bi bi-eye-slash" id="togglePassword"></i><br>
+        </div>
+          <input class="signin-button btn btn-secondary" class="form-control" type="submit" value="Sign in" onclick= "signin()" >
       </form>
       <div>
-        <br>
-        <p>Do you have an account?</p>
-        <a href="register.html" class="link">Register</a>
+        <p>Not a member?</p>
+        <a href="register.html" class="link">Sign up</a>
       </div>
     </div>
-   
+
     <script src="assets/js/jquery.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/login.js"></script>
