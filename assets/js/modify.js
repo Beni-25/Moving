@@ -73,3 +73,15 @@ $(function () {
     $(".bi-instagram").removeClass("bi-active");
   });
   
+  //Booking Button color change on mouseenter & mouseleave
+$("#bookingbtn").on("mouseenter", () => {
+  $("#bookingbtn").css({
+    color: "white",
+  });
+});
+
+$("#bookingbtn").on("mouseleave", () => {
+  $("#bookingbtn").css({
+    color: "black",
+  });
+});
