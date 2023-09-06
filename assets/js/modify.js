@@ -45,7 +45,7 @@ $(function () {
   });
 
 
-  //social media buttons grey on mouse enter and leave
+  //social media buttons color change on mouse enter and leave
   $(".bi-facebook").on("mouseenter", () => {
     $(".bi-facebook").addClass("bi-active");
   });

@@ -1,5 +1,10 @@
 // Functions
 
+// IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
+
+$(document).ready(function () {
+
+//social media buttons color change on mouse enter and leave
 $(".bi-facebook").on("mouseenter", () => {
     $(".bi-facebook").addClass("bi-active");
   });
@@ -40,5 +45,5 @@ $("#bookingbtn").on("mouseleave", () => {
   });
 });
 
-
+});
    

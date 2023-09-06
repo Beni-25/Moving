@@ -1,11 +1,9 @@
-
 // FUNCTIONS
 
 function renderBookings() {
-    bookingList.forEach((bookingObject) => {
-
-        console.log("Creating card for booking: ", bookingObject);
-        $("#list-of-bookings").append(`
+  bookingList.forEach((bookingObject) => {
+    console.log("Creating card for booking: ", bookingObject);
+    $("#list-of-bookings").append(`
     <div class="list container text-center rounded mt-4">
         <div class="row align-items-center p-4">
           <div class="col-xs-12 col-sm-6 col-md-4">
@@ -39,23 +37,44 @@ function renderBookings() {
           </div>
         </div>
       </div>`);
-    });
+  });
 }
 
-$(".bi-facebook").on("mouseenter", () => {
+// IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
+
+$(document).ready(function () {
+  // Handler for .ready() called.
+  renderBookings();
+
+  //Booking Button color change on mouseenter & mouseleave
+  $("#bookingbtn").on("mouseenter", () => {
+    $("#bookingbtn").css({
+      color: "white",
+    });
+  });
+
+  $("#bookingbtn").on("mouseleave", () => {
+    $("#bookingbtn").css({
+      color: "black",
+    });
+  });
+
+  //social media buttons color change on mouse enter and leave
+
+  $(".bi-facebook").on("mouseenter", () => {
     $(".bi-facebook").addClass("bi-active");
   });
   $(".bi-facebook").on("mouseleave", () => {
     $(".bi-facebook").removeClass("bi-active");
   });
-  
+
   $(".bi-envelope").on("mouseenter", () => {
     $(".bi-envelope").addClass("bi-active");
   });
   $(".bi-envelope").on("mouseleave", () => {
     $(".bi-envelope").removeClass("bi-active");
   });
-  
+
   $(".bi-linkedin").on("mouseenter", () => {
     $(".bi-linkedin").addClass("bi-active");
   });
@@ -68,23 +87,4 @@ $(".bi-facebook").on("mouseenter", () => {
   $(".bi-instagram").on("mouseleave", () => {
     $(".bi-instagram").removeClass("bi-active");
   });
-  
-//Booking Button color change on mouseenter & mouseleave
-$("#bookingbtn").on("mouseenter", () => {
-  $("#bookingbtn").css({
-    color: "white",
-  });
-});
-
-$("#bookingbtn").on("mouseleave", () => {
-  $("#bookingbtn").css({
-    color: "black",
-  });
-});
-
-// IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
-
-$(document).ready(function () {
-  // Handler for .ready() called.
-  renderBookings();
 });

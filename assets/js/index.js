@@ -1,3 +1,7 @@
+// IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
+
+$(document).ready(function () {
+
 //cards shadow increase on hover
 
 $(".lpcard").hover(
@@ -8,7 +12,7 @@ $(".lpcard").hover(
       }
     );
 
-    //Social media icons mouse enter and leave color change
+    //social media buttons color change on mouse enter and leave
     $('.bi-facebook').on('mouseenter', ()=>{
       $('.bi-facebook').addClass('bi-active');
   })
@@ -35,3 +39,5 @@ $(".lpcard").hover(
   $('.bi-instagram').on('mouseleave', ()=>{
       $('.bi-instagram').removeClass('bi-active');
   })
+
+});
