@@ -10,7 +10,7 @@ const togglePassword = document.querySelector("#togglePassword");
 //redirect page signin to home page
 
 function signin(){
-    alert("Signing in");
+    // alert("Signing in");
     window.location.href='./index.html'; 
     
 }
