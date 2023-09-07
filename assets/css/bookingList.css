@@ -5,7 +5,7 @@ h2{
     text-align: center;
 }
 .container{
-    background-color: #e4966b;
+    /* background-color: #e4966b; */
     color: whitesmoke;
 }
 footer{
@@ -14,16 +14,22 @@ footer{
 i{
     padding: 10px;
     color: white;
+    font-size: 40px;
 }
+.bi-active{
+    color: gray;
+  }
 .copyright{
     background-color: white;
-    text-align: center;
 }
-.row{
+/* .row{
     padding: 20px;
-}
+} */
 .list{
     background-color: grey;
     /* padding: 20px;
     margin: 20px; */
+ }
+ .modal-content{
+    color: black;
  }

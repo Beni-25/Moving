@@ -1,11 +1,21 @@
+body{
+    background-image: url("./images/greybackground.jpg");
+    width:100%;
+    height:740px;
+    background-size: cover;
+   background-repeat: no-repeat;
+   background-position: 50% 50%;
+}
 .position-absolute{
     background-color: #e4966b;
     position: absolute;
     width: 400px;
     height: 500px;
     text-align: left;
-     
     }
+.signup{
+    width:380px;
+}
     .heading,.link{
         color: white;
             }

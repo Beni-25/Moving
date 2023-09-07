@@ -13,6 +13,29 @@ h2{
     .d-flex{
         padding: 20px;
     }
+    
+    .container-summary{
+        position: relative;
+        left:100px;
+        top:20px;
+    }
+    .container-contact{
+        margin: auto;
+        background-color: #e4966b;
+    }
+    .container-booking{
+        background-color: gray;
+    }
+    .container-location{
+        background-color: #e4966b;
+    }
+    .container-estimation{
+        background-color: #e4966b;
+    }
+    .container-details{
+        background-color: gray;
+    }
+
 .container{
     background-color: #e4966b;
     color: whitesmoke;
@@ -23,7 +46,12 @@ footer{
 i{
     padding: 10px;
     color: white;
+    font-size: 40px;
 }
+
+.bi-active{
+    color: gray;
+  }
 .copyright{
     background-color: white;
     text-align: center;

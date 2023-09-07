@@ -13,7 +13,7 @@
 
     <nav id="navbar" class="navbar navbar-light navbar-expand-sm">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.html">
           <img
             src="assets/css/images/logo.jpeg"
             alt=""
@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/bookingList.html"
+              <a class="nav-link fw-medium fs-5" aria-current="page" id="bookingbtn" href="/bookingList.html"
                 >My Bookings</a
               >
             </li>
@@ -75,17 +75,16 @@
 
       <main>
             <section>
-                <br>
-                <h2> Tracking Details</h2>
+              <h2 class="m-4"> Tracking Details</h2>
 
-                <div class="container-sm pt-2 pb-2 mt-4 mb-5 rounded">
+                <div class="container-sm p-4 mb-5 rounded">
                     <p> BOOKING ID: 400001</p>
                     <p>PICKUP: ST.JOHN'S</p>
                     <p>DROP: MOUNT PEARL</p>
                     <p>DATE: 5TH JUNE 2023</p>
                     <p>APPROXIMATE PICKUP TIME: 10:00AM</p>
                     <P>APPROXIMATE DROP TIME: 10:30AM</P>
-                </div>
+                </div><br>
             </section>
           </main>
 
@@ -102,19 +101,31 @@
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
                   <h3>Social Media</h3>
-                  <a href="https://www.facebook.com/profile.php?id=100093111200999&mibextid=LQQJ4d"><i class="bi bi-facebook"></i></a>
-                  <a  href="mailto:abmovers2023@gmail.com"><i class="bi bi-envelope"></i></a>
-                  <a href="https://www.linkedin.com/profile_name"><i class="bi bi-linkedin"></i></a>
-                  <a href="https://www.instagram.com/@profile_name"><i class="bi bi-instagram"></i></a>
+                  
+            <a href="https://www.facebook.com/profile.php?id=100093111200999&mibextid=LQQJ4d"
+            target="_blank"><i class="bi bi-facebook px-2"></i
+            ></a>
+            <a href="mailto:info@abmoversnl.com"
+            target="_blank"><i class="bi bi-envelope px-2"></i
+            ></a>
+            <a href="https://www.linkedin.com/profile_name"
+            target="_blank"><i class="bi bi-linkedin px-2"></i
+            ></a>
+            <a href="https://www.instagram.com/abmoversnl"
+            target="_blank" ><i class="bi bi-instagram px-2"></i
+            ></a>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
                   <h3>Contact</h3>
-                  <p>+1 (709) 769 4450</p>
+                  <p>+1 (709) 769 4450<br>
+                    info@abmoversnl.com</p>
                 </div>
               </div>
             </div>
             <div class="copyright fixed-bottom"><p>Copyright © AB Movers. All Rights Reserved</p></div>
           </footer>
+          <script src="assets/js/jquery.js"></script>
           <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+          <script src="assets/js/tracking.js"></script>
         </body>
 </html>

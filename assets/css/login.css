@@ -1,11 +1,32 @@
+body{
+    background-image: url("./images/greybackground.jpg");
+    width:100%;
+    height:740px;
+    background-size: cover;
+   background-repeat: no-repeat;
+   background-position: 50% 50%;
+}
 .position-absolute{
-background-color: #e4966b;
+background-color:#e4966b ;
 height: 350px;
 width:360px;
 }
 .heading,.link{
     color: white;
     padding: 20px;
+}
+.signin-button{
+    width:340px;
+}
+.passwordcontainer{
+    width:350px;
+}
+#togglePassword{
+    position: absolute;
+    top: 43%;
+    right: 5%;
+    cursor: pointer;
+    color: gray;
 }
 label{
     width: 120px;

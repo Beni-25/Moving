@@ -1,0 +1,35 @@
+.booking-form{
+    background-color: gray;
+    width:600px;
+    margin: auto;
+  }
+  /* .bi-check{
+    display: none;
+  } */
+  .form-step {
+    display: none;
+    padding-left: 15px;
+    border-left: 2px solid #e4966b;
+  }
+  .form-step.active {
+    display: block;
+  }
+  
+  .step-tabs {
+         margin: 20px 0;
+       }
+  
+  .step-tab {
+       display: inline-block;
+       background-color:#e4966b ;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .step-tab.active {
+    background-color: white;
+    color: black;
+  }

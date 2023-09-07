@@ -16,6 +16,14 @@ i {
   padding: 10px;
   color: white;
 }
+.bi{
+  font-size:40px;
+}
+
+.bi-active{
+  color: gray;
+}
+
 h2 {
   text-align: center;
   padding: 20px;
