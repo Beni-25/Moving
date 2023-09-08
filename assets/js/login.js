@@ -7,12 +7,12 @@ const togglePassword = document.querySelector("#togglePassword");
             this.classList.toggle("bi-eye");
         });
 
-//redirect page signin to home page
-
-function signin(){
-    // alert("Signing in");
-    window.location.href='./index.html'; 
-    
-}
 
 
+$(document).ready(function () {
+    $( "button#signin" ).on( "click", function(e) {
+        console.log("Signing in", e);
+        e.preventDefault(); // Stops <form> from reloading the page
+        document.location.href='index.html'; 
+    } );
+});
