@@ -14,11 +14,6 @@ h2{
         padding: 20px;
     }
     
-    .container-summary{
-        position: relative;
-        left:100px;
-        top:20px;
-    }
     .container-contact{
         margin: auto;
         background-color: #e4966b;
@@ -36,7 +31,7 @@ h2{
         background-color: gray;
     }
 
-.container{
+.container-color{
     background-color: #e4966b;
     color: whitesmoke;
 }
