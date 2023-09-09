@@ -6,3 +6,11 @@ var bookingList = [
     { name: "Benisha", id: "100004", pickup: "Terra Nova RD", drop:"Smallwood Dr" },
   ];
   
+
+var summaryList = [
+  { image:"/assets/css/images/booking.png", title:"Booking Details" },
+  { image:"/assets/css/images/location.png", title:"Location Details" },
+  { image:"/assets/css/images/estimation.png", title:"Estimation Details" },
+  { image:"/assets/css/images/info.png", title:"Additional Details" },
+
+]
