@@ -3,30 +3,33 @@
 function renderSummary() {
   summaryList.forEach((summaryObject) => {
     console.log("Creating card for summary: ", summaryObject);
-    $("#list-summary").append(`<div class="col-6">
+    $("#list-summary").append(`
+    <div class="col-6">
     <div class="p-3">
-      <div class="card mb-3" style="max-width: 540px">
+    <div class="card mb-3 ${summaryObject["container"]} lpcard" style="max-width: 540px">
         <div class="row g-0">
           <div class="col-md-4">
             <img
               src=${summaryObject["image"]}
               class="img-fluid rounded-start"
-              alt="..."
+              alt=${summaryObject["imagename"]}
             />
           </div>
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title">${summaryObject["title"]}</h5>
               <p class="card-text">
-                This is a wider card with supporting text below as a
-                natural lead-in to additional content. This content
-                is a little bit longer.
+              ${summaryObject["textline1"]}
               </p>
               <p class="card-text">
-                <small class="text-body-secondary"
-                  >Last updated 3 mins ago</small
-                >
+              ${summaryObject["textline2"]}
               </p>
+              <p class="card-text">
+              ${summaryObject["textline3"]}
+              </p>              
+              <p class="card-text">
+              ${summaryObject["textline4"]}
+              </p> 
             </div>
           </div>
         </div>
@@ -43,6 +46,17 @@ function renderSummary() {
 $(document).ready(function () {
 
   renderSummary();
+
+  //cards shadow increase on hover
+
+$(".lpcard").hover(
+  function() {
+      $( this ).addClass( "shadow-lg" );
+    }, function() {
+      $( this ).removeClass( "shadow-lg" );
+    }
+  );
+
 
 //social media buttons color change on mouse enter and leave
 $(".bi-facebook").on("mouseenter", () => {
