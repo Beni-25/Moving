@@ -6,50 +6,29 @@ document.addEventListener("DOMContentLoaded", function () {
   bdate.value = formattedDate;
 });
 
-// Parsley Multistep Form function
-$(function () {
-  var $sections = $(".form-section");
+  //Multistep with  tab navigation
+  function showStep(stepNumber) {
+    const formSteps = $('.form-step');
+     const stepTabs = $('.step-tab');
 
-  function navigateTo(index) {
-    // Mark the current section with the class 'current'
-    $sections.removeClass("current").eq(index).addClass("current");
-    // Show only the navigation buttons that make sense for the current section:
-    $(".form-navigation .previous").toggle(index > 0);
-    var atTheEnd = index >= $sections.length - 1;
-    $(".form-navigation .next").toggle(!atTheEnd);
-    $(".form-navigation [type=submit]").toggle(atTheEnd);
-  }
+       stepTabs.removeClass('active');
+     formSteps.removeClass('active');
+     
+          stepTabs.eq(stepNumber - 1).addClass('active');
+     
+        formSteps.eq(stepNumber - 1).addClass('active');
+   }
 
-  function curIndex() {
-    // Return the current index by looking at which section has the class 'current'
-    return $sections.index($sections.filter(".current"));
-  }
+// IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
-  // Previous button is easy, just go back
-  $(".form-navigation .previous").click(function () {
-    navigateTo(curIndex() - 1);
-  });
+$(document).ready(function () {
 
-  // Next button goes forward iff current block validates
-  $(".form-navigation .next").click(function () {
-    $(".booking-form")
-      .parsley()
-      .whenValidate({
-        group: "block-" + curIndex(),
-      })
-      .done(function () {
-        navigateTo(curIndex() + 1);
-      });
-  });
 
-  // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
-  $sections.each(function (index, section) {
-    $(section)
-      .find(":input")
-      .attr("data-parsley-group", "block-" + index);
-  });
-  navigateTo(0); // Start at the beginning
-});
+   //tick icon show
+   $(".bi-check").hide();
+   $(".step1input").on("click", function() {
+    $(".step1icon").show();
+   })
 
 //Booking Button color change on mouseenter & mouseleave
 $("#bookingbtn").on("mouseenter", () => {
@@ -90,4 +69,5 @@ $(".bi-instagram").on("mouseenter", () => {
 });
 $(".bi-instagram").on("mouseleave", () => {
   $(".bi-instagram").removeClass("bi-active");
+});
 });

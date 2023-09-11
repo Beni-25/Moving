@@ -7,7 +7,7 @@ const togglePassword = document.querySelector("#togglePassword");
             this.classList.toggle("bi-eye");
         });
 
-
+// IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
 $(document).ready(function () {
     $( "button#signin" ).on( "click", function(e) {

@@ -1,46 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="bookingform.css">
-    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
-    <link
-    rel="stylesheet"
-    href="/assets/bootstrap-icons/font/bootstrap-icons.css"
-  />
-  <script src="/assets/js/jquery.js"></script>
-</head>
-<body>
-
-    <h1 class="text-center">Create Booking</h1>
-    <div class="booking-form p-4 mt-5 mb-5 rounded">
-  <ul class="step-tabs">
-    <li class="step-tab" onclick="showStep(1)">Time<i class="bi bi-check"></i></li>
-    <li class="step-tab" onclick="showStep(2)">Pickup<i class="bi bi-check"></i></li>
-    <li class="step-tab" onclick="showStep(3)">Drop<i class="bi bi-check"></i></li>
-    <li class="step-tab" onclick="showStep(4)">Details<i class="bi bi-check"></i></li>
-    <li class="step-tab" onclick="showStep(5)">Challenges<i class="bi bi-check"></i></li>
-  </ul>
+<style>
   
-  <form id="multiStepForm p-3 m-3" action="#" method="post">
-    <!-- Step 1 -->
-    
-    <div class="form-step step-1 active mb-3">
-           <label for="date">Date:</label> 
-            <input type="date" name="date" id="date" class="form-control step1input" />
+/* parsley css */
+
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+  color: #468847;
+  background-color: #dff0d8;
+  border: 1px solid #d6e9c6;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border: 1px solid #eed3d7;
+}
+
+.parsley-errors-list {
+  margin: 2px 0 3px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 0;
+  color: #b94a48;
+
+  transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+}
+
+.form-section {
+  padding-left: 15px;
+  border-left: 2px solid #ff851b;
+  display: none;
+}
+.form-section.current {
+  display: inherit;
+}
+.btn-light,
+.btn-outline-light {
+  margin-top: 10px;
+}
+html.codepen body {
+  margin: 1em;
+}
+
+</style>
+
+<h2 class="m-4">Create Booking</h2>
+
+        <form class="booking-form p-4 mb-5 rounded">
+          <div class="form-section p-2 m-3 mb-5">
+            <label for="date">Date:</label>
+            <input type="date" name="date" id="date" class="form-control" />
 
             <label for="time">Time:</label>
-            <input type="time" name="time" class="form-control step1input" /><br>
+            <input type="time" name="time" class="form-control" />
+          </div>
 
-            <button type="button" class="btn btn-light step2" onclick="showStep(2)">Next</button>
-    </div>
-    
-    <!-- Step 2 -->
-    <div class="form-step step-2 mb-3">
-    
-      <label for="address" class="form-label">Pickup Location:</label>
+          <div class="form-section">
+            <label for="address" class="form-label">Pickup Location:</label>
             <input
               type="text"
               name="address1"
@@ -71,14 +98,9 @@
               placeholder="Zipcode"
               class="form-control"
             /><br />
-
-            <button type="button" class="btn btn-light" onclick="showStep(1)">Previous</button>
-            <button type="button" class="btn btn-light" onclick="showStep(3)">Next</button>
-    </div>
-    
-    <!-- Step 3 -->
-    <div class="form-step step-3 mb-3">
-           <label for="d_address" class="form-label">Drop Location:</label>
+          </div>
+          <div class="form-section">
+            <label for="d_address" class="form-label">Drop Location:</label>
             <input
               type="text"
               name="d_address1"
@@ -109,15 +131,10 @@
               placeholder="Zipcode"
               class="form-control"
             /><br />
+          </div>
 
-            <button type="button" class="btn btn-light" onclick="showStep(2)">Previous</button>
-            <button type="button" class="btn btn-light" onclick="showStep(4)">Next</button>
-    </div>
-    
-     <!-- Step 4 -->
-    <div class="form-step step-4 mb-3">
-    
-     <label for="distance" class="form-label"
+          <div class="form-section">
+            <label for="distance" class="form-label"
               >Distance in Kilometers:</label
             >
             <input
@@ -156,20 +173,15 @@
                 class="form-check-input"
               />
               <label for="load" class="form-check-label">Large</label>
-            </div><br />
+            </div>
 
             <label for="instructions" class="form-label">
               Special delivery/Pickup instructions:</label
             >
-            <textarea name="instructions" class="form-control"> </textarea><br>
-
-            <button type="button" class="btn btn-light" onclick="showStep(3)">Previous</button>
-            <button type="button" class="btn btn-light" onclick="showStep(5)">Next</button>
-    </div>
-    
-     <!-- Step 5 -->
-    <div class="form-step step-5 mb-3">
-           <p>Are there any challenges in parking?</p>
+            <textarea name="instructions" class="form-control"> </textarea>
+          </div>
+          <div class="form-section">
+            <p>Are there any challenges in parking?</p>
             <input type="radio" name="parking" value="Yes" />
             <label for="parking">Yes</label><br />
             <input type="radio" name="parking" value="No" />
@@ -189,14 +201,67 @@
               <option value="20 mins">20 mins</option>
               <option value="30 mins">30 mins</option>
               <option value="60 mins">60 mins</option>
-            </select><br /><br />
-            <button type="button" class="btn btn-light">Preview</button>
-            <input type="submit" class="btn btn-outline-light">
-    </div>
-</div>
-  </form>
-  <script src="bookingform.js"></script>
- 
-  <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+            </select>
+          </div>
+
+          <div class="form-navigation">
+            <button type="button" class="previous btn btn-light pull-left">
+              Previous
+            </button>
+            <button type="button" class="next btn btn-light pull-right">
+              Next
+            </button>
+            <input type="submit" class="btn btn-outline-light pull-right" />
+            <span class="clearfix"></span>
+          </div>
+        </form>
+
+        <script>
+
+// Parsley Multistep Form function
+$(function () {
+  var $sections = $(".form-section");
+
+  function navigateTo(index) {
+    // Mark the current section with the class 'current'
+    $sections.removeClass("current").eq(index).addClass("current");
+    // Show only the navigation buttons that make sense for the current section:
+    $(".form-navigation .previous").toggle(index > 0);
+    var atTheEnd = index >= $sections.length - 1;
+    $(".form-navigation .next").toggle(!atTheEnd);
+    $(".form-navigation [type=submit]").toggle(atTheEnd);
+  }
+
+  function curIndex() {
+    // Return the current index by looking at which section has the class 'current'
+    return $sections.index($sections.filter(".current"));
+  }
+
+  // Previous button is easy, just go back
+  $(".form-navigation .previous").click(function () {
+    navigateTo(curIndex() - 1);
+  });
+
+  // Next button goes forward iff current block validates
+  $(".form-navigation .next").click(function () {
+    $(".booking-form")
+      .parsley()
+      .whenValidate({
+        group: "block-" + curIndex(),
+      })
+      .done(function () {
+        navigateTo(curIndex() + 1);
+      });
+  });
+
+  // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
+  $sections.each(function (index, section) {
+    $(section)
+      .find(":input")
+      .attr("data-parsley-group", "block-" + index);
+  });
+  navigateTo(0); // Start at the beginning
+});
+
+
+        </script>
