@@ -8,8 +8,6 @@ var bookingList = [
   
 
 var summaryList = [
-  // { container:"", image:"/assets/css/images/booking.png", title:"Booking Details", imagename:"Booking icon",
-  //  textline1:"BOOKING ID: 400001", textline2:"DATE: 5TH JUNE 2023", textline3:"TIME: 10:00AM", textline4:"" },
   { container:"container-booking", image:"/assets/css/images/booking.png", title:"Booking Details", imagename:"Booking icon",
    textline1:"BOOKING ID: 400001", textline2:"DATE: 5TH JUNE 2023", textline3:"TIME: 10:00AM", textline4:"" },
   { container:"container-location", image:"/assets/css/images/location.png", title:"Location Details", imagename:"Location icon",

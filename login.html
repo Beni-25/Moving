@@ -2,27 +2,40 @@
 <html>
   <head>
     <title>Sign in</title>
-    <link rel="stylesheet" href="assets/css/login.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/login.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="assets/bootstrap-icons/font/bootstrap-icons.css"
+    />
   </head>
   <body>
-   
-    <div class="position-absolute top-50 start-50 translate-middle text-center shadow rounded">
+    <div
+      class="position-absolute top-50 start-50 translate-middle text-center shadow rounded"
+    >
       <h2 class="heading">Sign in</h2>
       <form class="signin-form">
         <div>
-          <!-- <label for="username" class="form-label"></label> -->
-          <input type="text" name="username" class="form-control" placeholder="Username" />
+          <input
+            type="text"
+            name="username"
+            class="form-control"
+            placeholder="Username"
+          />
         </div>
         <div class="passwordcontainer">
-          <!-- <label for="password" class="form-label"></label> -->
-          <input type="password" name="password" class="form-control" id="password" placeholder="Password"/>
-          <i class="bi bi-eye-slash" id="togglePassword"></i><br>
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+          />
+          <i class="bi bi-eye-slash" id="togglePassword"></i><br />
         </div>
-       
-         <button class="signin-button btn btn-secondary" id="signin">Sign In</button>
-          <!-- <input class="signin-button btn btn-secondary" class="form-control" value="Sign in" onclick= "Signin= setTimeout(signin, 2000)" > -->
+        <button class="signin-button btn btn-secondary" id="signin">
+          Sign In
+        </button>
       </form>
       <div>
         <p>Not a member?</p>
@@ -33,6 +46,5 @@
     <script src="assets/js/jquery.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/login.js"></script>
-    
   </body>
 </html>

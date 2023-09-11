@@ -4,7 +4,7 @@ function renderSummary() {
   summaryList.forEach((summaryObject) => {
     console.log("Creating card for summary: ", summaryObject);
     $("#list-summary").append(`
-    <div class="col-6">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
     <div class="p-3">
     <div class="card mb-3 ${summaryObject["container"]} lpcard" style="max-width: 540px">
         <div class="row g-0">

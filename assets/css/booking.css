@@ -1,13 +1,7 @@
 header {
   background-color: #e4966b;
 }
-form.container-fluid {
-  background-color: gray;
-  width: 500px;
-}
-.form {
-  padding: 0px 20px 40px;
-}
+
 label {
   width: 300px;
   padding: 5px;
@@ -24,10 +18,6 @@ i {
   color: gray;
 }
 
-h2 {
-  text-align: center;
-  padding: 20px;
-}
 .container {
   background-color: #e4966b;
   color: whitesmoke;
@@ -37,67 +27,55 @@ footer {
 }
 .copyright {
   background-color: white;
-  text-align: center;
 }
-.d-flex {
-  padding: 20px;
-}
+
+/* Multistep Form CSS */
 
 .booking-form{
   background-color: gray;
   width:600px;
   margin: auto;
 }
-
-/* parsley css */
-
-input.parsley-success,
-select.parsley-success,
-textarea.parsley-success {
-  color: #468847;
-  background-color: #dff0d8;
-  border: 1px solid #d6e9c6;
-}
-
-input.parsley-error,
-select.parsley-error,
-textarea.parsley-error {
-  color: #b94a48;
-  background-color: #f2dede;
-  border: 1px solid #eed3d7;
-}
-
-.parsley-errors-list {
-  margin: 2px 0 3px;
-  padding: 0;
-  list-style-type: none;
-  font-size: 0.9em;
-  line-height: 0.9em;
-  opacity: 0;
-  color: #b94a48;
-
-  transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -webkit-transition: all 0.3s ease-in;
-}
-
-.parsley-errors-list.filled {
-  opacity: 1;
-}
-
-.form-section {
-  padding-left: 15px;
-  border-left: 2px solid #ff851b;
+/* .bi-check{
   display: none;
+} */
+.form-step {
+  display: none;
+  padding-left: 15px;
+  border-left: 2px solid #e4966b;
 }
-.form-section.current {
-  display: inherit;
+.form-step.active {
+  display: block;
 }
-.btn-light,
-.btn-outline-light {
-  margin-top: 10px;
+
+.step-tabs {
+       margin: 20px 0;
+     }
+
+.step-tab {
+     display: inline-block;
+     background-color:#e4966b ;
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px;
+  border-radius: 8px;
+  cursor: pointer;
 }
-html.codepen body {
-  margin: 1em;
+
+.step-tab.active {
+  background-color: white;
+  color: black;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
