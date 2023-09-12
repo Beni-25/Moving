@@ -56,7 +56,7 @@
                   />
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">View Profile</a></li>
+                  <li><a class="dropdown-item" href="/profile.html">View Profile</a></li>
                   <li><a class="dropdown-item" href="#">Edit Profile</a></li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
@@ -74,166 +74,187 @@
       <main>
         
         <section>
-            <h2 class="m-4">Modify Booking</h2>
-            <form class="booking-form p-4 mb-5 rounded">
-              <div class="form-section p-2 m-3 mb-5">
-                <label for="date">Date:</label>
-                <input type="date" name="date" id="date" class="form-control" />
-    
-                <label for="time">Time:</label>
-                <input type="time" name="time" class="form-control" />
-              </div>
-    
-              <div class="form-section">
-                <label for="address" class="form-label">Pickup Location:</label>
-                <input
-                  type="text"
-                  name="address1"
-                  placeholder="Address Line 1"
-                  class="form-control"
-                /><br />
-                <input
-                  type="text"
-                  name="address2"
-                  placeholder="Address Line 2"
-                  class="form-control"
-                /><br />
-                <input
-                  type="text"
-                  name="city"
-                  placeholder="City"
-                  class="form-control"
-                /><br />
-                <input
-                  type="text"
-                  name="province"
-                  placeholder="Province"
-                  class="form-control"
-                /><br />
-                <input
-                  type="text"
-                  name="zipcode"
-                  placeholder="Zipcode"
-                  class="form-control"
-                /><br />
-              </div>
-              <div class="form-section">
-                <label for="d_address" class="form-label">Drop Location:</label>
-                <input
-                  type="text"
-                  name="d_address1"
-                  placeholder="Address Line 1"
-                  class="form-control"
-                /><br />
-                <input
-                  type="text"
-                  name="d_address2"
-                  placeholder="Address Line 2"
-                  class="form-control"
-                /><br />
-                <input
-                  type="text"
-                  name="d_city"
-                  placeholder="City"
-                  class="form-control"
-                /><br />
-                <input
-                  type="text"
-                  name="d_province"
-                  placeholder="Province"
-                  class="form-control"
-                /><br />
-                <input
-                  type="text"
-                  name="d_zipcode"
-                  placeholder="Zipcode"
-                  class="form-control"
-                /><br />
-              </div>
-    
-              <div class="form-section">
-                <label for="distance" class="form-label"
-                  >Distance in Kilometers:</label
-                >
-                <input
-                  type="number"
-                  name="distance"
-                  min="0"
-                  max="100"
-                  step="1"
-                  class="form-control"
-                /><br />
-    
-                <label for="load" class="form-label">Load Size:</label>
-                <div class="form-check">
+          <h2 class="text-center p-3">Modify Booking</h2>
+          <div class="booking-form p-4 mt-3 mb-5 rounded">
+        <ul class="step-tabs">
+          <li class="step-tab" onclick="showStep(1)">Time<i class="bi bi-check"></i></li>
+          <li class="step-tab" onclick="showStep(2)">Pickup<i class="bi bi-check"></i></li>
+          <li class="step-tab" onclick="showStep(3)">Drop<i class="bi bi-check"></i></li>
+          <li class="step-tab" onclick="showStep(4)">Details<i class="bi bi-check"></i></li>
+          <li class="step-tab" onclick="showStep(5)">Challenges<i class="bi bi-check"></i></li>
+        </ul>
+        
+        <form id="multiStepForm p-3 m-3" action="#" method="post">
+          <!-- Step 1 -->
+          
+          <div class="form-step step-1 active mb-3">
+                 <label for="date">Date:</label> 
+                  <input type="date" name="date" id="date" class="form-control step1input" />
+      
+                  <label for="time">Time:</label>
+                  <input type="time" name="time" class="form-control step1input" /><br>
+      
+                  <button type="button" class="btn btn-light step2" onclick="showStep(2)">Next</button>
+          </div>
+          
+          <!-- Step 2 -->
+          <div class="form-step step-2 mb-3">
+          
+            <label for="address" class="form-label">Pickup Location:</label>
                   <input
-                    type="radio"
-                    name="load"
-                    value="small"
-                    class="form-check-input"
-                  />
-                  <label for="load" class="form-check-label">Small</label>
-                </div>
-                <div class="form-check">
+                    type="text"
+                    name="address1"
+                    placeholder="Address Line 1"
+                    class="form-control"
+                  /><br />
                   <input
-                    type="radio"
-                    name="load"
-                    value="medium"
-                    class="form-check-input"
-                  />
-                  <label for="load" class="form-check-label">Medium</label>
-                </div>
-                <div class="form-check">
+                    type="text"
+                    name="address2"
+                    placeholder="Address Line 2"
+                    class="form-control"
+                  /><br />
                   <input
-                    type="radio"
-                    name="load"
-                    value="large"
-                    class="form-check-input"
-                  />
-                  <label for="load" class="form-check-label">Large</label>
-                </div>
-    
-                <label for="instructions" class="form-label">
-                  Special delivery/Pickup instructions:</label
-                >
-                <textarea name="instructions" class="form-control"> </textarea>
-              </div>
-              <div class="form-section">
-                <p>Are there any challenges in parking?</p>
-                <input type="radio" name="parking" value="Yes" />
-                <label for="parking">Yes</label><br />
-                <input type="radio" name="parking" value="No" />
-                <label for="parking">No</label>
-    
-                <p>Do you have stairs/steps in the location?</p>
-                <input type="radio" name="stairs" value="Yes" />
-                <label for="stairs">Yes</label><br />
-                <input type="radio" name="stairs" value="No" />
-                <label for="stairs">No</label><br />
-    
-                <label for="notification" class="form-label"
-                  >Prior Notification to send alert:</label
-                >
-                <select>
-                  <option value="10 mins">10 mins</option>
-                  <option value="20 mins">20 mins</option>
-                  <option value="30 mins">30 mins</option>
-                  <option value="60 mins">60 mins</option>
-                </select>
-              </div>
-    
-              <div class="form-navigation">
-                <button type="button" class="previous btn btn-light pull-left">
-                  Previous
-                </button>
-                <button type="button" class="next btn btn-light pull-right">
-                  Next
-                </button>
-                <input type="submit" class="btn btn-outline-light pull-right" />
-                <span class="clearfix"></span>
-              </div>
-            </form>
-            </div>
+                    type="text"
+                    name="city"
+                    placeholder="City"
+                    class="form-control"
+                  /><br />
+                  <input
+                    type="text"
+                    name="province"
+                    placeholder="Province"
+                    class="form-control"
+                  /><br />
+                  <input
+                    type="text"
+                    name="zipcode"
+                    placeholder="Zipcode"
+                    class="form-control"
+                  /><br />
+      
+                  <button type="button" class="btn btn-light" onclick="showStep(1)">Previous</button>
+                  <button type="button" class="btn btn-light" onclick="showStep(3)">Next</button>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="form-step step-3 mb-3">
+                 <label for="d_address" class="form-label">Drop Location:</label>
+                  <input
+                    type="text"
+                    name="d_address1"
+                    placeholder="Address Line 1"
+                    class="form-control"
+                  /><br />
+                  <input
+                    type="text"
+                    name="d_address2"
+                    placeholder="Address Line 2"
+                    class="form-control"
+                  /><br />
+                  <input
+                    type="text"
+                    name="d_city"
+                    placeholder="City"
+                    class="form-control"
+                  /><br />
+                  <input
+                    type="text"
+                    name="d_province"
+                    placeholder="Province"
+                    class="form-control"
+                  /><br />
+                  <input
+                    type="text"
+                    name="d_zipcode"
+                    placeholder="Zipcode"
+                    class="form-control"
+                  /><br />
+      
+                  <button type="button" class="btn btn-light" onclick="showStep(2)">Previous</button>
+                  <button type="button" class="btn btn-light" onclick="showStep(4)">Next</button>
+          </div>
+          
+           <!-- Step 4 -->
+          <div class="form-step step-4 mb-3">
+          
+           <label for="distance" class="form-label"
+                    >Distance in Kilometers:</label
+                  >
+                  <input
+                    type="number"
+                    name="distance"
+                    min="0"
+                    max="100"
+                    step="1"
+                    class="form-control"
+                  /><br />
+      
+                  <label for="load" class="form-label">Load Size:</label>
+                  <div class="form-check">
+                    <input
+                      type="radio"
+                      name="load"
+                      value="small"
+                      class="form-check-input"
+                    />
+                    <label for="load" class="form-check-label">Small</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="radio"
+                      name="load"
+                      value="medium"
+                      class="form-check-input"
+                    />
+                    <label for="load" class="form-check-label">Medium</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="radio"
+                      name="load"
+                      value="large"
+                      class="form-check-input"
+                    />
+                    <label for="load" class="form-check-label">Large</label>
+                  </div><br />
+      
+                  <label for="instructions" class="form-label">
+                    Special delivery/Pickup instructions:</label
+                  >
+                  <textarea name="instructions" class="form-control"> </textarea><br>
+      
+                  <button type="button" class="btn btn-light" onclick="showStep(3)">Previous</button>
+                  <button type="button" class="btn btn-light" onclick="showStep(5)">Next</button>
+          </div>
+          
+           <!-- Step 5 -->
+          <div class="form-step step-5 mb-3">
+                 <p>Are there any challenges in parking?</p>
+                  <input type="radio" name="parking" value="Yes" />
+                  <label for="parking">Yes</label><br />
+                  <input type="radio" name="parking" value="No" />
+                  <label for="parking">No</label>
+      
+                  <p>Do you have stairs/steps in the location?</p>
+                  <input type="radio" name="stairs" value="Yes" />
+                  <label for="stairs">Yes</label><br />
+                  <input type="radio" name="stairs" value="No" />
+                  <label for="stairs">No</label><br />
+      
+                  <label for="notification" class="form-label"
+                    >Prior Notification to send alert:</label
+                  >
+                  <select>
+                    <option value="10 mins">10 mins</option>
+                    <option value="20 mins">20 mins</option>
+                    <option value="30 mins">30 mins</option>
+                    <option value="60 mins">60 mins</option>
+                  </select><br /><br />
+                  <button type="button" class="btn btn-light">Preview</button>
+                  <input type="submit" class="btn btn-outline-light">
+          </div>
+      </div>
+        </form>
           </section>
 
       </main>
@@ -275,7 +296,6 @@
       </footer>
       <script src="assets/js/jquery.js"></script>
       <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/js/parsley.js"></script>
       <script src="assets/js/modify.js"></script>
          </body>
 </html>
