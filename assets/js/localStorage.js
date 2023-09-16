@@ -1,20 +1,23 @@
+window.USER_LIST_KEY = "USERS";
+
 function getAllUsers() {
+    console.log("Inside getALLUSERS");
   let allUsers = localStorage.getItem(window.USER_LIST_KEY);
   if (allUsers == null) {
     localStorage.setItem(window.USER_LIST_KEY, JSON.stringify([]));
     return [];
   } else {
-    return JSON.parse(allUsers);
+    return allUsers;
   }
 }
 
 function getUser(username) {
-    console.log("Get User")
+    console.log("Get User");
     let allUsers = localStorage.getItem(window.USER_LIST_KEY);
     if (allUsers == null) {
         return null;
     } else {
-        allUsers = JSON.parse(allUsers);
+        allUsers =JSON.parse(allUsers);
         console.log("Listing all users", allUsers);
         allUsers.forEach(user => {
             if(user["username"] == username) {
@@ -28,7 +31,7 @@ function getUser(username) {
   }
 
 function saveUser(username, password, c_password, phone, email) {
-  console.log("Saving user")
+  console.log("Saving user");
   if (password !== c_password) {
     alert("Password is incorrect");
     return;
