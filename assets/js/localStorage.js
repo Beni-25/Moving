@@ -1,13 +1,11 @@
-window.USER_LIST_KEY = "USERS";
-
 function getAllUsers() {
     console.log("Inside getALLUSERS");
   let allUsers = localStorage.getItem(window.USER_LIST_KEY);
   if (allUsers == null) {
-    localStorage.setItem(window.USER_LIST_KEY, JSON.stringify([]));
+    // localStorage.setItem(window.USER_LIST_KEY, JSON.stringify([]));
     return [];
   } else {
-    return allUsers;
+    return JSON.parse(allUsers);
   }
 }
 
@@ -33,7 +31,7 @@ function getUser(username) {
 function saveUser(username, password, c_password, phone, email) {
   console.log("Saving user");
   if (password !== c_password) {
-    alert("Password is incorrect");
+    alert("Password is not matching with confirm password");
     return;
   } else {
     let allUsers = getAllUsers();
@@ -48,7 +46,7 @@ function saveUser(username, password, c_password, phone, email) {
         email: email,
       };
       localStorage.setItem(USER_KEY, USER_PAYLOAD);
-      return getUser(username) 
+      return getUser(username); 
     } else {
       alert(`User with username ${username} already exists.`);
       return null;
