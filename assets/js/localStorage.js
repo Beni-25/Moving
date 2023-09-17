@@ -1,8 +1,8 @@
 function getAllUsers() {
     console.log("Inside getALLUSERS");
   let allUsers = localStorage.getItem(window.USER_LIST_KEY);
-  if (allUsers == null) {
-    // localStorage.setItem(window.USER_LIST_KEY, JSON.stringify([]));
+  if (allUsers == null || allUsers == "" ) {
+    localStorage.setItem(window.USER_LIST_KEY, JSON.stringify([]));
     return [];
   } else {
     return JSON.parse(allUsers);
