@@ -47,6 +47,7 @@ function saveUser(username, password, c_password, phone, email) {
         email: email,
       };
       localStorage.setItem(USER_KEY,JSON.stringify(USER_PAYLOAD));
+      console.log("User payload", USER_PAYLOAD);
       return getUser(username); 
     } else {
       alert(`User with username ${username} already exists.`);
