@@ -2,6 +2,7 @@ function getAllUsers() {
     console.log("Inside getALLUSERS");
   let allUsers = localStorage.getItem(window.USER_LIST_KEY);
   if (allUsers == null || allUsers == "" ) {
+    console.log("Null in getALLUSERS");
     localStorage.setItem(window.USER_LIST_KEY, JSON.stringify([]));
     return [];
   } else {
@@ -45,7 +46,8 @@ function saveUser(username, password, c_password, phone, email) {
         phone: phone,
         email: email,
       };
-      localStorage.setItem(USER_KEY, USER_PAYLOAD);
+      localStorage.setItem(USER_KEY,JSON.stringify(USER_PAYLOAD));
+      console.log("User payload", USER_PAYLOAD);
       return getUser(username); 
     } else {
       alert(`User with username ${username} already exists.`);
