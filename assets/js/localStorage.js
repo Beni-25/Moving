@@ -2,7 +2,7 @@ function getAllUsers() {
     console.log("Inside getALLUSERS");
   let allUsers = localStorage.getItem(window.USER_LIST_KEY);
   if (allUsers == null || allUsers == "" ) {
-    console.log("Null in getALLUSERS");
+    console.log("Null in ALLUSERS");
     localStorage.setItem(window.USER_LIST_KEY, JSON.stringify([]));
     return [];
   } else {
@@ -13,7 +13,7 @@ function getAllUsers() {
 function getUser(username) {
     console.log("Get User");
     let allUsers = localStorage.getItem(window.USER_LIST_KEY);
-    if (allUsers == null) {
+    if (allUsers == null || allUsers == "" ) {
         return null;
     } else {
         allUsers =JSON.parse(allUsers);
@@ -21,7 +21,7 @@ function getUser(username) {
         allUsers.forEach(user => {
             if(user["username"] == username) {
                 console.log("User found", user)
-                return user
+                return user;
             }
         });
         console.log("User not found")
@@ -55,9 +55,4 @@ function saveUser(username, password, c_password, phone, email) {
     }
   }
 
-  // localStorage.setItem("username", "Benisha");
-  // localStorage.setItem("phone", "+1 (709)1111111");
-  // localStorage.setItem("email", "benisha@gmail.com");
-  // localStorage.setItem("password", "Password123");
-  // localStorage.setItem("c_password", "Password123");
 }
