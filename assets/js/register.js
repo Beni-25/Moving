@@ -8,12 +8,12 @@ $(document).ready(function () {
     const phone =  $('input#phone').val();
     const email=  $('input#email').val();
     let user = saveUser(username, password, c_password, phone, email);
-    if(user == null){
-        alert("Error creating user");
-    }else{
-        console.log("Signing up", e);
-        e.preventDefault(); // Stops <form> from reloading the page
-        // window.location.href = "index.html";
-    }
+    // if(user == null){
+    //     alert("Error creating user");
+    // }else{
+    //     console.log("Signing up", e);
+    //     e.preventDefault(); // Stops <form> from reloading the page
+    //     // window.location.href = "index.html";
+    // }
   });
 });
