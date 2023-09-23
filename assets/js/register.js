@@ -7,7 +7,7 @@ $(document).ready(function () {
     const c_password =  $('input#c_password').val();
     const phone =  $('input#phone').val();
     const email=  $('input#email').val();
-    let user = saveUser(username, password, c_password, phone, email);
+    let user = saveUser(username, password, c_password, phone, email);//eg:username:"1", password:"2", c_password:"2", phone:"3", email:"4"
     // if(user == null){
     //     alert("Error creating user");
     // }else{
