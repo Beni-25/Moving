@@ -18,12 +18,19 @@ function getUser(username) {
     } else {//if allUsers has any values
         allUsers =JSON.parse(allUsers);//get the Javascript object from string in allUsers ie,'[{username: "1", password: "2"..}]' to {username: "1", password: "2"..}
         console.log("Listing all users", allUsers);
-        allUsers.forEach(user => {  // {username: "1", password: "2"..} (each set of object will be called one by one using forEach)user means a set of object; allUsers means array of user objects
-            if(user["username"] == username) { // user["username"] = 1; checks whether current set user object username property matches the username given
-                console.log("User found", user)
-                return user; // {username: "1", password: "2"..} returns user object (exit current set of object)
-            }
-        });
+        // allUsers.forEach(user => {  // {username: "1", password: "2"..} (each set of object will be called one by one using forEach)user means a set of object; allUsers means array of user objects
+        //     if(user["username"] == username) { // user["username"] = 1; checks whether current set user object username property matches the username given
+        //         console.log("User found", user)
+        //         return user; // {username: "1", password: "2"..} returns user object (exit current set of object)
+        //     }
+        // });
+
+        for (const user of allUsers) { // forEach will execute each set one by one; even if it found the same username it will execute the next object
+            if (user["username"] === username) { //in this for loop, we need to stop and return the user as soon as same username found
+                console.log("User found", user);
+                return user;
+                          }
+        }
         console.log("User not found")
         return null
     }
@@ -50,7 +57,7 @@ function saveUser(username, password, c_password, phone, email) {//saveUser(user
       //localStorage.setItem(USER_KEY,JSON.stringify(USER_PAYLOAD));
       localStorage.setItem(window.USER_LIST_KEY ,JSON.stringify(allUsers)); //set the object value as string ie, "[{ username:"1", password:"2", phone:"3", email:"4"}]"" 
       console.log("User payload", USER_PAYLOAD);
-      return getUser(username); // go to getUser(username) function to check the username exists or not
+        return getUser(username); // go to getUser(username) function to check the username exists or not
     } else { // if user has value and same username exists
       alert(`User with username ${username} already exists.`);// alert to indicate the same username exists
       return null;// return to inside if loop to create new USER_PAYLOAD
