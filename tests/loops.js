@@ -1,36 +1,32 @@
-// for loop
-for (let i = 0; i < allUsers.length; i++) {
-    const user = allUsers[i];
-    if (user["username"] === username) {
-        console.log("User found", user);
-        return user;
-    }
+var testLoops =[
+    {name:"NAME: BENI"},
+    {name:"NAME: BENIS"},
+    {name:"NAME: BENISHA"}
+
+];
+
+function renderCards() {
+for(i=0;i<3;i++){
+  const loops = testLoops[i];
+
+$(".card").append(`<div class="card mb-3 container-contact lpcard" style="max-width: 540px;">
+<div class="row g-0">
+  <div class="col-md-4">
+    <img src="/assets/css/images/profileuser.png" class="img-fluid rounded-start" alt="User icon">
+  </div>
+  <div class="col-md-8">
+    <div class="card-body">
+      <h5 class="card-title">Contact Details</h5>
+      <p class="card-text">${loops[name]}</p>
+      <p class="card-text">PHONE NUMBER: +1 709 351 6971</p>
+      <p class="card-text">EMAIL ADDRESS: benisha@gmail.com</p>
+    </div>
+  </div>
+</div>
+</div>`);
+}
 }
 
-// for loop without i value ie, without index
-
-for (const user of allUsers) {
-    if (user["username"] === username) {
-        console.log("User found", user);
-        return user;
-    }
-}
-
-// forEach loop
-  allUsers.forEach(user => {  
-            if(user["username"] == username) { 
-                console.log("User found", user)
-                return user; 
-            }
-        });
-
-// while loop
-let i=0;
-while(i < allUsers.length){
-    const user = allUsers[i];
-    if (user["username"] === username) {
-        console.log("User found", user);
-        return user; 
-    }
-    i++;
-}
+$(document).ready(function () {
+    renderCards();
+});
