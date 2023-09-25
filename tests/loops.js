@@ -10,7 +10,7 @@ for(let i=0;i<testLoops.length;i++){
   let loops = testLoops[i];
   console.log(testLoops.length);
 
-$(".card").append(`<div class="card mb-3 container-contact lpcard" style="max-width: 540px;">
+$(".cardsrepetition").append(`<div class="card mb-3 container-contact lpcard" style="max-width: 540px;">
 <div class="row g-0">
   <div class="col-md-4">
     <img src="/assets/css/images/profileuser.png" class="img-fluid rounded-start" alt="User icon">
