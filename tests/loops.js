@@ -7,7 +7,7 @@ var testLoops =[
 
 function renderCards() {
 for(i=0;i<3;i++){
-  const loops = testLoops[i];
+  let loops = testLoops[i];
 
 $(".card").append(`<div class="card mb-3 container-contact lpcard" style="max-width: 540px;">
 <div class="row g-0">
