@@ -1,13 +1,14 @@
 var testLoops =[
     {Name:"NAME: BENI"},
     {Name:"NAME: BENIS"},
-    {Name:"NAME: BENISHA"}
+    {Name:"NAME: BENISHA"},
 
 ];
 
 function renderCards() {
 for(let i=0;i<testLoops.length;i++){
   let loops = testLoops[i];
+  console.log(testLoops.length);
 
 $(".card").append(`<div class="card mb-3 container-contact lpcard" style="max-width: 540px;">
 <div class="row g-0">
