@@ -5,6 +5,11 @@ var testLoops =[
 
 ];
 
+// Local Storage
+localStorage.setItem("heading", "AB Movers");
+$("#heading").text(localStorage.getItem("heading"));
+
+
 function renderCards() {
 for(let i=0;i<testLoops.length;i++){
   let loops = testLoops[i];
