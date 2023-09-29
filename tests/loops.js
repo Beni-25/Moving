@@ -10,6 +10,26 @@ localStorage.setItem("heading", "AB Movers");
 $("#heading").text(localStorage.getItem("heading"));
 
 
+window.Fruits="Fruits"
+
+
+function saveFruits(){
+  let existingFruits = JSON.parse(localStorage.getItem(window.Fruits)) || [];//if existing fruits available, using parse to get the fruits
+  const newFruit = document.getElementById("fruitname").value;//get the new fruit name
+  if (newFruit) {// if new fruit is there
+    existingFruits.push(newFruit);//push new fruit to the earlier array
+    localStorage.setItem(window.Fruits, JSON.stringify(existingFruits));// set the new fruit added array to local storage
+    document.getElementById("fruitname").value = "";//clear input field
+
+      }
+}
+
+
+// function getFruits(){
+//   let getFruit= JSON.parse(localStorage.getItem(window.Fruits));
+//   return getFruit;
+// }
+ 
 function renderCards() {
 for(let i=0;i<testLoops.length;i++){
   let loops = testLoops[i];
@@ -62,3 +82,5 @@ $(document).ready(function () {
     renderCards();
     renderWhileCards();
 });
+
+
