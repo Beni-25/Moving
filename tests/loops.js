@@ -10,11 +10,11 @@ localStorage.setItem("heading", "AB Movers");
 $("#heading").text(localStorage.getItem("heading"));
 
 
-window.Fruits="Fruits"
+window.Fruits="Fruits"//key to set in loal storage
 
 
 function saveFruits(){
-  let existingFruits = JSON.parse(localStorage.getItem(window.Fruits)) || [];//if existing fruits available, using parse to get the fruits
+  let existingFruits = JSON.parse(localStorage.getItem(window.Fruits)) || [];//if existing fruits available, using parse to get the fruits else empty array set
   const newFruit = document.getElementById("fruitname").value;//get the new fruit name
   if (newFruit) {// if new fruit is there
     existingFruits.push(newFruit);//push new fruit to the earlier array
