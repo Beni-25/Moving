@@ -1,6 +1,6 @@
 var testLoops =[
     {Name:"NAME: BENI"},
-    {Name:"NAME: BENIS"},
+    {Name:"NAME: BERNIE"},
     {Name:"NAME: BENISHA"},
 
 ];
@@ -10,25 +10,20 @@ localStorage.setItem("heading", "AB Movers");
 $("#heading").text(localStorage.getItem("heading"));
 
 
-window.Fruits="Fruits"//key to set in loal storage
+window.Fruits="Fruits"//key to set in local storage
 
 
 function saveFruits(){
   let existingFruits = JSON.parse(localStorage.getItem(window.Fruits)) || [];//if existing fruits available, using parse to get the fruits else empty array set
   const newFruit = document.getElementById("fruitname").value;//get the new fruit name
   if (newFruit) {// if new fruit is there
-    existingFruits.push(newFruit);//push new fruit to the earlier array
+    existingFruits.push(newFruit);//push new fruit to the earlier Fruits array
     localStorage.setItem(window.Fruits, JSON.stringify(existingFruits));// set the new fruit added array to local storage
     document.getElementById("fruitname").value = "";//clear input field
 
       }
 }
 
-
-// function getFruits(){
-//   let getFruit= JSON.parse(localStorage.getItem(window.Fruits));
-//   return getFruit;
-// }
  
 function renderCards() {
 for(let i=0;i<testLoops.length;i++){
