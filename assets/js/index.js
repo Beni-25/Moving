@@ -42,6 +42,22 @@ $(document).ready(function () {
 
     renderCarousel();
     renderCard();
+
+
+    if(loggedInUser == null){
+      // No user logged in
+      // Jquery hide the logout
+      // Jquery show the login
+    } else {
+      // User logged in
+      // Jquery show the logout
+      // Jquery hide the login
+    }
+
+    // onclick event for logout
+    // delete the content inside LOGGEDIN_USER in local storage
+    // Redirect to Sign in page
+
 //cards shadow increase on hover
 
 $(".lpcard").hover(

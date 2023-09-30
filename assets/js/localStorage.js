@@ -29,11 +29,22 @@ function getUser(username) {
             if (user["username"] === username) { //in this for loop, we need to stop and return the user as soon as same username found
                 console.log("User found", user);
                 return user;
-                          }
+            }
         }
         console.log("User not found")
         return null
     }
+  }
+
+  function getLoggedInUser(){
+
+    let loggedinUser=localStorage.getItem(window.LOGGEDIN_USER_KEY);
+    if(loggedinUser==null || loggedinUser ==""){
+      return null;
+    }else{
+      return JSON.parse(loggedinUser);
+    }
+
   }
 
 function saveUser(username, password, c_password, phone, email) {//saveUser(username:"1", password:"2", c_password:"2", phone:"3", email:"4")
@@ -47,6 +58,7 @@ function saveUser(username, password, c_password, phone, email) {//saveUser(user
     let user = getUser(username); // call getUser() function, saves user as either a set of user object or null; if username matching then gives user object ie, {username: "1", password: "2"..}
     console.log(user, "saveUser | getUser(username)");
     if (user == null) {// if user is null, execute below code
+      
       const USER_PAYLOAD = {
         username: username, //get values as object in USER_PAYLOAD ie, { username:"1", password:"2", phone:"3", email:"4"}
         password: password,
@@ -54,7 +66,7 @@ function saveUser(username, password, c_password, phone, email) {//saveUser(user
         email: email,
       };
       allUsers.push(USER_PAYLOAD);// push the object ie, { username:"1", password:"2", phone:"3", email:"4"} to allUsers array
-      //localStorage.setItem(USER_KEY,JSON.stringify(USER_PAYLOAD));
+      localStorage.setItem(window.LOGGEDIN_USER_KEY,JSON.stringify(USER_PAYLOAD)); //set the current user(loggedin user in local storage)
       localStorage.setItem(window.USER_LIST_KEY ,JSON.stringify(allUsers)); //set the object value as string ie, "[{ username:"1", password:"2", phone:"3", email:"4"}]"" 
       console.log("User payload", USER_PAYLOAD);
         return getUser(username); // go to getUser(username) function to check the username exists or not
