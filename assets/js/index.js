@@ -45,6 +45,14 @@ $(document).ready(function () {
 
 
     if(loggedInUser == null){
+
+      
+    
+            $(".sign-in-button").addClass( "shadow-lg" );
+          
+            $(".sign-in-button").removeClass( "shadow-lg" );
+        
+    
       // No user logged in
       // Jquery hide the logout
       // Jquery show the login
