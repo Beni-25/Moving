@@ -42,29 +42,21 @@ $(document).ready(function () {
 
     renderCarousel();
     renderCard();
-
-
-    if(loggedInUser == null){
-
-      
-    
-            $(".sign-in-button").addClass( "shadow-lg" );
-          
-            $(".sign-in-button").removeClass( "shadow-lg" );
-        
-    
-      // No user logged in
-      // Jquery hide the logout
-      // Jquery show the login
-    } else {
-      // User logged in
-      // Jquery show the logout
-      // Jquery hide the login
+  
+      let loggedinUser=localStorage.getItem(window.LOGGEDIN_USER_KEY);
+      if(loggedinUser != null ){ // User logged in
+        $("#signIn").hide();// Jquery hide the login
+        $("#signOut").show();  // Jquery show the logout      
+     
+    } else { // No user logged in
+      $("#signIn").show(); // Jquery show the login
+        $("#signOut").hide(); // Jquery hide the logout  
     }
-
-    // onclick event for logout
-    // delete the content inside LOGGEDIN_USER in local storage
-    // Redirect to Sign in page
+ // onclick event for logout
+    function signout(){
+      localStorage.removeItem(window.LOGGEDIN_USER_KEY); // delete the content inside LOGGEDIN_USER in local storage
+      window.location.href='login.html'; // Redirect to Sign in page
+    }  
 
 //cards shadow increase on hover
 

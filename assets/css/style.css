@@ -1,3 +1,7 @@
+button.sign-out-button{
+  display: none;
+}
+
 h1.carousel-title {
   color: #e4966b;
   font-size: 60px;
