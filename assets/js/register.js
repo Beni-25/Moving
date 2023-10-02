@@ -21,6 +21,6 @@ $(document).ready(function () {
       }
     });
   } else {
-    window.location.href = "index.html";
+    // window.location.href = "index.html";
   }
 });
