@@ -44,6 +44,7 @@ $(document).ready(function () {
     renderCard();
   
       let loggedinUser=localStorage.getItem(window.LOGGEDIN_USER_KEY);
+      console.log(loggedinUser);
       if(loggedinUser != null ){ // User logged in
         $("#signIn").hide();// Jquery hide the login
         $("#signOut").show();  // Jquery show the logout      
