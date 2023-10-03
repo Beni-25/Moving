@@ -69,7 +69,7 @@ function saveUser(username, password, c_password, phone, email) {//saveUser(user
       localStorage.setItem(window.LOGGEDIN_USER_KEY,JSON.stringify(USER_PAYLOAD)); //set the current user(loggedin user in local storage)
       localStorage.setItem(window.USER_LIST_KEY ,JSON.stringify(allUsers)); //set the object value as string ie, "[{ username:"1", password:"2", phone:"3", email:"4"}]"" 
       console.log("User payload", USER_PAYLOAD);
-        return getUser(username); // go to getUser(username) function to check the username exists or not
+      return getUser(username); // go to getUser(username) function to check the username exists or not
     } else { // if user has value and same username exists
       alert(`User with username ${username} already exists.`);// alert to indicate the same username exists
       return null;// return to inside if loop to create new USER_PAYLOAD

@@ -34,7 +34,11 @@ function renderCard() {
     </div>`);
 });
 }
-
+ // onclick event for logout
+ function signout(){
+  localStorage.removeItem(window.LOGGEDIN_USER_KEY); // delete the content inside LOGGEDIN_USER in local storage
+  window.location.href='login.html'; // Redirect to Sign in page
+}  
 
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
@@ -53,11 +57,7 @@ $(document).ready(function () {
       $("#signIn").show(); // Jquery show the login
         $("#signOut").hide(); // Jquery hide the logout  
     }
- // onclick event for logout
-    function signout(){
-      localStorage.removeItem(window.LOGGEDIN_USER_KEY); // delete the content inside LOGGEDIN_USER in local storage
-      window.location.href='login.html'; // Redirect to Sign in page
-    }  
+
 
 //cards shadow increase on hover
 
