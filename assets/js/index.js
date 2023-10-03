@@ -47,7 +47,7 @@ $(document).ready(function () {
     renderCarousel();
     renderCard();
   
-      let loggedinUser=localStorage.getItem(window.LOGGEDIN_USER_KEY);
+      let loggedinUser=localStorage.getItem(window.LOGGEDIN_USER_KEY);// getting value from localStorage(ie, {username:"1", password:"2",...}) or null
       console.log(loggedinUser);
       if(loggedinUser != null ){ // User logged in
         $("#signIn").hide();// Jquery hide the login
