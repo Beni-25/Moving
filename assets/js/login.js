@@ -15,7 +15,7 @@ $(document).ready(function () {
         const password = $("input#password").val();
         let checkUser = checkUser(username, password);
         if(checkUser == null){
-            alert("Error signing-in user");
+            alert("User not found.");
         }
         else{
             console.log("Signing in", e);
