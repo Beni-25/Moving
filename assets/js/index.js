@@ -58,7 +58,6 @@ $(document).ready(function () {
         $("#signOut").hide(); // Jquery hide the logout  
     }
 
-
 //cards shadow increase on hover
 
 $(".lpcard").hover(
