@@ -11,16 +11,16 @@ const togglePassword = document.querySelector("#togglePassword");
 
 $(document).ready(function () {
     $( "button#signin" ).on( "click", function(e) {
-        const username = $("input#username").val();
-        const password = $("input#password").val();
-        let checkUser = checkUser(username, password);
-        if(checkUser == null){
+        const username = $("input#username").val();//get the value of username
+        const password = $("input#password").val();//get the value of password
+        let user = checkUser(username, password);
+        if(user == null){//check the value of user, if null execute if block
             alert("User not found.");
         }
-        else{
-            console.log("Signing in", e);
-        e.preventDefault(); // Stops <form> from reloading the page
-        document.location.href='index.html';
+        else{//if user not null and it has value, execute else block
+            console.log("Signing up", e);
+            e.preventDefault(); // Stops <form> from reloading the page
+            window.location.href = "index.html";
     }
          
     } );

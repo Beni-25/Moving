@@ -90,7 +90,9 @@ function saveUser(username, password, c_password, phone, email) {
 
   function checkUser(username, password) {
     //function to check whether the user in local storage
+    console.log("Inside checkUser");
     let allUsers = getAllUsers();
+    console.log(allUsers, "allUsers|checkUser");
     for (const user of allUsers) {
       // check whether the same username exists
       if (user["username"] === username && user["password"] === password) {
