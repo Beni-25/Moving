@@ -11,8 +11,17 @@ const togglePassword = document.querySelector("#togglePassword");
 
 $(document).ready(function () {
     $( "button#signin" ).on( "click", function(e) {
-        console.log("Signing in", e);
+        const username = $("input#username").val();
+        const password = $("input#password").val();
+        let checkUser = checkUser(username, password);
+        if(checkUser == null){
+            alert("User not found.");
+        }
+        else{
+            console.log("Signing in", e);
         e.preventDefault(); // Stops <form> from reloading the page
-        document.location.href='index.html'; 
+        document.location.href='index.html';
+    }
+         
     } );
 });
