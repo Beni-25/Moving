@@ -87,20 +87,18 @@ function saveUser(username, password, c_password, phone, email) {
       return null; // return to inside if loop to create new USER_PAYLOAD
     }
   }
-
-  function checkUser(username, password) {
-    //function to check whether the user in local storage
-    console.log("Inside checkUser");
-    let allUsers = getAllUsers();
-    console.log(allUsers, "allUsers|checkUser");
-    for (const user of allUsers) {
-      // check whether the same username exists
-      if (user["username"] === username && user["password"] === password) {
-        console.log("User found", user);
-        return user;
-      }
-    }
-    console.log("User not found");
+}
+function checkUserPassword(username, password) {
+  let user = getUser(username); //user= {username:"1", password:"2", phone:"3", email:"3"} or null
+  if (user == null) {
+    alert("Login details not found");
+    console.log("user null");
     return null;
+  } else {
+    if (user["password"] === password) {
+      console.log("User found", user);
+      localStorage.setItem(window.LOGGEDIN_USER_KEY, JSON.stringify(user)); //set the current user(loggedin user in local storage)
+      return user;
+    }
   }
 }
