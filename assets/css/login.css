@@ -19,11 +19,11 @@ width:360px;
     width:340px;
 }
 .passwordcontainer{
-    width:350px;
+    width:340px;
 }
 #togglePassword{
     position: absolute;
-    top: 43%;
+    top: 45%;
     right: 5%;
     cursor: pointer;
     color: gray;
