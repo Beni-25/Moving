@@ -24,6 +24,7 @@ $(document).ready(function () {
 
       let user = saveUser(username, password, c_password, phone, email); //eg:username:"1", password:"2", c_password:"2", phone:"3", email:"4"
       if (user == null) {
+        
         alert("Error creating user");
       } else {
         console.log("Signing up", e);
