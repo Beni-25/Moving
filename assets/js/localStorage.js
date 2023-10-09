@@ -102,3 +102,37 @@ function checkUserPassword(username, password) {
     }
   }
 }
+
+
+function saveDetails(date, time, P_address1, P_address2, P_city, P_province, P_zipcode,
+  D_address1, D_address2, D_city, D_province, D_zipcode, distance, load, instructions,
+  parking, stairs, notification) {
+
+  let allBookings = JSON.parse(localStorage.getItem(window.BOOKINGS_KEY)) || [];// check whether any existing bookings there or not
+
+  // Create a booking object 
+  const booking = {
+    date: date,
+    time: time,
+    P_address1: P_address1,
+    P_address2: P_address2,
+    P_city: P_city,
+    P_province: P_province,
+    P_zipcode: P_zipcode,
+    D_address1: D_address1,
+    D_address2: D_address2,
+    D_city: D_city,
+    D_province: D_province,
+    D_zipcode: D_zipcode,
+    distance: distance,
+    load: load,
+    instructions: instructions,
+    parking: parking,
+    stairs: stairs,
+    notification: notification
+  };
+
+  allBookings.push(booking);//push the object ie, {date:"1", time:"2",....} to allBookings
+
+  localStorage.setItem(window.BOOKINGS_KEY, JSON.stringify(allBookings)); // Set the updated current booking in the localStorage
+}
