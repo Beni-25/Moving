@@ -86,13 +86,17 @@ $("button#submit").on("click", function (e) {
     const D_zipcode   = $("input#D_zipcode").val(); //get the value of D_zipcode
 
     const distance = $("input#distance").val(); //get the value of distance
-    // const load = $("input#distance").val(); //get the value of distance
+    const load = $("input[name='load']:checked").val(); //get the value of load
     const instructions = $("textarea#instructions").val(); //get the value of instructions
 
-    // const parking = $("input#parking").val(); //get the value of parking
-    // const stairs = $("input#stairs").val(); //get the value of stairs
-    // const notification = $("input#notification").val(); //get the value of notification
+    const parking = $("input[name='parking']:checked").val(); //get the value of parking
+    const stairs = $("input[name='stairs']:checked").val(); //get the value of stairs
+    const notification = $("#notification").val(); //get the value of notification
 
+    let booking=saveDetails(date, time,P_address1,  P_address2, P_city , P_province, P_zipcode, 
+      D_address1, D_address2 , D_city , D_province , D_zipcode, distance, load, instructions, 
+      parking, stairs, notification )
+  alert("Submitting Form Successfully....");
   console.log("Submitting Form", e);
   e.preventDefault(); // Stops <form> from reloading the page
 });
