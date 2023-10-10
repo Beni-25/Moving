@@ -101,10 +101,22 @@ $("button#submit").on("click", function (e) {
 
     const distance = $("input#distance").val(); //get the value of distance
     const load = $("input[name='load']:checked").val(); //get the value of load
+    if(load == null){
+      alert("please select the load type");
+      return;
+    }
     const instructions = $("textarea#instructions").val(); //get the value of instructions
 
     const parking = $("input[name='parking']:checked").val(); //get the value of parking
+    if(parking == null){
+      alert("please select the parking challenges");
+      return;
+    }
     const stairs = $("input[name='stairs']:checked").val(); //get the value of stairs
+    if(stairs == null){
+      alert("please select whether stairs are there");
+      return;
+    }
     const notification = $("#notification").val(); //get the value of notification
 
     let booking=saveDetails(date, time,P_address1,  P_address2, P_city , P_province, P_zipcode, 
