@@ -45,7 +45,8 @@ function renderSummary() {
 
 $(document).ready(function () {
 
-  renderSummary();
+
+  
 
   //cards shadow increase on hover
 
@@ -98,6 +99,16 @@ $("#bookingbtn").on("mouseleave", () => {
     color: "black",
   });
 });
+
+let selectedBooking = getSelectedBooking();
+if(selectedBooking == null){
+  alert("no booking selected, create a booking");
+  window.location.href = "booking.html";
+
+}else{
+  console.log("booking found",selectedBooking);
+  renderSummary(selectedBooking);
+}
 
 });
    
