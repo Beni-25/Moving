@@ -70,6 +70,7 @@ $(".bi-instagram").on("mouseleave", () => {
 });
 
 $("button#submit").on("click", function (e) {
+  e.preventDefault(); // Stops <form> from reloading the page
     const date = $("input#date").val(); //get the value of date
     const time = $("input#time").val(); //get the value of time
     if(time.trim()===""){
@@ -125,11 +126,13 @@ $("button#submit").on("click", function (e) {
 
     if(booking){
       alert("Form Submitted Successfully....");
+      window.location.href = "summary.html";
     }else{
       alert("Error Submitting Form. Please try again");
+     return null;
     }
  
-   e.preventDefault(); // Stops <form> from reloading the page
+   
 });
 
 
