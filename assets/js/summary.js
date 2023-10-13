@@ -1,6 +1,6 @@
 // Functions
 
-function renderSummary() {
+function renderSummary(selectedBooking) {
   summaryList.forEach((summaryObject) => {
     console.log("Creating card for summary: ", summaryObject);
     $("#list-summary").append(`
