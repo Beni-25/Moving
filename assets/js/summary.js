@@ -38,13 +38,17 @@ function renderSummary(selectedBooking) {
 });
 }
 
+
+
+
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
 $(document).ready(function () {
 
-
-  
-
+let loggedInUser = getLoggedInUser(); 
+  $("#name").text("NAME: " + loggedInUser["username"]);
+  $("#phone").text("PHONE NUMBER: " + loggedInUser["phone"]);
+  $("#email").text("EMAIL ADDRESS: " + loggedInUser["email"]);
   //cards shadow increase on hover
 
 $(".lpcard").hover(

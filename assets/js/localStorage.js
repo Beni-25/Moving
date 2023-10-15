@@ -151,7 +151,7 @@ function saveDetails(date, time, P_address1, P_address2, P_city, P_province, P_z
   }
       }
  
-function getSelectedBooking(){
+ function getSelectedBooking(){ 
   let selectedBooking = localStorage.getItem(window.SELECTED_BOOKING_KEY);
   if (selectedBooking == null || selectedBooking == "") {
     return null;
