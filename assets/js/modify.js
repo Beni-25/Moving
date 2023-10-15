@@ -23,6 +23,32 @@ function showStep(stepNumber) {
 
 $(document).ready(function () {
 
+  let selectedBooking = getSelectedBooking();
+  if(selectedBooking){
+    $("input#date").val(selectedBooking.date);
+    $("input#time").val(selectedBooking.time);
+
+    $("input#P_address1").val(selectedBooking.P_address1);
+    $("input#P_address2").val(selectedBooking.P_address2);
+    $("input#P_city").val(selectedBooking.P_city); 
+    $("input#P_province").val(selectedBooking.P_province);
+    $("input#P_zipcode").val(selectedBooking.P_zipcode);
+    
+     $("input#D_address1").val(selectedBooking.D_address1);
+    $("input#D_address2").val(selectedBooking.D_address2);
+     $("input#D_city").val(selectedBooking.D_city); 
+    $("input#D_province").val(selectedBooking.D_province); 
+     $("input#D_zipcode").val(selectedBooking.D_zipcode);
+    
+    $("input#distance").val(selectedBooking.distance);
+    $("input[name='load'][value='" + selectedBooking.load + "']").prop('checked', true);
+    $("textarea#instructions").val(selectedBooking.instructions); 
+
+    $("input[name='parking'][value='" + selectedBooking.parking + "']").prop('checked', true);
+    $("input[name='stairs'][value='" + selectedBooking.stairs + "']").prop('checked', true);
+    $("#notification").val(selectedBooking.notification);
+  }
+ 
   //tick icon show
   $(".bi-check").hide();
   $(".step1input").on("click", function() {
@@ -72,6 +98,7 @@ $("#bookingbtn").on("mouseleave", () => {
 });
 
 $("button#submit").on("click", function (e) {
+  e.preventDefault(); // Stops <form> from reloading the page
   const date = $("input#date").val(); //get the value of date
   const time = $("input#time").val(); //get the value of time
   if(time.trim()===""){
@@ -131,7 +158,7 @@ $("button#submit").on("click", function (e) {
     alert("Error Submitting Form. Please try again");
   }
 
- e.preventDefault(); // Stops <form> from reloading the page
+ 
 });
 
 
