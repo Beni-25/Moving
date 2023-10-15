@@ -1,3 +1,6 @@
+
+let selectedBooking = getSelectedBooking();
+console.log("selectedBooking", selectedBooking);
 //Global variables
 var bookingList = [
     { name: "Athan", id: "100001", pickup: "Crossbie RD", drop:"Elizabeth Ave" },
@@ -9,16 +12,19 @@ var bookingList = [
 
 var summaryList = [
   { container:"container-booking", image:"/assets/css/images/booking.png", title:"Booking Details", imagename:"Booking icon",
-   textline1:"BOOKING ID" + selectedBooking["id"], textline2:"DATE:", textline3:"TIME: "},
+   textline1:"BOOKING ID: "+ selectedBooking["id"], textline2:"DATE: "+ selectedBooking["date"], textline3:"TIME: "+ selectedBooking["time"]},
   { container:"container-location", image:"/assets/css/images/location.png", title:"Location Details", imagename:"Location icon",
-   textline1:"<strong>PICKUP LOCATION:</strong>" + selectedBooking["address"], 
-   textline2:"<strong>DROP LOCATION:</strong>", textline3:"LOAD SIZE:"},
+   textline1:"<strong>PICKUP LOCATION: </strong>"+ selectedBooking["P_address1"] + "," + selectedBooking["P_address2"] + "," +
+   selectedBooking["P_city"] + "," + selectedBooking["P_province"]+","+ selectedBooking["P_zipcode"],
+   textline2:"<strong>DROP LOCATION: </strong>"+ selectedBooking["D_address1"] + "," + selectedBooking["D_address2"] + "," +
+   selectedBooking["D_city"] + "," + selectedBooking["D_province"]+","+ selectedBooking["D_zipcode"],
+   textline3:"LOAD SIZE: " + selectedBooking["load"]},
   { container:"container-estimation", image:"/assets/css/images/estimation.png", title:"Estimation Details", imagename:"Estimation icon", 
-  textline1:"TOTAL DISTANCE IN KILOMETERS:" + selectedBooking["distance"], textline2:"TOTAL ESTIMATED TIME IN MINS:", 
-  textline3:"ESTIMATED PRIZE :"},
+  textline1:"TOTAL DISTANCE IN KILOMETERS: "+ selectedBooking["distance"], textline2:"TOTAL ESTIMATED TIME IN MINS: ", 
+  textline3:"ESTIMATED PRIZE: "},
   { container:"container-details", image:"/assets/css/images/info.png", title:"Additional Details", imagename:"Additional Info icon", 
-  textline1:"ARE THERE ANY PARKING CHALLENGES? " + selectedBooking["parking"], textline2:"DO YOU HAVE ANY STAIRS/STEPS IN THE LOCATION?", 
-  textline3:"INSTRUCTIONS:"},
+  textline1:"ARE THERE ANY PARKING CHALLENGES? "+ selectedBooking["parking"], textline2:"DO YOU HAVE ANY STAIRS/STEPS IN THE LOCATION? "+ selectedBooking["stairs"], 
+  textline3:"INSTRUCTIONS: "+ selectedBooking["instructions"]},
 
 ];
 
