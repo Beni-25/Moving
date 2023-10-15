@@ -27,10 +27,7 @@ function renderSummary(selectedBooking) {
               <p class="card-text">
               ${summaryObject["textline3"]}
               </p>              
-              <p class="card-text">
-              ${summaryObject["textline4"]}
-              </p> 
-            </div>
+              </div>
           </div>
         </div>
       </div>
