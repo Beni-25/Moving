@@ -9,21 +9,20 @@ var bookingList = [
 
 var summaryList = [
   { container:"container-booking", image:"/assets/css/images/booking.png", title:"Booking Details", imagename:"Booking icon",
-   textline1:"BOOKING ID:", textline2:"DATE:", textline3:"TIME: ", textline4:"" },
+   textline1:"BOOKING ID", textline2:"DATE:", textline3:"TIME: "},
   { container:"container-location", image:"/assets/css/images/location.png", title:"Location Details", imagename:"Location icon",
    textline1:"<strong>PICKUP LOCATION:</strong>", 
-   textline2:"<strong>DROP LOCATION:</strong>", textline3:"", textline4:""},
+   textline2:"<strong>DROP LOCATION:</strong>", textline3:"LOAD SIZE:"},
   { container:"container-estimation", image:"/assets/css/images/estimation.png", title:"Estimation Details", imagename:"Estimation icon", 
   textline1:"TOTAL DISTANCE IN KILOMETERS:", textline2:"TOTAL ESTIMATED TIME IN MINS:", 
-  textline3:"ESTIMATED PRIZE :", textline4:""},
+  textline3:"ESTIMATED PRIZE :"},
   { container:"container-details", image:"/assets/css/images/info.png", title:"Additional Details", imagename:"Additional Info icon", 
-  textline1:"LOAD SIZE:", textline2:"ARE THERE ANY PARKING CHALLENGES? ", 
-  textline3:"DO YOU HAVE ANY STAIRS/STEPS IN THE LOCATION?", textline4:"INSTRUCTIONS:" },
+  textline1:"ARE THERE ANY PARKING CHALLENGES? ", textline2:"DO YOU HAVE ANY STAIRS/STEPS IN THE LOCATION?", 
+  textline3:"INSTRUCTIONS:"},
 
 ];
 
 var carouselList=[
-
 {imageclass:"active carousel-image1-wrapper"},
 {imageclass:"carousel-image2-wrapper"},
 {imageclass:"carousel-image3-wrapper"},

@@ -19,7 +19,7 @@ function renderSummary(selectedBooking) {
             <div class="card-body">
               <h5 class="card-title">${summaryObject["title"]}</h5>
               <p class="card-text">
-              ${summaryObject["textline1"]}
+              ${summaryObject["textline1"]}:${selectedBooking}
               </p>
               <p class="card-text">
               ${summaryObject["textline2"]}
@@ -27,10 +27,7 @@ function renderSummary(selectedBooking) {
               <p class="card-text">
               ${summaryObject["textline3"]}
               </p>              
-              <p class="card-text">
-              ${summaryObject["textline4"]}
-              </p> 
-            </div>
+              </div>
           </div>
         </div>
       </div>
