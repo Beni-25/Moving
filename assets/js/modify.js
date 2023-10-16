@@ -99,6 +99,9 @@ $("#bookingbtn").on("mouseleave", () => {
 
 $("button#submit").on("click", function (e) {
   e.preventDefault(); // Stops <form> from reloading the page
+
+  let selectedBooking = getSelectedBooking();
+  const id = selectedBooking["id"];
   const date = $("input#date").val(); //get the value of date
   const time = $("input#time").val(); //get the value of time
   if(time.trim()===""){
@@ -148,11 +151,11 @@ $("button#submit").on("click", function (e) {
   }
   const notification = $("#notification").val(); //get the value of notification
 
-  let booking=saveDetails(date, time,P_address1,  P_address2, P_city , P_province, P_zipcode, 
+  let newBooking=saveModifiedDetails(id , date, time,P_address1,  P_address2, P_city , P_province, P_zipcode, 
     D_address1, D_address2 , D_city , D_province , D_zipcode, distance, load, instructions, 
     parking, stairs, notification )
 
-  if(booking){
+  if(newBooking){
     alert("Form Submitted Successfully....");
   }else{
     alert("Error Submitting Form. Please try again");
