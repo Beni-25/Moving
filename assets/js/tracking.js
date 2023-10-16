@@ -4,6 +4,17 @@
 
 $(document).ready(function () {
 
+  let selectedBooking = getSelectedBooking();
+  if(selectedBooking){
+    $("#bookingID").text("BOOKING ID : " + selectedBooking["id"]);
+    $("#pickup").text("PICKUP : " + selectedBooking["P_address1"] + selectedBooking["P_address2"]);
+    $("#drop").text("DROP : " + selectedBooking["D_address1"] + selectedBooking["D_address2"]);
+    $("#date").text("DATE : " + selectedBooking["date"]);
+    $("#time").text("APPROXIMATE PICKUP TIME : " + selectedBooking["time"]);
+    $("#droptime").text("APPROXIMATE DROP TIME : ");
+
+  }
+
 //social media buttons color change on mouse enter and leave
 $(".bi-facebook").on("mouseenter", () => {
     $(".bi-facebook").addClass("bi-active");
