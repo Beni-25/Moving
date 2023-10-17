@@ -43,9 +43,8 @@ function renderBookings() {
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
 $(document).ready(function () {
-  // Handler for .ready() called.
-  renderBookings();
-
+  
+  
   //Booking Button color change on mouseenter & mouseleave
   $("#bookingbtn").on("mouseenter", () => {
     $("#bookingbtn").css({
@@ -87,4 +86,16 @@ $(document).ready(function () {
   $(".bi-instagram").on("mouseleave", () => {
     $(".bi-instagram").removeClass("bi-active");
   });
+
+  let allBookings = JSON.parse(localStorage.getItem(window.BOOKINGS_KEY));
+  if(allBookings == null){
+    alert("no bookings found, create a booking");
+    window.location.href = "booking.html";
+  
+  }else{
+    console.log("bookings found",allBookings);
+    renderBookings();
+  }
+  
+
 });
