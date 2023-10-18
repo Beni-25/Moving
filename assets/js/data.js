@@ -2,10 +2,10 @@
 
 //Global variables
 var bookingList = [
-    { name: "Athan", id: "100001", pickup: "Crossbie RD", drop:"Elizabeth Ave" },
-    { name: "Bernie", id: "100002", pickup: "Fresh Water RD", drop:"Suvla Strt" },
-    { name: "Alphin", id: "100003", pickup: "Water Street", drop:"Esconi Place" },
-    { name: "Benisha", id: "100004", pickup: "Terra Nova RD", drop:"Smallwood Dr" },
+    { id: "Benisha-01", contact:"+1 7095557777", pickup: "Crossbie RD", drop:"Elizabeth Ave" },
+    { id: "Anoj-02", contact:"+1 7096667878", pickup: "Fresh Water RD", drop:"Suvla Strt" },
+    { id: "Alphin-03",contact:"+1 7091238878", pickup: "Water Street", drop:"Esconi Place" },
+    { id: "Bernie-04", contact:"+1 7095647870",pickup: "Terra Nova RD", drop:"Smallwood Dr" },
   ];
 
 
