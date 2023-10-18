@@ -7,12 +7,12 @@ function renderBookings() {
     <div class="list container text-center rounded mt-4">
         <div class="row align-items-center p-4">
           <div class="col-xs-12 col-sm-6 col-md-4">
-            <p>NAME: ${bookingObject["name"]}</p>
-            <p>BOOKING ID: ${bookingObject["id"]}</p>
+            <p>Booking ID: ${bookingObject["id"]}</p>
+            <p>Contact Number: ${bookingObject["contact"]}</p>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-4">
-            <p>PICKUP: ${bookingObject["pickup"]}</p>
-            <p>DROP: ${bookingObject["drop"]}</p>
+            <p>Pickup Address: ${bookingObject["pickup"]}</p>
+            <p>Drop Address: ${bookingObject["drop"]}</p>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-4">
             <button
@@ -43,9 +43,8 @@ function renderBookings() {
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
 $(document).ready(function () {
-  // Handler for .ready() called.
-  renderBookings();
-
+  
+  
   //Booking Button color change on mouseenter & mouseleave
   $("#bookingbtn").on("mouseenter", () => {
     $("#bookingbtn").css({
@@ -87,4 +86,16 @@ $(document).ready(function () {
   $(".bi-instagram").on("mouseleave", () => {
     $(".bi-instagram").removeClass("bi-active");
   });
+
+  let allBookings = JSON.parse(localStorage.getItem(window.BOOKINGS_KEY));
+  if(allBookings == null){
+    alert("no bookings found, create a booking");
+    window.location.href = "booking.html";
+  
+  }else{
+    console.log("bookings found",allBookings);
+    renderBookings();
+  }
+  
+
 });
