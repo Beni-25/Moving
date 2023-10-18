@@ -157,6 +157,7 @@ $("button#submit").on("click", function (e) {
 
   if(newBooking){
     alert("Form Submitted Successfully....");
+    window.location.href = "summary.html";
   }else{
     alert("Error Submitting Form. Please try again");
   }
