@@ -59,14 +59,13 @@ function renderBookings(allBookings, loggedInUser) {
           </div>
         </div>
       </div>`);
-
-      $(`#${trackBtnId}`).on('click', function(){
-        trackBooking(bookingObject);
-      });
+      console.log(`#${trackBtnId}`);
+    $(`#${trackBtnId}`).on("click", function () {
+      alert("clicked track");
+      // trackBooking(`${bookingObject}`);
+    });
   });
-
- 
-}
+ }
 
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
