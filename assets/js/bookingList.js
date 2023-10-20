@@ -65,11 +65,7 @@ function renderBookings(allBookings, loggedInUser) {
       // trackBooking(`${bookingObject}`);
     });
   });
-  $(`#${trackBtnId}`).on("click", function () {
-    alert("clicked track");
-    // trackBooking(`${bookingObject}`);
-  });
-}
+ }
 
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
