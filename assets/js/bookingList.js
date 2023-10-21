@@ -1,4 +1,9 @@
 // FUNCTIONS
+let bookingObject ={};
+
+let trackBtnId = `track-btn-${bookingObject["id"]}`;
+let ModifyBtnId = `modify-btn-${bookingObject["id"]}`; 
+let CancelBtnId = `cancel-btn-${bookingObject["id"]}`;
 
 function trackBooking(bookingObject) {
   alert("track Booking");
@@ -25,9 +30,9 @@ function renderBookings(allBookings, loggedInUser) {
   allBookings.forEach((bookingObject) => {
     console.log("Creating card for booking: ", bookingObject);
 
-    trackBtnId = `track-btn-${bookingObject["id"]}`;
-    ModifyBtnId = `modify-btn-${bookingObject["id"]}`;
-    CancelBtnId = `cancel-btn-${bookingObject["id"]}`;
+    // trackBtnId = `track-btn-${bookingObject["id"]}`;
+    // ModifyBtnId = `modify-btn-${bookingObject["id"]}`;
+    // CancelBtnId = `cancel-btn-${bookingObject["id"]}`;
 
     $("#list-of-bookings").append(`
     <div class="list container text-center rounded mt-4">
@@ -64,22 +69,26 @@ function renderBookings(allBookings, loggedInUser) {
           </div>
         </div>
       </div>`);
-      console.log(`#${trackBtnId}`);
-    $(`#${trackBtnId}`).on("click", function () {
-      alert("clicked track");
-      // trackBooking(`${bookingObject}`);
-    });
-    $(`#${ModifyBtnId}`).on("click", function () {
-      alert("clicked modify");
-      // modifyBooking(`${bookingObject}`);
-    });
-    $(`#${CancelBtnId}`).on("click", function () {
-      alert("clicked cancel");
-      // cancelBooking(`${bookingObject}`);
-    });
-  });
- }
+    console.log(`#${trackBtnId}`);
 
+   
+  });
+}
+
+
+
+$(`#${trackBtnId}`).on("click", function () {
+  alert("clicked track");
+  // trackBooking(`${bookingObject}`);
+});
+$(`#${ModifyBtnId}`).on("click", function () {
+  alert("clicked modify");
+  // modifyBooking(`${bookingObject}`);
+});
+$(`#${CancelBtnId}`).on("click", function () {
+  alert("clicked cancel");
+  // cancelBooking(`${bookingObject}`);
+});
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
 $(document).ready(function () {
