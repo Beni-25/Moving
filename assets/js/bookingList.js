@@ -5,12 +5,14 @@ function trackBooking(bookingObject) {
   console.log("bookingObject", bookingObject);
   setNewSelectedBooking(newSelectedBooking);
   //go to track page window.href
+  window.location.href = "tracking.html";
 }
 function modifyBooking(bookingObject) {
   alert("modify booking");
   console.log("bookingObject", bookingObject);
   setNewSelectedBooking(newSelectedBooking);
   //go to modify page window.href
+  window.location.href = "modify.html";
 }
 function cancelBooking(bookingObject) {
   alert("cancel booking");
@@ -24,6 +26,8 @@ function renderBookings(allBookings, loggedInUser) {
     console.log("Creating card for booking: ", bookingObject);
 
     trackBtnId = `track-btn-${bookingObject["id"]}`;
+    ModifyBtnId = `modify-btn-${bookingObject["id"]}`;
+    CancelBtnId = `cancel-btn-${bookingObject["id"]}`;
 
     $("#list-of-bookings").append(`
     <div class="list container text-center rounded mt-4">
@@ -45,7 +49,7 @@ function renderBookings(allBookings, loggedInUser) {
             </button>
             <button
               class="btn btn-light"
-              onclick="window.location.href='modify.html';"
+              id='${ModifyBtnId}'
             >
               Modify
             </button>
@@ -53,6 +57,7 @@ function renderBookings(allBookings, loggedInUser) {
               class="btn btn-light"
               data-bs-toggle="modal"
               data-bs-target="#staticBackdrop"
+              id='${CancelBtnId}'
             >
               Cancel
             </button>
@@ -63,6 +68,14 @@ function renderBookings(allBookings, loggedInUser) {
     $(`#${trackBtnId}`).on("click", function () {
       alert("clicked track");
       // trackBooking(`${bookingObject}`);
+    });
+    $(`#${ModifyBtnId}`).on("click", function () {
+      alert("clicked modify");
+      // modifyBooking(`${bookingObject}`);
+    });
+    $(`#${CancelBtnId}`).on("click", function () {
+      alert("clicked cancel");
+      // cancelBooking(`${bookingObject}`);
     });
   });
  }
