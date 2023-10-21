@@ -1,4 +1,9 @@
 // FUNCTIONS
+let bookingObject ={};
+
+// let trackBtnId = `track-btn-${bookingObject["id"]}`;
+// let ModifyBtnId = `modify-btn-${bookingObject["id"]}`; 
+// let CancelBtnId = `cancel-btn-${bookingObject["id"]}`;
 
 function trackBooking(bookingObject) {
   alert("track Booking");
@@ -44,6 +49,7 @@ function renderBookings(allBookings, loggedInUser) {
             <button
               id='${trackBtnId}'
               class="btn btn-light"
+               data-booking='${JSON.stringify(bookingObject)}'
             >
               Track
             </button>
@@ -64,22 +70,35 @@ function renderBookings(allBookings, loggedInUser) {
           </div>
         </div>
       </div>`);
-      console.log(`#${trackBtnId}`);
-    $(`#${trackBtnId}`).on("click", function () {
-      alert("clicked track");
-      // trackBooking(`${bookingObject}`);
-    });
-    $(`#${ModifyBtnId}`).on("click", function () {
-      alert("clicked modify");
-      // modifyBooking(`${bookingObject}`);
-    });
-    $(`#${CancelBtnId}`).on("click", function () {
-      alert("clicked cancel");
-      // cancelBooking(`${bookingObject}`);
-    });
+    console.log(`#${trackBtnId}`);
+    
+   
   });
- }
+ 
+}
 
+
+// $("#list-of-bookings").on("click", '[id^="track-btn-"]', function () {
+//   const $button = $(this);
+//   const bookingObject = JSON.parse($button.data("booking"));
+//   alert("Clicked Track for booking with ID: " + bookingObject.id);
+//   // Now you have access to the specific bookingObject.
+//   // You can perform actions with it.
+// });
+
+
+// $(`#${trackBtnId}`).on("click", function () {
+//   alert("clicked track");
+//   // trackBooking(`${bookingObject}`);
+// });
+// $(`#${ModifyBtnId}`).on("click", function () {
+//   alert("clicked modify");
+//   // modifyBooking(`${bookingObject}`);
+// });
+// $(`#${CancelBtnId}`).on("click", function () {
+//   alert("clicked cancel");
+//   // cancelBooking(`${bookingObject}`);
+// });
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
 $(document).ready(function () {
