@@ -261,3 +261,17 @@ function setNewSelectedBooking(newSelectedBooking) {
   console.log("bookingObject", newSelectedBooking);
   localStorage.setItem(window.SELECTED_BOOKING_KEY, JSON.stringify(newSelectedBooking));
 }
+
+
+function cancelBooking(newSelectedBooking){
+  let selectedBooking =newSelectedBooking;
+  let allBookings =
+      JSON.parse(localStorage.getItem(window.BOOKINGS_KEY)); //
+  let allBookingsWithoutSelected = allBookings.filter(function (b) {
+        return b["id"] != selectedBooking["id"];
+      });      
+  localStorage.setItem(
+        window.BOOKINGS_KEY,
+        JSON.stringify(allBookingsWithoutSelected)
+      ); 
+}
