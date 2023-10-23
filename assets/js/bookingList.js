@@ -24,6 +24,7 @@ function cancelBooking(bookingObject) {
   console.log("bookingObject", bookingObject);
   setNewSelectedBooking(newSelectedBooking);
   //go to savemodifieddetails function and save after filter
+  cancelBooking(newSelectedBooking);
 }
 
 function renderBookings(allBookings, loggedInUser) {
@@ -78,27 +79,25 @@ function renderBookings(allBookings, loggedInUser) {
 }
 
 
-// $("#list-of-bookings").on("click", '[id^="track-btn-"]', function () {
-//   const $button = $(this);
-//   const bookingObject = JSON.parse($button.data("booking"));
-//   alert("Clicked Track for booking with ID: " + bookingObject.id);
-//   // Now you have access to the specific bookingObject.
-//   // You can perform actions with it.
-// });
+$("#list-of-bookings").on("click", '[id^="track-btn-"]', function () {
+  const trackButton = $(this);
+  const bookingObject = JSON.parse(trackButton.data("booking"));
+  alert("Clicked Track btn with ID: " + bookingObject.id);
+});
 
 
 // $(`#${trackBtnId}`).on("click", function () {
 //   alert("clicked track");
 //   // trackBooking(`${bookingObject}`);
 // });
-// $(`#${ModifyBtnId}`).on("click", function () {
-//   alert("clicked modify");
-//   // modifyBooking(`${bookingObject}`);
-// });
-// $(`#${CancelBtnId}`).on("click", function () {
-//   alert("clicked cancel");
-//   // cancelBooking(`${bookingObject}`);
-// });
+$(`#${ModifyBtnId}`).on("click", function () {
+  alert("clicked modify");
+  // modifyBooking(`${bookingObject}`);
+});
+$(`#${CancelBtnId}`).on("click", function () {
+  alert("clicked cancel");
+  // cancelBooking(`${bookingObject}`);
+});
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
 $(document).ready(function () {
