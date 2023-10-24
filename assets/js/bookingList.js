@@ -1,6 +1,10 @@
 // FUNCTIONS
 let bookingObject ={};
 
+let trackBtnId;
+let ModifyBtnId;
+let CancelBtnId; 
+
 // let trackBtnId = `track-btn-${bookingObject["id"]}`;
 // let ModifyBtnId = `modify-btn-${bookingObject["id"]}`; 
 // let CancelBtnId = `cancel-btn-${bookingObject["id"]}`;
@@ -73,17 +77,17 @@ function renderBookings(allBookings, loggedInUser) {
       </div>`);
     console.log(`#${trackBtnId}`);
     
-   
+       
   });
  
 }
 
 
-$("#list-of-bookings").on("click", '[id^="track-btn-"]', function () {
-  const trackButton = $(this);
-  const bookingObject = JSON.parse(trackButton.data("booking"));
-  alert("Clicked Track btn with ID: " + bookingObject.id);
-});
+// $("#list-of-bookings").on("click", '[id^="track-btn-"]', function () {
+//   const trackButton = $(this);
+//   const bookingObject = JSON.parse(trackButton.data("booking"));
+//   alert("Clicked Track btn with ID: " + bookingObject.id);
+// });
 
 
 // $(`#${trackBtnId}`).on("click", function () {
