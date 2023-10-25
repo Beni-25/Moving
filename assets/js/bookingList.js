@@ -90,10 +90,10 @@ function renderBookings(allBookings, loggedInUser) {
 // });
 
 
-// $(`#${trackBtnId}`).on("click", function () {
-//   alert("clicked track");
-//   // trackBooking(`${bookingObject}`);
-// });
+$(`#${trackBtnId}`).on("click", function () {
+  alert("clicked track");
+  // trackBooking(`${bookingObject}`);
+});
 $(`#${ModifyBtnId}`).on("click", function () {
   alert("clicked modify");
   // modifyBooking(`${bookingObject}`);
