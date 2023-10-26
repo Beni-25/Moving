@@ -1,33 +1,30 @@
 // FUNCTIONS
-let bookingObject ={};
+let bookingObject;
 
-let trackBtnId;
-let ModifyBtnId;
-let CancelBtnId; 
+// let trackBtnId;
+// let ModifyBtnId;
+// let CancelBtnId;
 
 // let trackBtnId = `track-btn-${bookingObject["id"]}`;
-// let ModifyBtnId = `modify-btn-${bookingObject["id"]}`; 
+// let ModifyBtnId = `modify-btn-${bookingObject["id"]}`;
 // let CancelBtnId = `cancel-btn-${bookingObject["id"]}`;
 
 function trackBooking(bookingObject) {
-  alert("track Booking");
   console.log("bookingObject", bookingObject);
   setNewSelectedBooking(newSelectedBooking);
-  //go to track page window.href
+  //go to track page
   window.location.href = "tracking.html";
 }
 function modifyBooking(bookingObject) {
-  alert("modify booking");
   console.log("bookingObject", bookingObject);
   setNewSelectedBooking(newSelectedBooking);
-  //go to modify page window.href
+  //go to modify page
   window.location.href = "modify.html";
 }
 function cancelBooking(bookingObject) {
-  alert("cancel booking");
   console.log("bookingObject", bookingObject);
   setNewSelectedBooking(newSelectedBooking);
-  //go to savemodifieddetails function and save after filter
+  //go to cancelBooking function
   cancelBooking(newSelectedBooking);
 }
 
@@ -61,6 +58,7 @@ function renderBookings(allBookings, loggedInUser) {
             <button
               class="btn btn-light"
               id='${ModifyBtnId}'
+              data-booking='${JSON.stringify(bookingObject)}'
             >
               Modify
             </button>
@@ -69,6 +67,7 @@ function renderBookings(allBookings, loggedInUser) {
               data-bs-toggle="modal"
               data-bs-target="#staticBackdrop"
               id='${CancelBtnId}'
+              data-booking='${JSON.stringify(bookingObject)}'
             >
               Cancel
             </button>
@@ -76,32 +75,49 @@ function renderBookings(allBookings, loggedInUser) {
         </div>
       </div>`);
     console.log(`#${trackBtnId}`);
-    
-       
   });
- 
 }
 
+$("#list-of-bookings").on("click", '[id^="track-btn-"]', function () {
+  const trackButton = $(this);
+  const trackBtnId = trackButton.attr("id");
+  const bookingId = trackBtnId.replace("track-btn-", "");
+  // const bookingObject = JSON.parse(trackButton.data("booking"));
+  // console.log(bookingObject);
+  alert("Clicked Track btn with ID: " + bookingId);
+});
 
-// $("#list-of-bookings").on("click", '[id^="track-btn-"]', function () {
-//   const trackButton = $(this);
-//   const bookingObject = JSON.parse(trackButton.data("booking"));
-//   alert("Clicked Track btn with ID: " + bookingObject.id);
+$("#list-of-bookings").on("click", '[id^="modify-btn-"]', function () {
+  const modifyButton = $(this);
+  const modifyBtnId = modifyButton.attr("id");
+  const bookingId = modifyBtnId.replace("modify-btn-", "");
+  // const bookingObject = JSON.parse(modifyButton.data("booking"));
+  // console.log(bookingObject);
+  alert("Clicked Modify btn with ID: " + bookingId);
+});
+
+$("#list-of-bookings").on("click", '[id^="cancel-btn-"]', function () {
+  const cancelButton = $(this);
+  const cancelBtnId = cancelButton.attr("id");
+  const bookingId = cancelBtnId.replace("cancel-btn-", "");
+  // const bookingObject = JSON.parse(cancelButton.data("booking"));
+  // console.log(bookingObject);
+  alert("Clicked Cancel btn with ID: " + bookingId);
+});
+
+// $(`#${trackBtnId}`).on("click", function () {
+//   alert("clicked track");
+//   // trackBooking(`${bookingObject}`);
+// });
+// $(`#${ModifyBtnId}`).on("click", function () {
+//   alert("clicked modify");
+//   // modifyBooking(`${bookingObject}`);
+// });
+// $(`#${CancelBtnId}`).on("click", function () {
+//   alert("clicked cancel");
+//   // cancelBooking(`${bookingObject}`);
 // });
 
-
-$(`#${trackBtnId}`).on("click", function () {
-  alert("clicked track");
-  // trackBooking(`${bookingObject}`);
-});
-$(`#${ModifyBtnId}`).on("click", function () {
-  alert("clicked modify");
-  // modifyBooking(`${bookingObject}`);
-});
-$(`#${CancelBtnId}`).on("click", function () {
-  alert("clicked cancel");
-  // cancelBooking(`${bookingObject}`);
-});
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
 $(document).ready(function () {
