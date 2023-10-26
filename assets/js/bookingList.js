@@ -1,5 +1,5 @@
 // FUNCTIONS
-let bookingObject;
+// slet bookingObject;
 
 // let trackBtnId;
 // let ModifyBtnId;
@@ -9,11 +9,22 @@ let bookingObject;
 // let ModifyBtnId = `modify-btn-${bookingObject["id"]}`;
 // let CancelBtnId = `cancel-btn-${bookingObject["id"]}`;
 
-function trackBooking(bookingObject) {
-  console.log("bookingObject", bookingObject);
-  setNewSelectedBooking(newSelectedBooking);
+function trackBooking(bookingObjectId) {
+  console.log("bookingObjectId", bookingObjectId);
+  let booking = searchBooking(bookingObjectId);
+  
+ 
   //go to track page
-  window.location.href = "tracking.html";
+  if(booking !== null){
+    console.log("booking found", booking)
+    setNewSelectedBooking(booking);
+    alert("booking found");
+
+    window.location.href = "tracking.html";
+  }else{
+    alert("Please check the booking ID");
+  }
+
 }
 function modifyBooking(bookingObject) {
   console.log("bookingObject", bookingObject);
@@ -32,12 +43,14 @@ function renderBookings(allBookings, loggedInUser) {
   allBookings.forEach((bookingObject) => {
     console.log("Creating card for booking: ", bookingObject);
 
-    trackBtnId = `track-btn-${bookingObject["id"]}`;
-    ModifyBtnId = `modify-btn-${bookingObject["id"]}`;
-    CancelBtnId = `cancel-btn-${bookingObject["id"]}`;
+    let trackBtnId = `track-btn-${bookingObject["id"]}`;
+    let ModifyBtnId = `modify-btn-${bookingObject["id"]}`;
+    let CancelBtnId = `cancel-btn-${bookingObject["id"]}`;
 
-    $("#list-of-bookings").append(`
-    <div class="list container text-center rounded mt-4">
+    
+
+    $("div#list-of-bookings").append(`
+    <div id='${bookingObject["id"]}' class="list container text-center rounded mt-4">
         <div class="row align-items-center p-4">
           <div class="col-xs-12 col-sm-6 col-md-4">
             <p>Booking ID: ${bookingObject["id"]}</p>
@@ -47,14 +60,14 @@ function renderBookings(allBookings, loggedInUser) {
             <p>Pickup Address: ${bookingObject["P_address1"]}</p>
             <p>Drop Address: ${bookingObject["D_address1"]}</p>
           </div>
-          <div class="col-xs-12 col-sm-6 col-md-4">
+          <div id='${bookingObject["id"]}-btns' class="col-xs-12 col-sm-6 col-md-4">
             <button
               id='${trackBtnId}'
               class="btn btn-light"
-               data-booking='${JSON.stringify(bookingObject)}'
+              onclick=trackBooking('${bookingObject["id"]}')
             >
-              Track
-            </button>
+            Track
+          </button>
             <button
               class="btn btn-light"
               id='${ModifyBtnId}'
@@ -75,22 +88,32 @@ function renderBookings(allBookings, loggedInUser) {
         </div>
       </div>`);
     console.log(`#${trackBtnId}`);
+
+    // $(trackBtnId).on("click", function () {
+    // const trackButton = $(this);
+    // const trackBtnId = trackButton.attr("id");
+    // const bookingId = trackBtnId.replace("track-btn-", "");
+    // const bookingObject = JSON.parse(trackButton.data("booking"));
+    // console.log(bookingObject);
+    // trackBooking(bookingObject);
+    // console.log("Clicked Track btn with ID: " , bookingObject);
+    // });
     // $(`#${trackBtnId}`).on("click", function () {
-      //   alert("clicked track");
-      //   trackBooking(`${bookingObject}`);
-      // });
+    //   alert("clicked track");
+    //   trackBooking(`${bookingObject}`);
+    // });
   });
 }
 
-$("#list-of-bookings").on("click", '[id^="track-btn-"]', function () {
-  const trackButton = $(this);
-  const trackBtnId = trackButton.attr("id");
-  const bookingId = trackBtnId.replace("track-btn-", "");
-  // const bookingObject = JSON.parse(trackButton.data("booking"));
-  // console.log(bookingObject);
-  // trackBooking(bookingObject);
-  alert("Clicked Track btn with ID: " + bookingId);
-});
+// $("#list-of-bookings").on("click", '[id^="track-btn-"]', function () {
+//   const trackButton = $(this);
+//   const trackBtnId = trackButton.attr("id");
+//   const bookingId = trackBtnId.replace("track-btn-", "");
+//   // const bookingObject = JSON.parse(trackButton.data("booking"));
+//   // console.log(bookingObject);
+//   // trackBooking(bookingObject);
+//   alert("Clicked Track btn with ID: " + bookingId);
+// });
 
 $("#list-of-bookings").on("click", '[id^="modify-btn-"]', function () {
   const modifyButton = $(this);
@@ -98,7 +121,7 @@ $("#list-of-bookings").on("click", '[id^="modify-btn-"]', function () {
   const bookingId = modifyBtnId.replace("modify-btn-", "");
   // const bookingObject = JSON.parse(modifyButton.data("booking"));
   // console.log(bookingObject);
-   // modifyBooking(bookingObject);
+  // modifyBooking(bookingObject);
   alert("Clicked Modify btn with ID: " + bookingId);
 });
 
