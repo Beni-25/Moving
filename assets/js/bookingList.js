@@ -75,6 +75,10 @@ function renderBookings(allBookings, loggedInUser) {
         </div>
       </div>`);
     console.log(`#${trackBtnId}`);
+    // $(`#${trackBtnId}`).on("click", function () {
+      //   alert("clicked track");
+      //   trackBooking(`${bookingObject}`);
+      // });
   });
 }
 
@@ -84,6 +88,7 @@ $("#list-of-bookings").on("click", '[id^="track-btn-"]', function () {
   const bookingId = trackBtnId.replace("track-btn-", "");
   // const bookingObject = JSON.parse(trackButton.data("booking"));
   // console.log(bookingObject);
+  // trackBooking(bookingObject);
   alert("Clicked Track btn with ID: " + bookingId);
 });
 
@@ -93,6 +98,7 @@ $("#list-of-bookings").on("click", '[id^="modify-btn-"]', function () {
   const bookingId = modifyBtnId.replace("modify-btn-", "");
   // const bookingObject = JSON.parse(modifyButton.data("booking"));
   // console.log(bookingObject);
+   // modifyBooking(bookingObject);
   alert("Clicked Modify btn with ID: " + bookingId);
 });
 
@@ -102,6 +108,7 @@ $("#list-of-bookings").on("click", '[id^="cancel-btn-"]', function () {
   const bookingId = cancelBtnId.replace("cancel-btn-", "");
   // const bookingObject = JSON.parse(cancelButton.data("booking"));
   // console.log(bookingObject);
+  // cancelBooking(bookingObject);
   alert("Clicked Cancel btn with ID: " + bookingId);
 });
 
