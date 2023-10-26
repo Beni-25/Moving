@@ -1,33 +1,30 @@
 // FUNCTIONS
 let bookingObject;
 
-let trackBtnId;
-let ModifyBtnId;
-let CancelBtnId; 
+// let trackBtnId;
+// let ModifyBtnId;
+// let CancelBtnId;
 
 // let trackBtnId = `track-btn-${bookingObject["id"]}`;
-// let ModifyBtnId = `modify-btn-${bookingObject["id"]}`; 
+// let ModifyBtnId = `modify-btn-${bookingObject["id"]}`;
 // let CancelBtnId = `cancel-btn-${bookingObject["id"]}`;
 
 function trackBooking(bookingObject) {
-  alert("track Booking");
   console.log("bookingObject", bookingObject);
   setNewSelectedBooking(newSelectedBooking);
-  //go to track page window.href
+  //go to track page
   window.location.href = "tracking.html";
 }
 function modifyBooking(bookingObject) {
-  alert("modify booking");
   console.log("bookingObject", bookingObject);
   setNewSelectedBooking(newSelectedBooking);
-  //go to modify page window.href
+  //go to modify page
   window.location.href = "modify.html";
 }
 function cancelBooking(bookingObject) {
-  alert("cancel booking");
   console.log("bookingObject", bookingObject);
   setNewSelectedBooking(newSelectedBooking);
-  //go to savemodifieddetails function and save after filter
+  //go to cancelBooking function
   cancelBooking(newSelectedBooking);
 }
 
@@ -78,33 +75,35 @@ function renderBookings(allBookings, loggedInUser) {
         </div>
       </div>`);
     console.log(`#${trackBtnId}`);
-       
   });
- 
 }
 
 $("#list-of-bookings").on("click", '[id^="track-btn-"]', function () {
   const trackButton = $(this);
-  // const bookingObject = JSON.parse(trackButton.data("booking")); 
-  // console.log(bookingObject); 
-  const bookingId = trackButton.attr("id");
-  const trackBtnId = bookingId.replace("track-btn-", "");
-
-  alert("Clicked Track btn with ID: " + trackBtnId);
+  const trackBtnId = trackButton.attr("id");
+  const bookingId = trackBtnId.replace("track-btn-", "");
+  // const bookingObject = JSON.parse(trackButton.data("booking"));
+  // console.log(bookingObject);
+  alert("Clicked Track btn with ID: " + bookingId);
 });
-
 
 $("#list-of-bookings").on("click", '[id^="modify-btn-"]', function () {
   const modifyButton = $(this);
-  // const bookingObject = JSON.parse(trackButton.data("booking")); 
-  // console.log(bookingObject); 
-  const bookingId = modifyButton.attr("id");
-  const modifyBtnId = bookingId.replace("modify-btn-", "");
-
-  alert("Clicked Modify btn with ID: " + modifyBtnId);
+  const modifyBtnId = modifyButton.attr("id");
+  const bookingId = modifyBtnId.replace("modify-btn-", "");
+  // const bookingObject = JSON.parse(modifyButton.data("booking"));
+  // console.log(bookingObject);
+  alert("Clicked Modify btn with ID: " + bookingId);
 });
 
-
+$("#list-of-bookings").on("click", '[id^="cancel-btn-"]', function () {
+  const cancelButton = $(this);
+  const cancelBtnId = cancelButton.attr("id");
+  const bookingId = cancelBtnId.replace("cancel-btn-", "");
+  // const bookingObject = JSON.parse(cancelButton.data("booking"));
+  // console.log(bookingObject);
+  alert("Clicked Cancel btn with ID: " + bookingId);
+});
 
 // $(`#${trackBtnId}`).on("click", function () {
 //   alert("clicked track");
@@ -118,7 +117,6 @@ $("#list-of-bookings").on("click", '[id^="modify-btn-"]', function () {
 //   alert("clicked cancel");
 //   // cancelBooking(`${bookingObject}`);
 // });
-
 
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
