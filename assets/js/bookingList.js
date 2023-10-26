@@ -1,5 +1,5 @@
 // FUNCTIONS
-let bookingObject ={};
+// let bookingObject ={};
 
 let trackBtnId;
 let ModifyBtnId;
@@ -54,7 +54,7 @@ function renderBookings(allBookings, loggedInUser) {
             <button
               id='${trackBtnId}'
               class="btn btn-light"
-               data-booking='${JSON.stringify(bookingObject)}'
+               data-booking='${JSON.stringify(bookingObject["id"])}'
             >
               Track
             </button>
@@ -82,6 +82,15 @@ function renderBookings(allBookings, loggedInUser) {
  
 }
 
+document.querySelector("#list-of-bookings").addEventListener("click", function (event) {
+  // Check if the clicked element has an ID that starts with "track-btn-"
+  if (event.target.id && event.target.id.startsWith("track-btn-")) {
+    const trackButton = event.target;
+    const bookingObject = JSON.parse(trackButton.getAttribute("data-booking"));
+    alert("Clicked Track btn with ID: " + bookingObject.id);
+  }
+});
+
 
 // $("#list-of-bookings").on("click", '[id^="track-btn-"]', function () {
 //   const trackButton = $(this);
@@ -90,10 +99,10 @@ function renderBookings(allBookings, loggedInUser) {
 // });
 
 
-$(`#${trackBtnId}`).on("click", function () {
-  alert("clicked track");
-  // trackBooking(`${bookingObject}`);
-});
+// $(`#${trackBtnId}`).on("click", function () {
+//   alert("clicked track");
+//   // trackBooking(`${bookingObject}`);
+// });
 $(`#${ModifyBtnId}`).on("click", function () {
   alert("clicked modify");
   // modifyBooking(`${bookingObject}`);
