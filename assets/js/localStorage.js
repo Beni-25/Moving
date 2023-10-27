@@ -275,3 +275,34 @@ function cancelBooking(newSelectedBooking){
         JSON.stringify(allBookingsWithoutSelected)
       ); 
 }
+
+
+function searchBooking(bookingId) {
+  console.log("Get Booking");
+  let allBookings = localStorage.getItem(window.BOOKINGS_KEY); // [ {username: "1", password: "2"..}, {username: "3", password: "4"..} ] or []
+  if (allBookings == null || allBookings == "") {
+    //if allUsers is null or empty
+    return null; //return null to saveUser function
+  } else {
+    //if allUsers has any values
+    allBookings = JSON.parse(allBookings); //get the Javascript object from string in allUsers ie,'[{username: "1", password: "2"..}]' to {username: "1", password: "2"..}
+    console.log("Listing all bookings", allBookings);
+    // allUsers.forEach(user => {  // {username: "1", password: "2"..} (each set of object will be called one by one using forEach)user means a set of object; allUsers means array of user objects
+    //     if(user["username"] == username) { // user["username"] = 1; checks whether current set user object username property matches the username given
+    //         console.log("User found", user)
+    //         return user; // {username: "1", password: "2"..} returns user object (exit current set of object)
+    //     }
+    // });
+
+    for (const booking of allBookings) {
+      // forEach will execute each set one by one; even if it found the same username it will execute the next object
+      if (booking["id"] === bookingId) {
+        //in this for loop, we need to stop and return the user as soon as same username found
+        console.log("booking found", booking);
+        return booking;
+      }
+    }
+    console.log("booking not found");
+    return null;
+  }
+}
