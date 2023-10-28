@@ -257,7 +257,7 @@ function saveModifiedDetails(
 
 
 function setNewSelectedBooking(newSelectedBooking) {
-  alert("set Booking");
+  // alert("set Booking");
   console.log("bookingObject", newSelectedBooking);
   localStorage.setItem(window.SELECTED_BOOKING_KEY, JSON.stringify(newSelectedBooking));
 }
@@ -287,14 +287,7 @@ function searchBooking(bookingId) {
     //if allUsers has any values
     allBookings = JSON.parse(allBookings); //get the Javascript object from string in allUsers ie,'[{username: "1", password: "2"..}]' to {username: "1", password: "2"..}
     console.log("Listing all bookings", allBookings);
-    // allUsers.forEach(user => {  // {username: "1", password: "2"..} (each set of object will be called one by one using forEach)user means a set of object; allUsers means array of user objects
-    //     if(user["username"] == username) { // user["username"] = 1; checks whether current set user object username property matches the username given
-    //         console.log("User found", user)
-    //         return user; // {username: "1", password: "2"..} returns user object (exit current set of object)
-    //     }
-    // });
-
-    for (const booking of allBookings) {
+       for (const booking of allBookings) {
       // forEach will execute each set one by one; even if it found the same username it will execute the next object
       if (booking["id"] === bookingId) {
         //in this for loop, we need to stop and return the user as soon as same username found

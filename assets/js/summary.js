@@ -85,8 +85,8 @@ function createSummaryList(selectedBooking) {
       title: "Estimation Details",
       imagename: "Estimation icon",
       textline1: "TOTAL DISTANCE IN KILOMETERS: " + selectedBooking["distance"],
-      textline2: "TOTAL ESTIMATED TIME IN MINS: ",
-      textline3: "ESTIMATED PRIZE: ",
+      textline2: "TOTAL ESTIMATED TIME IN MINS: 2hrs/bhk (approx)",
+      textline3: "ESTIMATED PRIZE: 90 CAD/hr (approx)",
     },
     {
       container: "container-details",
