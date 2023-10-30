@@ -33,20 +33,12 @@ function modifyBooking(bookingObjectId) {
 function cancelBooking(bookingObjectId) {
   // Confirm with the user before canceling the booking
   if (window.confirm("Are you sure you want to cancel this booking?")) {
-    // If the user confirms, proceed with canceling the booking
-    // let booking = searchBooking(bookingObjectId);
-  //   if (booking !== null) {
-  //     console.log("Booking found", booking);
-  //     setNewSelectedBooking(newSelectedBooking);
-  //     // Call your cancelBooking function here
-      cancelBooking(bookingObjectId);
-  //   } else {
-  //     alert("Error canceling the booking. Please check the booking ID.");
-  //   }
-  // } else {
-  //   // If the user cancels, do nothing or provide appropriate feedback
-  //   alert("Booking cancellation canceled.");
+
+   cancelBookingUsingId(bookingObjectId);
+ 
   }
+  // Refresh the page
+  location.reload(); // This will refresh the current page
 }
 
 function renderBookings(allBookings, loggedInUser) {
@@ -124,6 +116,14 @@ function renderBookings(allBookings, loggedInUser) {
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
 $(document).ready(function () {
+
+  $("#signOut").click(function (event) {
+    console.log("signout clicked");
+    event.preventDefault(); // Prevent the default behavior of the button (eg., form submission)
+    localStorage.removeItem(window.LOGGEDIN_USER_KEY); // delete the content inside LOGGEDIN_USER in local storage
+    window.location.href = "login.html"; // Redirect to the Sign-in page
+  });
+
   //Booking Button color change on mouseenter & mouseleave
   $("#bookingbtn").on("mouseenter", () => {
     $("#bookingbtn").css({
