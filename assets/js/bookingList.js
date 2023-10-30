@@ -31,18 +31,21 @@ function modifyBooking(bookingObjectId) {
 
 }
 function cancelBooking(bookingObjectId) {
-  
-  console.log("bookingObjectId", bookingObjectId);
-  let booking = searchBooking(bookingObjectId);
-  if(booking !== null){
-    console.log("booking found", booking)
-  // setNewSelectedBooking(newSelectedBooking);
-  //go to cancelBooking function
-
-  cancelBooking(booking);
-  }
-  else{
-    alert("Error cancelling the booking, Please check the booking ID");
+  // Confirm with the user before canceling the booking
+  if (window.confirm("Are you sure you want to cancel this booking?")) {
+    // If the user confirms, proceed with canceling the booking
+    // let booking = searchBooking(bookingObjectId);
+  //   if (booking !== null) {
+  //     console.log("Booking found", booking);
+  //     setNewSelectedBooking(newSelectedBooking);
+  //     // Call your cancelBooking function here
+      cancelBooking(bookingObjectId);
+  //   } else {
+  //     alert("Error canceling the booking. Please check the booking ID.");
+  //   }
+  // } else {
+  //   // If the user cancels, do nothing or provide appropriate feedback
+  //   alert("Booking cancellation canceled.");
   }
 }
 
