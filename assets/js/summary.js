@@ -107,6 +107,14 @@ function createSummaryList(selectedBooking) {
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
 $(document).ready(function () {
+
+  $("#signOut").click(function (event) {
+    console.log("signout clicked");
+    event.preventDefault(); // Prevent the default behavior of the button (eg., form submission)
+    localStorage.removeItem(window.LOGGEDIN_USER_KEY); // delete the content inside LOGGEDIN_USER in local storage
+    window.location.href = "login.html"; // Redirect to the Sign-in page
+  });
+
   let loggedInUser = getLoggedInUser();
   $("#name").text("NAME: " + loggedInUser["username"]);
   $("#phone").text("PHONE NUMBER: " + loggedInUser["phone"]);

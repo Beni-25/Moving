@@ -263,12 +263,12 @@ function setNewSelectedBooking(newSelectedBooking) {
 }
 
 
-function cancelBooking(newSelectedBooking){
-  let selectedBooking =newSelectedBooking;
+function cancelBookingUsingId(bookingObjectId){
+  // let selectedBooking =newSelectedBooking;
   let allBookings =
       JSON.parse(localStorage.getItem(window.BOOKINGS_KEY)); //
   let allBookingsWithoutSelected = allBookings.filter(function (b) {
-        return b["id"] != selectedBooking["id"];
+        return b["id"] != bookingObjectId;
       });      
   localStorage.setItem(
         window.BOOKINGS_KEY,

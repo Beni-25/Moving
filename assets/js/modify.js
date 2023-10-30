@@ -23,6 +23,13 @@ function showStep(stepNumber) {
 
 $(document).ready(function () {
 
+  $("#signOut").click(function (event) {
+    console.log("signout clicked");
+    event.preventDefault(); // Prevent the default behavior of the button (eg., form submission)
+    localStorage.removeItem(window.LOGGEDIN_USER_KEY); // delete the content inside LOGGEDIN_USER in local storage
+    window.location.href = "login.html"; // Redirect to the Sign-in page
+  });
+
   let selectedBooking = getSelectedBooking();
   if(selectedBooking){
     $("input#date").val(selectedBooking.date);
