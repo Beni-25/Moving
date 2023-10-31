@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="assets/bootstrap-icons/font/bootstrap-icons.min.css"
+    />
+    <style>
+      .card {
+        background-color: grey;
+      }
+      .container {
+        max-width: 100%;
+        height: 740px;
+        background: rgb(128, 128, 128);
+        background: linear-gradient(
+          90deg,
+          rgba(128, 128, 128, 1) 0%,
+          rgba(228, 150, 107, 1) 43%,
+          rgba(128, 128, 128, 1) 100%
+        );
+      }
+      .card-subheading {
+        color: #e4966b;
+        text-align: center;
+      }
+      .card-body{
+        padding-left: 2%;
+      }
+      p {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container d-flex justify-content-center align-items-center">
+        <div class="card mb-3 container-contact" style="max-width: 500px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="/assets/css/images/profileuser.png"
+                class="img-fluid rounded-start"
+                alt="User Icon Image"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body pt-4">
+                <p class="card-text" id="name">NAME:</p>
+                <p class="card-text" id="phone">
+                  PHONE NUMBER:
+                  <input
+                    type="text"
+                    id="phoneInput"
+                    style="display: none"
+                    placeholder="Enter phone number"
+                  />
+                </p>
+                <p class="card-text" id="email">
+                  EMAIL ADDRESS:
+                  <input
+                    type="text"
+                    id="emailInput"
+                    style="display: none"
+                    placeholder="Enter email address"
+                  />
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/localStorage.js"></script>
+    <script>
+      $(document).ready(function () {
+        let loggedInUser = getLoggedInUser();
+        if (loggedInUser) {
+          $("#name").text("NAME : " + loggedInUser["username"]);
+
+          const phoneValue = $("<span>" + loggedInUser["phone"] + "</span>");
+          $("#phone").append(" ");
+          $("#phone").append(phoneValue);
+          $("#phone").append(
+            ' <i class="bi bi-pencil-square" id="phoneedit"></i>'
+          );
+          $("#phone").append(
+            ' <i class="bi bi-check2-square" id="phonesave" style="display: none;"></i>'
+          );
+
+          const emailValue = $("<span>" + loggedInUser["email"] + "</span>");
+          $("#email").append(" ");
+          $("#email").append(emailValue);
+          $("#email").append(
+            ' <i class="bi bi-pencil-square" id="emailedit"></i>'
+          );
+          $("#email").append(
+            ' <i class="bi bi-check2-square" id="emailsave" style="display: none;"></i>'
+          );
+
+          $("#phoneedit").click(function () {
+            const phoneIcon = $(this);
+            if (phoneIcon.hasClass("bi-pencil-square")) {
+              phoneIcon
+                .removeClass("bi-pencil-square")
+                .addClass("bi-check2-square");
+              $("#phoneInput").css("display", "inline");
+              phoneValue.hide();
+            } else if (phoneIcon.hasClass("bi-check2-square")) {
+              phoneIcon
+                .removeClass("bi-check2-square")
+                .addClass("bi-pencil-square");
+              }
+          });
+
+          $("#emailedit").click(function () {
+            const emailIcon = $(this);
+            if (emailIcon.hasClass("bi-pencil-square")) {
+              emailIcon
+                .removeClass("bi-pencil-square")
+                .addClass("bi-check2-square");
+              $("#emailInput").css("display", "inline");
+              emailValue.hide();
+            }
+        
+          });
+
+
+         $("#phoneInput").val(loggedInUser["phone"]);
+        $("#emailInput").val(loggedInUser["email"]);
+
+        }
+
+     
+      });
+    </script>
+  </body>
+</html>
