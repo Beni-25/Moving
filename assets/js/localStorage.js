@@ -299,3 +299,47 @@ function searchBooking(bookingId) {
     return null;
   }
 }
+
+function saveModifiedUser(
+  username,
+  password,
+  phone,
+  email
+) {
+  try {
+    // entering inside try to check whether code is executing properly, if not it will go to catch block
+    let allUsers =
+      JSON.parse(localStorage.getItem(window.USER_LIST_KEY)) || []; // check whether any existing bookings there or not
+    console.log("allUsers|saveModifiedUser", allUsers);
+    let loggedinUser = getLoggedInUser();
+    let allUsersWithoutSelected = allUsers.filter(function (b) {
+      return b["username"] != loggedinUser["username"];
+    });
+    console.log(
+      "allUsersWithoutSelected|saveModifiedUser",
+      allUsersWithoutSelected
+    );
+    // Create a User object
+    const newUser = {
+      username: username,
+      password: password,
+      phone: phone,
+      email: email
+    };
+
+    allUsersWithoutSelected.push(newUser); //push the object ie, {phone:"1", email:"2",....} to allUsers
+    localStorage.setItem(
+      window.USER_LIST_KEY,
+      JSON.stringify(allUsersWithoutSelected)
+    ); // Set the updated current User in the localStorage
+    localStorage.setItem(
+      window.LOGGEDIN_USER_KEY,
+      JSON.stringify(newUser)
+    );
+    return true;
+  } catch {
+    // if try block not executed or any error in setting in localStorage shows error in catch block
+    console.log("Error saving User in the Edit profile form ");
+    return false;
+  }
+}

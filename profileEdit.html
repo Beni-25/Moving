@@ -109,13 +109,15 @@
               $("#phoneInput").css("display", "inline");
               phoneValue.hide();
             } else if (phoneIcon.hasClass("bi-check2-square")) {
-              phoneIcon
+              
+                const updatedPhone = $("#phoneInput").val();
+                saveModifiedUser(loggedInUser["username"],loggedInUser["password"],updatedPhone, loggedInUser["email"]);
+                $("#phoneInput").css("display", "none");
+                location.reload(); 
+                phoneValue.show();
+                phoneIcon
                 .removeClass("bi-check2-square")
                 .addClass("bi-pencil-square");
-                const updatedPhone = $("#phoneInput").val();
-                updateUser(loggedInUser["username"],updatedPhone);
-                // $("#phoneInput").css("display", "none");
-                // phoneValue.show();
               }
           });
 
@@ -128,13 +130,14 @@
               $("#emailInput").css("display", "inline");
               emailValue.hide();
             }else if (emailIcon.hasClass("bi-check2-square")) {
-              emailIcon
+                const updatedEmail = $("#emailInput").val();
+                saveModifiedUser(loggedInUser["username"],loggedInUser["password"],loggedInUser["phone"], updatedEmail);
+                $("#emailInput").css("display", "none");
+                location.reload(); 
+                emailValue.show();
+                emailIcon
                 .removeClass("bi-check2-square")
                 .addClass("bi-pencil-square");
-                const updatedEmail = $("#emailInput").val();
-                updateUser(loggedInUser["username"],updatedEmail);
-                // $("#emailInput").css("display", "none");
-                // emailValue.show();
               }
         
           });
