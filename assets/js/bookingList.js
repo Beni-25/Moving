@@ -93,25 +93,6 @@ function renderBookings(allBookings, loggedInUser) {
   });
 }
 
-// $("#list-of-bookings").on("click", '[id^="modify-btn-"]', function () {
-//   const modifyButton = $(this);
-//   const modifyBtnId = modifyButton.attr("id");
-//   const bookingId = modifyBtnId.replace("modify-btn-", "");
-//   // const bookingObject = JSON.parse(modifyButton.data("booking"));
-//   // console.log(bookingObject);
-//   // modifyBooking(bookingObject);
-//   alert("Clicked Modify btn with ID: " + bookingId);
-// });
-
-// $("#list-of-bookings").on("click", '[id^="cancel-btn-"]', function () {
-//   const cancelButton = $(this);
-//   const cancelBtnId = cancelButton.attr("id");
-//   const bookingId = cancelBtnId.replace("cancel-btn-", "");
-//   // const bookingObject = JSON.parse(cancelButton.data("booking"));
-//   // console.log(bookingObject);
-//   // cancelBooking(bookingObject);
-//   alert("Clicked Cancel btn with ID: " + bookingId);
-// });
 
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
@@ -168,12 +149,26 @@ $(document).ready(function () {
 
   let loggedInUser = JSON.parse(localStorage.getItem(window.LOGGEDIN_USER_KEY));
 
-  let allBookings = JSON.parse(localStorage.getItem(window.BOOKINGS_KEY));
-  if (allBookings == null) {
+  let userBookings =  loggedInUserBookings(loggedInUser["username"]);
+
+  // let allBookings = JSON.parse(localStorage.getItem(window.BOOKINGS_KEY));
+  // if (allBookings == null) {
+  //   alert("no bookings found, create a booking");
+  //   window.location.href = "booking.html";
+  // } else {
+  //   console.log("bookings found", allBookings);
+  //   renderBookings(allBookings, loggedInUser);
+  // }
+
+  let allLoggedInUserBookings = JSON.parse(localStorage.getItem(window.LOGGEDINUSER_BOOKINGS_KEY));
+
+  if (allLoggedInUserBookings == null) {
     alert("no bookings found, create a booking");
     window.location.href = "booking.html";
   } else {
-    console.log("bookings found", allBookings);
-    renderBookings(allBookings, loggedInUser);
+    console.log("bookings found", allLoggedInUserBookings);
+    renderBookings(allLoggedInUserBookings, loggedInUser);
   }
+
+
 });
