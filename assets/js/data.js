@@ -1,14 +1,5 @@
 
 
-//Global variables
-// var bookingList = [
-//     { id: "Benisha-01", contact:"+1 7095557777", pickup: "Crossbie RD", drop:"Elizabeth Ave" },
-//     { id: "Anoj-02", contact:"+1 7096667878", pickup: "Fresh Water RD", drop:"Suvla Strt" },
-//     { id: "Alphin-03",contact:"+1 7091238878", pickup: "Water Street", drop:"Esconi Place" },
-//     { id: "Bernie-04", contact:"+1 7095647870",pickup: "Terra Nova RD", drop:"Smallwood Dr" },
-//   ];
-
-
 var carouselList=[
     {imageclass:"active carousel-image1-wrapper"},
     {imageclass:"carousel-image2-wrapper"},

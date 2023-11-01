@@ -91,19 +91,14 @@
           $("#phone").append(
             ' <i class="bi bi-pencil-square" id="phoneedit"></i>'
           );
-          $("#phone").append(
-            ' <i class="bi bi-check2-square" id="phonesave" style="display: none;"></i>'
-          );
-
+          
           const emailValue = $("<span>" + loggedInUser["email"] + "</span>");
           $("#email").append(" ");
           $("#email").append(emailValue);
           $("#email").append(
             ' <i class="bi bi-pencil-square" id="emailedit"></i>'
           );
-          $("#email").append(
-            ' <i class="bi bi-check2-square" id="emailsave" style="display: none;"></i>'
-          );
+         
 
           $("#phoneedit").click(function () {
             const phoneIcon = $(this);
@@ -114,7 +109,13 @@
               $("#phoneInput").css("display", "inline");
               phoneValue.hide();
             } else if (phoneIcon.hasClass("bi-check2-square")) {
-              phoneIcon
+              
+                const updatedPhone = $("#phoneInput").val();
+                saveModifiedUser(loggedInUser["username"],loggedInUser["password"],updatedPhone, loggedInUser["email"]);
+                $("#phoneInput").css("display", "none");
+                location.reload(); 
+                phoneValue.show();
+                phoneIcon
                 .removeClass("bi-check2-square")
                 .addClass("bi-pencil-square");
               }
@@ -128,11 +129,20 @@
                 .addClass("bi-check2-square");
               $("#emailInput").css("display", "inline");
               emailValue.hide();
-            }
+            }else if (emailIcon.hasClass("bi-check2-square")) {
+                const updatedEmail = $("#emailInput").val();
+                saveModifiedUser(loggedInUser["username"],loggedInUser["password"],loggedInUser["phone"], updatedEmail);
+                $("#emailInput").css("display", "none");
+                location.reload(); 
+                emailValue.show();
+                emailIcon
+                .removeClass("bi-check2-square")
+                .addClass("bi-pencil-square");
+              }
         
           });
 
-
+          
          $("#phoneInput").val(loggedInUser["phone"]);
         $("#emailInput").val(loggedInUser["email"]);
 

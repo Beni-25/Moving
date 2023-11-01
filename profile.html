@@ -48,18 +48,18 @@
                 <p class="card-text" id="email">EMAIL ADDRESS:</p>
               </div>
             </div>
-            <!-- <div class="col-md-4 p-3 card-subheading">
+            <div class="col-md-4 p-3 card-subheading">
               <h4>Bookings</h4>
-              <p>0</p>
+              <p id="bookings"></p>
             </div>
             <div class="col-md-4 p-3 card-subheading">
               <h4>Completed</h4>
-              <p>0</p>
+              <p id="completed">0</p>
             </div>
             <div class="col-md-4 p-3 card-subheading">
               <h4>Pending</h4>
-              <p>0</p>
-            </div> -->
+              <p id="pending">0</p>
+            </div>
           </div>
         </div>
       </div>
@@ -69,12 +69,23 @@
     <script src="assets/js/config.js"></script>
     <script src="assets/js/localStorage.js"></script>
     <script>
+
+       // Get the current date and time
+      const currentDateTime = new Date();
+      console.log("currentDateTime",currentDateTime);
+        
+
       let loggedInUser = getLoggedInUser();
       if (loggedInUser) {
         $("#name").text("NAME : " + loggedInUser["username"]);
         $("#phone").text("PHONE NUMBER : " + loggedInUser["phone"]);
         $("#email").text("EMAIL ADDRESS : " + loggedInUser["email"]);
       }
+      let allLoggedInUserBookings = JSON.parse(localStorage.getItem(window.LOGGEDINUSER_BOOKINGS_KEY));
+      let numOfBookings =  allLoggedInUserBookings.length || 0;
+      $("#bookings").text(numOfBookings);
+
+
     </script>
   </body>
 </html>
