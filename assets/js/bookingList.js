@@ -160,8 +160,26 @@ $(document).ready(function () {
   //   renderBookings(allBookings, loggedInUser);
   // }
 
+
   let allLoggedInUserBookings = JSON.parse(localStorage.getItem(window.LOGGEDINUSER_BOOKINGS_KEY));
 
+  $("#search").on("input", function() {
+    const searchText = $(this).val().trim();
+    if (searchText) {
+      const searchArray = allLoggedInUserBookings.filter(function (b) {
+        return b["id"] === searchText;
+      });
+  
+      console.log(searchArray, "searchArray");
+      renderBookings(searchArray, loggedInUser);
+      
+    } else {
+      console.log("Using allLoggedInUserBookings");
+      renderBookings(allLoggedInUserBookings, loggedInUser);
+    }
+   })
+ 
+ 
   if (allLoggedInUserBookings == null) {
     alert("no bookings found, create a booking");
     window.location.href = "booking.html";
