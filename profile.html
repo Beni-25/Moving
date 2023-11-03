@@ -69,11 +69,9 @@
     <script src="assets/js/config.js"></script>
     <script src="assets/js/localStorage.js"></script>
     <script>
-
-       // Get the current date and time
+      // Get the current date and time
       const currentDateTime = new Date();
-      console.log("currentDateTime",currentDateTime);
-        
+      console.log("currentDateTime", currentDateTime);
 
       let loggedInUser = getLoggedInUser();
       if (loggedInUser) {
@@ -81,11 +79,11 @@
         $("#phone").text("PHONE NUMBER : " + loggedInUser["phone"]);
         $("#email").text("EMAIL ADDRESS : " + loggedInUser["email"]);
       }
-      let allLoggedInUserBookings = JSON.parse(localStorage.getItem(window.LOGGEDINUSER_BOOKINGS_KEY));
-      let numOfBookings =  allLoggedInUserBookings.length || 0;
+      let allLoggedInUserBookings = JSON.parse(
+        localStorage.getItem(window.LOGGEDINUSER_BOOKINGS_KEY)
+      );
+      let numOfBookings = allLoggedInUserBookings.length || 0;
       $("#bookings").text(numOfBookings);
-
-
     </script>
   </body>
 </html>

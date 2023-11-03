@@ -163,7 +163,8 @@ $(document).ready(function () {
 
   let allLoggedInUserBookings = JSON.parse(localStorage.getItem(window.LOGGEDINUSER_BOOKINGS_KEY));
 
-  $("#search").on("input", function() {
+  $("#search").on("change", function() {
+    alert("changed");
     const searchText = $(this).val().trim();
     if (searchText) {
       const searchArray = allLoggedInUserBookings.filter(function (b) {
