@@ -1,317 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/modify.css">
-    <link rel="stylesheet" href="assets/bootstrap-icons/font/bootstrap-icons.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/modify.css" />
+    <link
+      rel="stylesheet"
+      href="assets/bootstrap-icons/font/bootstrap-icons.css"
+    />
     <title>Modify</title>
-</head>
-<body>
-  <header>
-
-    <nav id="navbar" class="navbar navbar-light navbar-expand-sm">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <img
-            src="assets/css/images/logo.jpeg"
-            alt=""
-            height="20"
-            class="d-inline-block align-text-top mt-1"
-          />
-          AB Movers
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link fw-medium fs-5" aria-current="page" id="bookingbtn" href="/bookingList.html"
-                >My Bookings</a
-              >
-            </li>
-
-            
-          </ul>
-          <div class="">
-            <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item dropstart">
+  </head>
+  <body>
+    <header>
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="assets/css/images/logo.jpeg"
+              alt=""
+              height="20"
+              class="d-inline-block align-text-top mt-1"
+            />
+            AB Movers
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
                 <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
+                  class="nav-link fw-medium fs-5"
+                  aria-current="page"
+                  id="bookingbtn"
+                  href="/bookingList.html"
+                  >My Bookings</a
                 >
-                  <img
-                    src="assets/css/images/user.png"
-                    height="20px"
-                    alt="user image"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseWidthExample"
-                    aria-expanded="false"
-                    aria-controls="collapseWidthExample"
-                  />
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/profile.html">View Profile</a></li>
-                  <li><a class="dropdown-item" href="/profileEdit.html">Edit Profile</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" id="signOut">Sign out</a>
-                  </li>
-                </ul>
               </li>
             </ul>
+            <div class="">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropstart">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="assets/css/images/user.png"
+                      height="20px"
+                      alt="user image"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseWidthExample"
+                      aria-expanded="false"
+                      aria-controls="collapseWidthExample"
+                    />
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="/profile.html"
+                        >View Profile</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/profileEdit.html"
+                        >Edit Profile</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" id="signOut">Sign out</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2 class="text-center p-3">Modify Booking</h2>
+        <div class="booking-form p-4 mt-3 mb-5 rounded">
+          <ul class="step-tabs">
+            <li class="step-tab" onclick="showStep(1)">
+              Time<i class="bi bi-check"></i>
+            </li>
+            <li class="step-tab" onclick="showStep(2)">
+              Pickup<i class="bi bi-check"></i>
+            </li>
+            <li class="step-tab" onclick="showStep(3)">
+              Drop<i class="bi bi-check"></i>
+            </li>
+            <li class="step-tab" onclick="showStep(4)">
+              Details<i class="bi bi-check"></i>
+            </li>
+            <li class="step-tab" onclick="showStep(5)">
+              Challenges<i class="bi bi-check"></i>
+            </li>
+          </ul>
 
-      </div>
-    </nav>
-  </header>
-      <main>
-        
-        <section>
-          <h2 class="text-center p-3">Modify Booking</h2>
-          <div class="booking-form p-4 mt-3 mb-5 rounded">
-        <ul class="step-tabs">
-          <li class="step-tab" onclick="showStep(1)">Time<i class="bi bi-check"></i></li>
-          <li class="step-tab" onclick="showStep(2)">Pickup<i class="bi bi-check"></i></li>
-          <li class="step-tab" onclick="showStep(3)">Drop<i class="bi bi-check"></i></li>
-          <li class="step-tab" onclick="showStep(4)">Details<i class="bi bi-check"></i></li>
-          <li class="step-tab" onclick="showStep(5)">Challenges<i class="bi bi-check"></i></li>
-        </ul>
-        
-        <div id="multiStepForm p-3 m-3" action="#" method="post">
-          <!-- Step 1 -->
-          
-          <div class="form-step step-1 active mb-3">
-            <label for="date">Date:</label> 
-             <input type="date" name="date" id="date" class="form-control step1input" />
- 
-             <label for="time">Time:</label>
-             <input type="time" name="time" id="time" class="form-control step1input" /><br>
- 
-             <button type="button" class="btn btn-light step2" onclick="showStep(2)">Next</button>
-     </div>
-     
-     <!-- Step 2 -->
-     <div class="form-step step-2 mb-3">
-     
-       <label for="address" class="form-label">Pickup Location:</label>
-             <input
-               type="text"
-               name="address1"
-               placeholder="Address Line 1"
-               id="P_address1"
-               class="form-control"
-             /><br />
-             <input
-               type="text"
-               name="address2"
-               placeholder="Address Line 2"
-               id="P_address2"
-               class="form-control"
-             /><br />
-             <input
-               type="text"
-               name="city"
-               placeholder="City"
-               id="P_city"
-               class="form-control"
-             /><br />
-             <input
-               type="text"
-               name="province"
-               placeholder="Province"
-               id="P_province"
-               class="form-control"
-             /><br />
-             <input
-               type="text"
-               name="zipcode"
-               placeholder="Zipcode"
-               id="P_zipcode"
-               class="form-control"
-             /><br />
- 
-             <button type="button" class="btn btn-light" onclick="showStep(1)">Previous</button>
-             <button type="button" class="btn btn-light" onclick="showStep(3)">Next</button>
-     </div>
-     
-     <!-- Step 3 -->
-     <div class="form-step step-3 mb-3">
-            <label for="d_address" class="form-label">Drop Location:</label>
-             <input
-               type="text"
-               name="d_address1"
-               placeholder="Address Line 1"
-               id="D_address1"
-               class="form-control"
-             /><br />
-             <input
-               type="text"
-               name="d_address2"
-               placeholder="Address Line 2"
-               id="D_address2"
-               class="form-control"
-             /><br />
-             <input
-               type="text"
-               name="d_city"
-               placeholder="City"
-               id="D_city"
-               class="form-control"
-             /><br />
-             <input
-               type="text"
-               name="d_province"
-               placeholder="Province"
-               id="D_province"
-               class="form-control"
-             /><br />
-             <input
-               type="text"
-               name="d_zipcode"
-               placeholder="Zipcode"
-               id="D_zipcode"
-               class="form-control"
-             /><br />
- 
-             <button type="button" class="btn btn-light" onclick="showStep(2)">Previous</button>
-             <button type="button" class="btn btn-light" onclick="showStep(4)">Next</button>
-     </div>
-     
-      <!-- Step 4 -->
-     <div class="form-step step-4 mb-3">
-     
-      <label for="distance" class="form-label"
-               >Distance in Kilometers:</label
-             >
-             <input
-               type="number"
-               name="distance"
-               min="0"
-               max="100"
-               step="1"
-               id="distance"
-               class="form-control"
-             /><br />
- 
-             <label for="load" class="form-label">Load Size:</label>
-             <div class="form-check">
-               <input
-                 type="radio"
-                 name="load"
-                 id="small-load"
-                 value="small"
-                 class="form-check-input"
-               />
-               <label for="small-load" class="form-check-label">Small(1 BHK)</label>
-             </div>
-             <div class="form-check">
-               <input
-                 type="radio"
-                 name="load"
-                 id="medium-load"
-                 value="medium"
-                 class="form-check-input"
-               />
-               <label for="medium-load" class="form-check-label">Medium(2-3 BHK)</label>
-             </div>
-             <div class="form-check">
-               <input
-                 type="radio"
-                 name="load"
-                 id="large-load"
-                 value="large"
-                 class="form-check-input"
-               />
-               <label for="large-load" class="form-check-label">Large(3+ BHK)</label>
-             </div><br />
- 
-             <label for="instructions" class="form-label">
-               Special delivery/Pickup instructions:</label
-             >
-             <textarea name="instructions" id="instructions" class="form-control"> </textarea><br>
- 
-             <button type="button" class="btn btn-light" onclick="showStep(3)">Previous</button>
-             <button type="button" class="btn btn-light" onclick="showStep(5)">Next</button>
-     </div>
-     
-      <!-- Step 5 -->
-     <div class="form-step step-5 mb-3">
-            <p>Are there any challenges in parking?</p>
-             <input type="radio" name="parking" id="yes-parking" value="Yes" />
-             <label for="yes-parking">Yes</label><br />
-             <input type="radio" name="parking" id="no-parking" value="No" />
-             <label for="no-parking">No</label>
- 
-             <p>Do you have stairs/steps in the location?</p>
-             <input type="radio" name="stairs" id="yes-stairs" value="Yes" />
-             <label for="yes-stairs">Yes</label><br />
-             <input type="radio" name="stairs" id="no-stairs" value="No" />
-             <label for="no-stairs">No</label><br />
- 
-             <label for="notification" class="form-label" 
-               >Prior Notification to send alert:</label
-             >
-             <select id="notification">
-               <option value="10 mins">10 mins</option>
-               <option value="20 mins">20 mins</option>
-               <option value="30 mins">30 mins</option>
-               <option value="60 mins">60 mins</option>
-             </select><br /><br />
-             <button type="button" class="btn btn-light" onclick="showStep(4)">Previous</button>
-             <button type="button" class="btn btn-outline-light" id="submit">Submit</button>
+          <div id="multiStepForm p-3 m-3" action="#" method="post">
+            <!-- Step 1 -->
+
+            <div class="form-step step-1 active mb-3">
+              <label for="date">Date:</label>
+              <input
+                type="date"
+                name="date"
+                id="date"
+                class="form-control step1input"
+              />
+
+              <label for="time">Time:</label>
+              <input
+                type="time"
+                name="time"
+                id="time"
+                class="form-control step1input"
+              /><br />
+
+              <button
+                type="button"
+                class="btn btn-light step2"
+                onclick="showStep(2)"
+              >
+                Next
+              </button>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="form-step step-2 mb-3">
+              <label for="address" class="form-label">Pickup Location:</label>
+              <input
+                type="text"
+                name="address1"
+                placeholder="Address Line 1"
+                id="P_address1"
+                class="form-control"
+              /><br />
+              <input
+                type="text"
+                name="address2"
+                placeholder="Address Line 2"
+                id="P_address2"
+                class="form-control"
+              /><br />
+              <input
+                type="text"
+                name="city"
+                placeholder="City"
+                id="P_city"
+                class="form-control"
+              /><br />
+              <input
+                type="text"
+                name="province"
+                placeholder="Province"
+                id="P_province"
+                class="form-control"
+              /><br />
+              <input
+                type="text"
+                name="zipcode"
+                placeholder="Zipcode"
+                id="P_zipcode"
+                class="form-control"
+              /><br />
+
+              <button type="button" class="btn btn-light" onclick="showStep(1)">
+                Previous
+              </button>
+              <button type="button" class="btn btn-light" onclick="showStep(3)">
+                Next
+              </button>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="form-step step-3 mb-3">
+              <label for="d_address" class="form-label">Drop Location:</label>
+              <input
+                type="text"
+                name="d_address1"
+                placeholder="Address Line 1"
+                id="D_address1"
+                class="form-control"
+              /><br />
+              <input
+                type="text"
+                name="d_address2"
+                placeholder="Address Line 2"
+                id="D_address2"
+                class="form-control"
+              /><br />
+              <input
+                type="text"
+                name="d_city"
+                placeholder="City"
+                id="D_city"
+                class="form-control"
+              /><br />
+              <input
+                type="text"
+                name="d_province"
+                placeholder="Province"
+                id="D_province"
+                class="form-control"
+              /><br />
+              <input
+                type="text"
+                name="d_zipcode"
+                placeholder="Zipcode"
+                id="D_zipcode"
+                class="form-control"
+              /><br />
+
+              <button type="button" class="btn btn-light" onclick="showStep(2)">
+                Previous
+              </button>
+              <button type="button" class="btn btn-light" onclick="showStep(4)">
+                Next
+              </button>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="form-step step-4 mb-3">
+              <label for="distance" class="form-label"
+                >Distance in Kilometers:</label
+              >
+              <input
+                type="number"
+                name="distance"
+                min="0"
+                max="100"
+                step="1"
+                id="distance"
+                class="form-control"
+              /><br />
+
+              <label for="load" class="form-label">Load Size:</label>
+              <div class="form-check">
+                <input
+                  type="radio"
+                  name="load"
+                  id="small-load"
+                  value="small"
+                  class="form-check-input"
+                />
+                <label for="small-load" class="form-check-label"
+                  >Small(1 BHK)</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  type="radio"
+                  name="load"
+                  id="medium-load"
+                  value="medium"
+                  class="form-check-input"
+                />
+                <label for="medium-load" class="form-check-label"
+                  >Medium(2-3 BHK)</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  type="radio"
+                  name="load"
+                  id="large-load"
+                  value="large"
+                  class="form-check-input"
+                />
+                <label for="large-load" class="form-check-label"
+                  >Large(3+ BHK)</label
+                >
+              </div>
+              <br />
+
+              <label for="instructions" class="form-label">
+                Special delivery/Pickup instructions:</label
+              >
+              <textarea
+                name="instructions"
+                id="instructions"
+                class="form-control"
+              >
+              </textarea
+              ><br />
+
+              <button type="button" class="btn btn-light" onclick="showStep(3)">
+                Previous
+              </button>
+              <button type="button" class="btn btn-light" onclick="showStep(5)">
+                Next
+              </button>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="form-step step-5 mb-3">
+              <p>Are there any challenges in parking?</p>
+              <input type="radio" name="parking" id="yes-parking" value="Yes" />
+              <label for="yes-parking">Yes</label><br />
+              <input type="radio" name="parking" id="no-parking" value="No" />
+              <label for="no-parking">No</label>
+
+              <p>Do you have stairs/steps in the location?</p>
+              <input type="radio" name="stairs" id="yes-stairs" value="Yes" />
+              <label for="yes-stairs">Yes</label><br />
+              <input type="radio" name="stairs" id="no-stairs" value="No" />
+              <label for="no-stairs">No</label><br />
+
+              <label for="notification" class="form-label"
+                >Prior Notification to send alert:</label
+              >
+              <select id="notification">
+                <option value="10 mins">10 mins</option>
+                <option value="20 mins">20 mins</option>
+                <option value="30 mins">30 mins</option>
+                <option value="60 mins">60 mins</option></select
+              ><br /><br />
+              <button type="button" class="btn btn-light" onclick="showStep(4)">
+                Previous
+              </button>
+              <button type="button" class="btn btn-outline-light" id="submit">
+                Submit
+              </button>
+            </div>
           </div>
-      </div>
-    </div>
-          </section>
+        </div>
+      </section>
+    </main>
 
-      </main>
-
-      <footer>
-        <div class="container text-center">
-          <div class="row align-items-center p-4">
-            <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
-              <h3>Address</h3>
+    <footer>
+      <div class="container text-center">
+        <div class="row align-items-center p-4">
+          <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
+            <h3>Address</h3>
             <p>
               55 Terra Nova Road<br />
               St.John's, NL - A1B1E7
             </p>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
-              <h3>Social Media</h3>
-              <a href="https://www.facebook.com/profile.php?id=100093111200999&mibextid=LQQJ4d"
-              target="_blank"><i class="bi bi-facebook px-2"></i
-              ></a>
-              <a href="mailto:info@abmoversnl.com"
-              target="_blank"><i class="bi bi-envelope px-2"></i
-              ></a>
-              <a href="https://www.linkedin.com/profile_name"
-              target="_blank"><i class="bi bi-linkedin px-2"></i
-              ></a>
-              <a href="https://www.instagram.com/abmoversnl"
-              target="_blank" ><i class="bi bi-instagram px-2"></i
-              ></a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
-              <h3>Contact</h3>
-              <p>+1 (709) 769 4450<br>
-                info@abmoversnl.com</p>
-            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
+            <h3>Social Media</h3>
+            <a
+              href="https://www.facebook.com/profile.php?id=100093111200999&mibextid=LQQJ4d"
+              target="_blank"
+              ><i class="bi bi-facebook px-2"></i
+            ></a>
+            <a href="mailto:info@abmoversnl.com" target="_blank"
+              ><i class="bi bi-envelope px-2"></i
+            ></a>
+            <a href="https://www.linkedin.com/profile_name" target="_blank"
+              ><i class="bi bi-linkedin px-2"></i
+            ></a>
+            <a href="https://www.instagram.com/abmoversnl" target="_blank"
+              ><i class="bi bi-instagram px-2"></i
+            ></a>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
+            <h3>Contact</h3>
+            <p>
+              +1 (709) 769 4450<br />
+              info@abmoversnl.com
+            </p>
           </div>
         </div>
-        <div class="copyright pt-3"><p>Copyright © AB Movers. All Rights Reserved</p></div>
-      </footer>
-      <script src="assets/js/jquery.js"></script>
-      <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/js/data.js"></script>
-      <script src="assets/js/config.js"></script>
-      <script src="assets/js/localStorage.js"></script>
-      <script src="assets/js/modify.js"></script>
-         </body>
+      </div>
+      <div class="copyright pt-3">
+        <p>Copyright © AB Movers. All Rights Reserved</p>
+      </div>
+    </footer>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/localStorage.js"></script>
+    <script src="assets/js/modify.js"></script>
+  </body>
 </html>
