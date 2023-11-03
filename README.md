@@ -32,4 +32,5 @@
 9. Send it to Ruben for a quick review
 10. Post in the #projects channel following an example message from one of the previous students
 11. Bonus: Repate the steps above but by subdiving into smaller JS files
+12. Mark Benisha as module completed
 
