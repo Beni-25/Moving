@@ -19,4 +19,16 @@
 
 ### sub sub title
 
-#### sub sub sub title
+#### TOOD
+
+1. clean up functions by dividing into smaller functions
+2. Delete any unused comments
+3. Push to branch
+4. Create Pull Request
+5. Merge into master
+6. Wait couple of mins and confirm all works on github pages
+7. Update the readme with instructions to login, create booking, filter bookings, modify user, modify bookings
+8. Add pictures to the wiki
+9. Post in the #projects channel following an example message from one of the previous students
+10. Bonus: Repate the steps above but by subdiving into smaller JS files
+
