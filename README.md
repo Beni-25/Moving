@@ -4,6 +4,8 @@
 
 1. Go to `https...../register`
 
+![image](https://github.com/Beni-25/Moving/assets/105207468/b5fe4602-2405-4e29-bab5-03fbe176688b)
+
   ![image](https://github.com/Beni-25/Moving/assets/105207468/3798658e-97a7-4725-8165-d78d80026b48)
 
 3. Create username and password
