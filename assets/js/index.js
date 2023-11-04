@@ -52,17 +52,14 @@ $(document).ready(function () {
   let loggedinUser = localStorage.getItem(window.LOGGEDIN_USER_KEY); // getting value from localStorage(ie, {username:"1", password:"2",...}) or null
   console.log(loggedinUser);
   if (loggedinUser != null) {
-    // User logged in
     $("#signIn").hide(); // Jquery hide the login
     $("#signOut").show(); // Jquery show the logout
   } else {
-    // No user logged in
     $("#signIn").show(); // Jquery show the login
     $("#signOut").hide(); // Jquery hide the logout
   }
 
   //cards shadow increase on hover
-
   $(".lpcard").hover(
     function () {
       $(this).addClass("shadow-lg");

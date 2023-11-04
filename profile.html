@@ -74,16 +74,19 @@
       console.log("currentDateTime", currentDateTime);
 
       let loggedInUser = getLoggedInUser();
-      if (loggedInUser) {
+      if (loggedInUser !== null) {
         $("#name").text("NAME : " + loggedInUser["username"]);
         $("#phone").text("PHONE NUMBER : " + loggedInUser["phone"]);
         $("#email").text("EMAIL ADDRESS : " + loggedInUser["email"]);
+      }else{
+        console.log("No User Logged in, please sign in");
+        window.location.href = "login.html";
       }
       let userName = loggedInUser["username"];
       let allBookings = JSON.parse(localStorage.getItem(window.BOOKINGS_KEY));
       let allLoggedInUserBookings = allBookings.filter(function (b) {
-      return b["id"].includes(userName)
-    });
+        return b["id"].includes(userName);
+      });
       let numOfBookings = allLoggedInUserBookings.length || 0;
       $("#bookings").text(numOfBookings);
     </script>

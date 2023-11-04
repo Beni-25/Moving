@@ -115,12 +115,7 @@ $(document).ready(function () {
     window.location.href = "login.html"; // Redirect to the Sign-in page
   });
 
-  let loggedInUser = getLoggedInUser();
-  $("#name").text("NAME: " + loggedInUser["username"]);
-  $("#phone").text("PHONE NUMBER: " + loggedInUser["phone"]);
-  $("#email").text("EMAIL ADDRESS: " + loggedInUser["email"]);
   //cards shadow increase on hover
-
   $(".lpcard").hover(
     function () {
       $(this).addClass("shadow-lg");
@@ -170,7 +165,16 @@ $(document).ready(function () {
       color: "black",
     });
   });
-
+  let loggedInUser = getLoggedInUser();
+  if(loggedInUser !== null){
+    $("#name").text("NAME: " + loggedInUser["username"]);
+    $("#phone").text("PHONE NUMBER: " + loggedInUser["phone"]);
+    $("#email").text("EMAIL ADDRESS: " + loggedInUser["email"]);
+  }else
+  {
+    console.log("No User Logged in, please sign in");
+    window.location.href = "login.html";
+  }
   let selectedBooking = getSelectedBooking();
   if (selectedBooking == null) {
     alert("no booking selected, create a booking");
