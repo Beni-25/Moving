@@ -3,39 +3,35 @@
 function trackBooking(bookingObjectId) {
   console.log("bookingObjectId", bookingObjectId);
   let booking = searchBooking(bookingObjectId);
-  
+
   //go to track page
-  if(booking !== null){
-    console.log("booking found", booking)
+  if (booking !== null) {
+    console.log("booking found", booking);
     setNewSelectedBooking(booking);
     // alert("booking found");
 
     window.location.href = "tracking.html";
-  }else{
+  } else {
     alert("Error tracking the booking with this booking ID");
   }
-
 }
 function modifyBooking(bookingObjectId) {
   console.log("bookingObjectId", bookingObjectId);
   let booking = searchBooking(bookingObjectId);
-  if(booking !== null){
-    console.log("booking found", booking)
+  if (booking !== null) {
+    console.log("booking found", booking);
     setNewSelectedBooking(booking);
     // alert("booking found");
 
     window.location.href = "modify.html";
-  }else{
+  } else {
     alert("Error in modifying, Please check the booking ID");
   }
-
 }
 function cancelBooking(bookingObjectId) {
   // Confirm with the user before canceling the booking
   if (window.confirm("Are you sure you want to cancel this booking?")) {
-
-   cancelBookingUsingId(bookingObjectId);
- 
+    cancelBookingUsingId(bookingObjectId);
   }
   // Refresh the page
   location.reload(); // This will refresh the current page
@@ -48,8 +44,6 @@ function renderBookings(allBookings, loggedInUser) {
     let trackBtnId = `track-btn-${bookingObject["id"]}`;
     let modifyBtnId = `modify-btn-${bookingObject["id"]}`;
     let cancelBtnId = `cancel-btn-${bookingObject["id"]}`;
-
-    
 
     $("div#list-of-bookings").append(`
     <div id='${bookingObject["id"]}' class="list container text-center rounded mt-4">
@@ -89,15 +83,12 @@ function renderBookings(allBookings, loggedInUser) {
           </div>
         </div>
       </div>`);
-    
   });
 }
-
 
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
 $(document).ready(function () {
-
   $("#signOut").click(function (event) {
     console.log("signout clicked");
     event.preventDefault(); // Prevent the default behavior of the button (eg., form submission)
@@ -149,7 +140,7 @@ $(document).ready(function () {
 
   let loggedInUser = JSON.parse(localStorage.getItem(window.LOGGEDIN_USER_KEY));
 
-  let userBookings =  loggedInUserBookings(loggedInUser["username"]);
+  let userBookings = loggedInUserBookings(loggedInUser["username"]);
 
   // let allBookings = JSON.parse(localStorage.getItem(window.BOOKINGS_KEY));
   // if (allBookings == null) {
@@ -160,27 +151,33 @@ $(document).ready(function () {
   //   renderBookings(allBookings, loggedInUser);
   // }
 
+  let allLoggedInUserBookings = JSON.parse(
+    localStorage.getItem(window.LOGGEDINUSER_BOOKINGS_KEY)
+  );
 
-  let allLoggedInUserBookings = JSON.parse(localStorage.getItem(window.LOGGEDINUSER_BOOKINGS_KEY));
-
-  $("#search").on("change", function() {
-    alert("changed");
+  $("#search").on("change", function () {
     const searchText = $(this).val().trim();
     if (searchText) {
       const searchArray = allLoggedInUserBookings.filter(function (b) {
-        return b["id"] === searchText;
+        let idName = b["id"].toLowerCase();
+        let searchInput = searchText.toLowerCase();
+        console.log("idName", idName);
+        console.log("searchInput", searchInput);
+        return idName.includes(searchInput);
       });
-  
-      console.log(searchArray, "searchArray");
-      renderBookings(searchArray, loggedInUser);
-      
+      if (searchArray.length > 0) {
+        $("div#list-of-bookings").html("");
+        console.log(searchArray, "searchArray");
+        renderBookings(searchArray, loggedInUser);
+      } else {
+        alert("No bookings found");
+      }
     } else {
       console.log("Using allLoggedInUserBookings");
       renderBookings(allLoggedInUserBookings, loggedInUser);
     }
-   })
- 
- 
+  });
+
   if (allLoggedInUserBookings == null) {
     alert("no bookings found, create a booking");
     window.location.href = "booking.html";
@@ -188,6 +185,4 @@ $(document).ready(function () {
     console.log("bookings found", allLoggedInUserBookings);
     renderBookings(allLoggedInUserBookings, loggedInUser);
   }
-
-
 });
