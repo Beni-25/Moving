@@ -79,9 +79,11 @@
         $("#phone").text("PHONE NUMBER : " + loggedInUser["phone"]);
         $("#email").text("EMAIL ADDRESS : " + loggedInUser["email"]);
       }
-      let allLoggedInUserBookings = JSON.parse(
-        localStorage.getItem(window.LOGGEDINUSER_BOOKINGS_KEY)
-      );
+      let userName = loggedInUser["username"];
+      let allBookings = JSON.parse(localStorage.getItem(window.BOOKINGS_KEY));
+      let allLoggedInUserBookings = allBookings.filter(function (b) {
+      return b["id"].includes(userName)
+    });
       let numOfBookings = allLoggedInUserBookings.length || 0;
       $("#bookings").text(numOfBookings);
     </script>
