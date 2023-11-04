@@ -10,17 +10,24 @@ $(document).ready(function () {
     localStorage.removeItem(window.LOGGEDIN_USER_KEY); // delete the content inside LOGGEDIN_USER in local storage
     window.location.href = "login.html"; // Redirect to the Sign-in page
   });
-
+  let loggedInUser = getLoggedInUser();
+  if (loggedInUser !== null) {
   let selectedBooking = getSelectedBooking();
-  if(selectedBooking){
+  if(selectedBooking !== null){
     $("#bookingID").text("BOOKING ID : " + selectedBooking["id"]);
     $("#pickup").text("PICKUP : " + selectedBooking["P_address1"] + selectedBooking["P_address2"]);
     $("#drop").text("DROP : " + selectedBooking["D_address1"] + selectedBooking["D_address2"]);
     $("#date").text("DATE : " + selectedBooking["date"]);
     $("#time").text("APPROXIMATE PICKUP TIME : " + selectedBooking["time"]);
     $("#droptime").text("APPROXIMATE DROP TIME : ");
-
+  }else{
+    alert("No booking found, create a booking");
+    window.location.href = "booking.html";
   }
+}else{
+  console.log("No User Logged in, please sign in");
+  window.location.href = "login.html";
+}
 
 //social media buttons color change on mouse enter and leave
 $(".bi-facebook").on("mouseenter", () => {

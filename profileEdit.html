@@ -82,7 +82,7 @@
     <script>
       $(document).ready(function () {
         let loggedInUser = getLoggedInUser();
-        if (loggedInUser) {
+        if (loggedInUser !== null) {
           $("#name").text("NAME : " + loggedInUser["username"]);
 
           const phoneValue = $("<span>" + loggedInUser["phone"] + "</span>");
@@ -151,6 +151,9 @@
 
           $("#phoneInput").val(loggedInUser["phone"]);
           $("#emailInput").val(loggedInUser["email"]);
+        }else{
+          console.log("No User Logged in, please sign in");
+        window.location.href = "login.html";
         }
       });
     </script>

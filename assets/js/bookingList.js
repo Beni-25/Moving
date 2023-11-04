@@ -1,40 +1,34 @@
 // FUNCTIONS
 
 function trackBooking(bookingObjectId) {
-  console.log("bookingObjectId", bookingObjectId);
   let booking = searchBooking(bookingObjectId);
-
-  //go to track page
   if (booking !== null) {
     console.log("booking found", booking);
     setNewSelectedBooking(booking);
-    // alert("booking found");
-
     window.location.href = "tracking.html";
   } else {
     alert("Error tracking the booking with this booking ID");
   }
 }
+
 function modifyBooking(bookingObjectId) {
-  console.log("bookingObjectId", bookingObjectId);
   let booking = searchBooking(bookingObjectId);
   if (booking !== null) {
     console.log("booking found", booking);
     setNewSelectedBooking(booking);
-    // alert("booking found");
-
     window.location.href = "modify.html";
   } else {
     alert("Error in modifying, Please check the booking ID");
   }
 }
+
 function cancelBooking(bookingObjectId) {
   // Confirm with the user before canceling the booking
   if (window.confirm("Are you sure you want to cancel this booking?")) {
     cancelBookingUsingId(bookingObjectId);
   }
   // Refresh the page
-  location.reload(); // This will refresh the current page
+  location.reload();
 }
 
 function renderBookings(allBookings, loggedInUser) {
@@ -141,46 +135,48 @@ $(document).ready(function () {
   let loggedInUser = JSON.parse(localStorage.getItem(window.LOGGEDIN_USER_KEY));
   let allBookings = JSON.parse(localStorage.getItem(window.BOOKINGS_KEY));
 
-    if(loggedInUser !== null){
+  if (loggedInUser !== null) {
     let userName = loggedInUser["username"];
-    let allLoggedInUserBookings = allBookings.filter(function (b) {
-      return b["id"].includes(userName)
-    });
-    console.log(allLoggedInUserBookings,"allLoggedInUserBookings");
-    renderBookings(allLoggedInUserBookings, loggedInUser);
-  }else
-    {
-
-      if (allBookings == null) {
-        alert("no bookings found, create a booking");
-        window.location.href = "booking.html";
-      } else {
-        console.log("bookings found", allBookings);
-        renderBookings(allBookings, loggedInUser);
-      }
+    let allUserBookings = allLoggedInUserBookings(userName);
+    if(allUserBookings !== null){
+      renderBookings(allUserBookings, loggedInUser);
+    }else{
+      alert("no bookings found, create a booking");
+      window.location.href = "booking.html";
     }
-
+     } else {
+    console.log("No User Logged in, please sign in");
+    window.location.href = "login.html";
+  }
 
   $("#search").on("change", function () {
     const searchText = $(this).val().trim();
     if (searchText) {
-      const searchArray = allBookings.filter(function (b) {
-        let idName = b["id"].toLowerCase();
-        let searchInput = searchText.toLowerCase();
-        console.log("idName", idName);
-        console.log("searchInput", searchInput);
-        return idName.includes(searchInput);
-      });
+      const searchArray = searchBookingUsingId(searchText);
       if (searchArray.length > 0) {
         $("div#list-of-bookings").html("");
-        console.log(searchArray, "searchArray");
         renderBookings(searchArray, loggedInUser);
       } else {
         alert("No bookings found");
       }
     } else {
       console.log("Using allLoggedInUserBookings");
-         }
+    }
   });
 
+  function allLoggedInUserBookings(userName) {
+    let loggedInUserBookings = allBookings.filter(function (b) {
+      return b["id"].includes(userName);
+    });
+    return loggedInUserBookings;
+  }
+
+  function searchBookingUsingId(searchText) {
+    const searchArray = allBookings.filter(function (b) {
+      let idName = b["id"].toLowerCase();
+      let searchInput = searchText.toLowerCase();
+      return idName.includes(searchInput);
+    });
+    return searchArray;
+  }
 });
