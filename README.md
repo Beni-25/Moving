@@ -1,6 +1,9 @@
-# Moving
+# Moving Company Website
 
-## Subtitle
+## Home Page
+1. 
+![image](https://github.com/Beni-25/Moving/assets/105207468/d5e2a18b-3cf7-4510-bd1a-2b94888dffa0)
+
 
 1. Go to `https...../register`
 
