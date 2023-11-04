@@ -139,26 +139,32 @@ $(document).ready(function () {
   });
 
   let loggedInUser = JSON.parse(localStorage.getItem(window.LOGGEDIN_USER_KEY));
+  let allBookings = JSON.parse(localStorage.getItem(window.BOOKINGS_KEY));
 
-  let userBookings = loggedInUserBookings(loggedInUser["username"]);
+    if(loggedInUser !== null){
+    let userName = loggedInUser["username"];
+    let allLoggedInUserBookings = allBookings.filter(function (b) {
+      return b["id"].includes(userName)
+    });
+    console.log(allLoggedInUserBookings,"allLoggedInUserBookings");
+    renderBookings(allLoggedInUserBookings, loggedInUser);
+  }else
+    {
 
-  // let allBookings = JSON.parse(localStorage.getItem(window.BOOKINGS_KEY));
-  // if (allBookings == null) {
-  //   alert("no bookings found, create a booking");
-  //   window.location.href = "booking.html";
-  // } else {
-  //   console.log("bookings found", allBookings);
-  //   renderBookings(allBookings, loggedInUser);
-  // }
+      if (allBookings == null) {
+        alert("no bookings found, create a booking");
+        window.location.href = "booking.html";
+      } else {
+        console.log("bookings found", allBookings);
+        renderBookings(allBookings, loggedInUser);
+      }
+    }
 
-  let allLoggedInUserBookings = JSON.parse(
-    localStorage.getItem(window.LOGGEDINUSER_BOOKINGS_KEY)
-  );
 
   $("#search").on("change", function () {
     const searchText = $(this).val().trim();
     if (searchText) {
-      const searchArray = allLoggedInUserBookings.filter(function (b) {
+      const searchArray = allBookings.filter(function (b) {
         let idName = b["id"].toLowerCase();
         let searchInput = searchText.toLowerCase();
         console.log("idName", idName);
@@ -174,15 +180,7 @@ $(document).ready(function () {
       }
     } else {
       console.log("Using allLoggedInUserBookings");
-      renderBookings(allLoggedInUserBookings, loggedInUser);
-    }
+         }
   });
 
-  if (allLoggedInUserBookings == null) {
-    alert("no bookings found, create a booking");
-    window.location.href = "booking.html";
-  } else {
-    console.log("bookings found", allLoggedInUserBookings);
-    renderBookings(allLoggedInUserBookings, loggedInUser);
-  }
 });

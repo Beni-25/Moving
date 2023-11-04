@@ -343,36 +343,3 @@ function saveModifiedUser(
     return false;
   }
 }
-
-function loggedInUserBookings(
-  username
-) {
-  try {
-    // entering inside try to check whether code is executing properly, if not it will go to catch block
-    let allBookings =
-      JSON.parse(localStorage.getItem(window.BOOKINGS_KEY)) || []; // check whether any existing bookings there or not
-    console.log("allBookings|loggedInUserBookings", allBookings);
-
-    let allLoggedInUserBookings = JSON.parse(localStorage.getItem(window.LOGGEDINUSER_BOOKINGS_KEY)) || []; 
-
- 
-    let loggedInBookings = allBookings.filter(function (b) {
-      return b["id"].includes(username)
-    });
-    console.log(
-      "loggedInBookings|loggedInUserBookings",
-      loggedInBookings
-    );
-  
-    localStorage.setItem(
-      window.LOGGEDINUSER_BOOKINGS_KEY,
-      JSON.stringify(loggedInBookings)
-    ); // Set the updated current booking in the localStorage
-   
-    return true;
-  } catch {
-    // if try block not executed or any error in setting in localStorage shows error in catch block
-    console.log("Error getting loggedin user bookings ");
-    return false;
-  }
-}
