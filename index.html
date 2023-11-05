@@ -13,7 +13,7 @@
   </head>
   <body>
     <header>
-      <nav id="navbar" class="navbar navbar-light">
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm">
         <div class="container-fluid">
           <a class="navbar-brand" href="/index.html">
             <img
@@ -25,27 +25,41 @@
             />
             AB Movers
           </a>
-          <div class="d-flex">
+          <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbarflex" id="navbarSupportedContent">
+          <div class="d-flex navbar-nav">
             <button
-              class="btn btn-secondary mx-1"
+              class="btn btn-secondary m-1"
               onclick="window.location.href='booking.html';"
             >
               Create Booking
             </button>
             <button
-              class="btn btn-outline-secondary mx-1 sign-in-button"
+              class="btn btn-outline-secondary m-1 sign-in-button"
               id="signIn"
               onclick="window.location.href='login.html';"
             >
               Sign-in
             </button>
             <button
-              class="btn btn-outline-secondary mx-1 sign-out-button"
+              class="btn btn-outline-secondary m-1 sign-out-button"
               id="signOut"
             >
               Sign-out
             </button>
           </div>
+          </div>
+
         </div>
       </nav>
     </header>
@@ -113,7 +127,7 @@
           </div>
           <div class="col-xs-12 col-sm-6 col-md-4 pb-3">
             <h3>Contact</h3>
-            <p>
+            <p class="text-white"> 
               +1 (709) 769 4450 <br />
               info@abmoversnl.com
             </p>
