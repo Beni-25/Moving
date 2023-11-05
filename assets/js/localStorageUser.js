@@ -22,13 +22,6 @@ function getUser(username) {
     //if allUsers has any values
     allUsers = JSON.parse(allUsers); //get the Javascript object from string in allUsers ie,'[{username: "1", password: "2"..}]' to {username: "1", password: "2"..}
     console.log("Listing all users", allUsers);
-    // allUsers.forEach(user => {  // {username: "1", password: "2"..} (each set of object will be called one by one using forEach)user means a set of object; allUsers means array of user objects
-    //     if(user["username"] == username) { // user["username"] = 1; checks whether current set user object username property matches the username given
-    //         console.log("User found", user)
-    //         return user; // {username: "1", password: "2"..} returns user object (exit current set of object)
-    //     }
-    // });
-
     for (const user of allUsers) {
       // forEach will execute each set one by one; even if it found the same username it will execute the next object
       if (user["username"] === username) {
