@@ -16,7 +16,7 @@ function renderCarousel() {
 function renderCard() {
   cardList.forEach((cardObject) => {
     console.log("Creating cards for index: ", cardObject);
-    $(".list-card").append(`<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    $(".list-card").append(`<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
       <div class="lpcard card h-100 shadow">
         <img
           src="assets/css/images/${cardObject["image"]}"
