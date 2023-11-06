@@ -1,4 +1,3 @@
-
 function saveDetails(
   date,
   time,
@@ -151,27 +150,26 @@ function saveModifiedDetails(
   }
 }
 
-
 function setNewSelectedBooking(newSelectedBooking) {
   // alert("set Booking");
   console.log("bookingObject", newSelectedBooking);
-  localStorage.setItem(window.SELECTED_BOOKING_KEY, JSON.stringify(newSelectedBooking));
-}
-
-
-function cancelBookingUsingId(bookingObjectId){
-  // let selectedBooking =newSelectedBooking;
-  let allBookings =
-      JSON.parse(localStorage.getItem(window.BOOKINGS_KEY)); //
-  let allBookingsWithoutSelected = allBookings.filter(function (b) {
-        return b["id"] != bookingObjectId;
-      });      
   localStorage.setItem(
-        window.BOOKINGS_KEY,
-        JSON.stringify(allBookingsWithoutSelected)
-      ); 
+    window.SELECTED_BOOKING_KEY,
+    JSON.stringify(newSelectedBooking)
+  );
 }
 
+function cancelBookingUsingId(bookingObjectId) {
+  // let selectedBooking =newSelectedBooking;
+  let allBookings = JSON.parse(localStorage.getItem(window.BOOKINGS_KEY)); //
+  let allBookingsWithoutSelected = allBookings.filter(function (b) {
+    return b["id"] != bookingObjectId;
+  });
+  localStorage.setItem(
+    window.BOOKINGS_KEY,
+    JSON.stringify(allBookingsWithoutSelected)
+  );
+}
 
 function searchBooking(bookingId) {
   console.log("Get Booking");
@@ -183,7 +181,7 @@ function searchBooking(bookingId) {
     //if allUsers has any values
     allBookings = JSON.parse(allBookings); //get the Javascript object from string in allUsers ie,'[{username: "1", password: "2"..}]' to {username: "1", password: "2"..}
     console.log("Listing all bookings", allBookings);
-       for (const booking of allBookings) {
+    for (const booking of allBookings) {
       // forEach will execute each set one by one; even if it found the same username it will execute the next object
       if (booking["id"] === bookingId) {
         //in this for loop, we need to stop and return the user as soon as same username found
@@ -195,5 +193,3 @@ function searchBooking(bookingId) {
     return null;
   }
 }
-
-

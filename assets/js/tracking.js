@@ -1,49 +1,48 @@
-// Functions
-
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
 $(document).ready(function () {
-
-  $("#signOut").click(function (event) {
-    console.log("signout clicked");
-    event.preventDefault(); // Prevent the default behavior of the button (eg., form submission)
-    localStorage.removeItem(window.LOGGEDIN_USER_KEY); // delete the content inside LOGGEDIN_USER in local storage
-    window.location.href = "login.html"; // Redirect to the Sign-in page
-  });
   let loggedInUser = getLoggedInUser();
   if (loggedInUser !== null) {
-  let selectedBooking = getSelectedBooking();
-  if(selectedBooking !== null){
-    $("#bookingID").text("BOOKING ID : " + selectedBooking["id"]);
-    $("#pickup").text("PICKUP : " + selectedBooking["P_address1"] + selectedBooking["P_address2"]);
-    $("#drop").text("DROP : " + selectedBooking["D_address1"] + selectedBooking["D_address2"]);
-    $("#date").text("DATE : " + selectedBooking["date"]);
-    $("#time").text("APPROXIMATE PICKUP TIME : " + selectedBooking["time"]);
-    $("#droptime").text("APPROXIMATE DROP TIME : ");
-  }else{
-    alert("No booking found, create a booking");
-    window.location.href = "booking.html";
+    let selectedBooking = getSelectedBooking();
+    if (selectedBooking !== null) {
+      $("#bookingID").text("BOOKING ID : " + selectedBooking["id"]);
+      $("#pickup").text(
+        "PICKUP : " +
+          selectedBooking["P_address1"] +
+          selectedBooking["P_address2"]
+      );
+      $("#drop").text(
+        "DROP : " +
+          selectedBooking["D_address1"] +
+          selectedBooking["D_address2"]
+      );
+      $("#date").text("DATE : " + selectedBooking["date"]);
+      $("#time").text("APPROXIMATE PICKUP TIME : " + selectedBooking["time"]);
+      $("#droptime").text("APPROXIMATE DROP TIME : ");
+    } else {
+      alert("No booking found, create a booking");
+      window.location.href = "booking.html";
+    }
+  } else {
+    console.log("No User Logged in, please sign in");
+    window.location.href = "login.html";
   }
-}else{
-  console.log("No User Logged in, please sign in");
-  window.location.href = "login.html";
-}
 
-//social media buttons color change on mouse enter and leave
-$(".bi-facebook").on("mouseenter", () => {
+  //social media buttons color change on mouse enter and leave
+  $(".bi-facebook").on("mouseenter", () => {
     $(".bi-facebook").addClass("bi-active");
   });
   $(".bi-facebook").on("mouseleave", () => {
     $(".bi-facebook").removeClass("bi-active");
   });
-  
+
   $(".bi-envelope").on("mouseenter", () => {
     $(".bi-envelope").addClass("bi-active");
   });
   $(".bi-envelope").on("mouseleave", () => {
     $(".bi-envelope").removeClass("bi-active");
   });
-  
+
   $(".bi-linkedin").on("mouseenter", () => {
     $(".bi-linkedin").addClass("bi-active");
   });
@@ -56,18 +55,17 @@ $(".bi-facebook").on("mouseenter", () => {
   $(".bi-instagram").on("mouseleave", () => {
     $(".bi-instagram").removeClass("bi-active");
   });
-  
-//Booking Button color change on mouseenter & mouseleave
-$("#bookingbtn").on("mouseenter", () => {
-  $("#bookingbtn").css({
-    color: "white",
-  });
-});
 
-$("#bookingbtn").on("mouseleave", () => {
-  $("#bookingbtn").css({
-    color: "black",
+  //Booking Button color change on mouseenter & mouseleave
+  $("#bookingbtn").on("mouseenter", () => {
+    $("#bookingbtn").css({
+      color: "white",
+    });
   });
-});
 
+  $("#bookingbtn").on("mouseleave", () => {
+    $("#bookingbtn").css({
+      color: "black",
+    });
+  });
 });

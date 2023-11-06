@@ -83,13 +83,6 @@ function renderBookings(allBookings, loggedInUser) {
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
 $(document).ready(function () {
-  $("#signOut").click(function (event) {
-    console.log("signout clicked");
-    event.preventDefault(); // Prevent the default behavior of the button (eg., form submission)
-    localStorage.removeItem(window.LOGGEDIN_USER_KEY); // delete the content inside LOGGEDIN_USER in local storage
-    window.location.href = "login.html"; // Redirect to the Sign-in page
-  });
-
   //Booking Button color change on mouseenter & mouseleave
   $("#bookingbtn").on("mouseenter", () => {
     $("#bookingbtn").css({
@@ -138,13 +131,13 @@ $(document).ready(function () {
   if (loggedInUser !== null) {
     let userName = loggedInUser["username"];
     let allUserBookings = allLoggedInUserBookings(userName);
-    if(allUserBookings !== null){
+    if (allUserBookings !== null) {
       renderBookings(allUserBookings, loggedInUser);
-    }else{
+    } else {
       alert("no bookings found, create a booking");
       window.location.href = "booking.html";
     }
-     } else {
+  } else {
     console.log("No User Logged in, please sign in");
     window.location.href = "login.html";
   }
@@ -160,7 +153,7 @@ $(document).ready(function () {
         alert("No bookings found");
       }
     } else {
-      console.log("Using allLoggedInUserBookings");
+      console.log("Using allUserBookings");
     }
   });
 
