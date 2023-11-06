@@ -1,9 +1,18 @@
 # Moving Company Website
 
-## Home Page
+## 1. Home Page
 1. 
 ![image](https://github.com/Beni-25/Moving/assets/105207468/d5e2a18b-3cf7-4510-bd1a-2b94888dffa0)
 
+## 2. Register Page
+## 3. Login Page
+## 4. Profile Page
+## 5. Edit Profile Page
+## 6. Booking Page
+## 7. Modify Booking Page
+## 8. Summary Page
+## 9. Tracking Page
+## 10. Booking List Page
 
 1. Go to `https...../register`
 
