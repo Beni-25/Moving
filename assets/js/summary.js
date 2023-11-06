@@ -1,11 +1,10 @@
 // Functions
 
 function renderSummary(selectedBooking) {
-
   console.log("selectedBooking", selectedBooking);
 
   let summaryList = createSummaryList(selectedBooking);
-console.log("summaryList", summaryList);
+  console.log("summaryList", summaryList);
   summaryList.forEach((summaryObject) => {
     console.log("Creating card for summary: ", summaryObject);
     $("#list-summary").append(`
@@ -107,14 +106,6 @@ function createSummaryList(selectedBooking) {
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
 $(document).ready(function () {
-
-  $("#signOut").click(function (event) {
-    console.log("signout clicked");
-    event.preventDefault(); // Prevent the default behavior of the button (eg., form submission)
-    localStorage.removeItem(window.LOGGEDIN_USER_KEY); // delete the content inside LOGGEDIN_USER in local storage
-    window.location.href = "login.html"; // Redirect to the Sign-in page
-  });
-
   //cards shadow increase on hover
   $(".lpcard").hover(
     function () {
@@ -166,12 +157,11 @@ $(document).ready(function () {
     });
   });
   let loggedInUser = getLoggedInUser();
-  if(loggedInUser !== null){
+  if (loggedInUser !== null) {
     $("#name").text("NAME: " + loggedInUser["username"]);
     $("#phone").text("PHONE NUMBER: " + loggedInUser["phone"]);
     $("#email").text("EMAIL ADDRESS: " + loggedInUser["email"]);
-  }else
-  {
+  } else {
     console.log("No User Logged in, please sign in");
     window.location.href = "login.html";
   }
