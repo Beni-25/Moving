@@ -4,6 +4,9 @@ header{
 h2{
     text-align: center;
 }
+.searchInput{
+    max-width: 160px;
+}
 .container{
     /* background-color: #e4966b; */
     color: whitesmoke;

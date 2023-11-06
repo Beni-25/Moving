@@ -8,10 +8,11 @@
     <style>
       .card {
         background-color: grey;
+        max-width: 500px;
       }
-      .container {
+      .container-background {
         max-width: 100%;
-        max-height: 740px;
+        min-height: 100vh;
         background: rgb(128, 128, 128);
         background: linear-gradient(
           90deg,
@@ -20,7 +21,7 @@
           rgba(128, 128, 128, 1) 100%
         );
       }
-      .card-subheading {
+      .card-header {
         color: #e4966b;
         text-align: center;
       }
@@ -31,38 +32,48 @@
   </head>
   <body>
     <main>
-      <div class="container d-flex justify-content-center align-items-center">
-        <div class="card mb-3 container-contact" style="max-width: 500px">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img
-                src="/assets/css/images/profileuser.png"
-                class="img-fluid rounded-start"
-                alt="User Icon Image"
-              />
-            </div>
-            <div class="col-md-8">
-              <div class="card-body pt-4">
-                <p class="card-text" id="name">NAME:</p>
-                <p class="card-text" id="phone">PHONE NUMBER:</p>
-                <p class="card-text" id="email">EMAIL ADDRESS:</p>
+
+      <div class="container-background container-fluid d-flex justify-content-center align-items-center">
+        <div class="container-contact">
+          <div class="card mb-3" >
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="/assets/css/images/profileuser.png"
+                  class="img-fluid rounded-start"
+                  alt="User Icon Image"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body pt-4">
+                  <p class="card-text" id="name">NAME:</p>
+                  <p class="card-text" id="phone">PHONE NUMBER:</p>
+                  <p class="card-text" id="email">EMAIL ADDRESS:</p>
+                </div>
               </div>
             </div>
-            <div class="col-md-4 p-3 card-subheading">
-              <h4>Bookings</h4>
-              <p id="bookings"></p>
-            </div>
-            <div class="col-md-4 p-3 card-subheading">
-              <h4>Completed</h4>
-              <p id="completed">0</p>
-            </div>
-            <div class="col-md-4 p-3 card-subheading">
-              <h4>Pending</h4>
-              <p id="pending">0</p>
-            </div>
           </div>
+          <div class="card bookings-card" >
+            <div class="row g-0">
+              <div class="col-md-4 p-3 card-header">
+                <h4>Bookings</h4>
+                <p id="bookings"></p>
+              </div>
+              <div class="col-md-4 p-3 card-header">
+                <h4>Completed</h4>
+                <p id="completed">0</p>
+              </div>
+              <div class="col-md-4 p-3 card-header">
+                <h4>Pending</h4>
+                <p id="pending">0</p>
+              </div>
+            </div>      
+          </div>
+
         </div>
       </div>
+
+      
     </main>
     <script src="assets/js/jquery.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
