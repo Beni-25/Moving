@@ -167,7 +167,7 @@ $(document).ready(function () {
   }
   let selectedBooking = getSelectedBooking();
   if (selectedBooking == null) {
-    alert("no booking selected, create a booking");
+    console.log("no bookings selected, create a booking");
     window.location.href = "booking.html";
   } else {
     console.log("booking found", selectedBooking);

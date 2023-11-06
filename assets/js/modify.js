@@ -53,7 +53,7 @@ $(document).ready(function () {
     );
     $("#notification").val(selectedBooking.notification);
   } else {
-    alert("No booking found, create a booking");
+    console.log("No booking found, create a booking");
     window.location.href = "booking.html";
   }
 
