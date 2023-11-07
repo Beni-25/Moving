@@ -1,19 +1,27 @@
 # Moving Company Website
-
+<img src="https://github.com/Beni-25/Moving/assets/105207468/d5e2a18b-3cf7-4510-bd1a-2b94888dffa0" alt="Home Page" width="500"/>
 ## 1. Home Page
-1. 
-![image](https://github.com/Beni-25/Moving/assets/105207468/d5e2a18b-3cf7-4510-bd1a-2b94888dffa0)
+Go to [index](https://beni-25.github.io/Moving/)
 
 ## 2. Register Page
+Go to [register](https://beni-25.github.io/Moving/register.html)
 ## 3. Login Page
+Go to [login](https://beni-25.github.io/Moving/login.html)
 ## 4. Profile Page
+Go to [Profile]()
 ## 5. Edit Profile Page
+
 ## 6. Booking Page
+
 ## 7. Modify Booking Page
+
 ## 8. Summary Page
+
 ## 9. Tracking Page
+
 ## 10. Booking List Page
 
+![image](https://github.com/Beni-25/Moving/assets/105207468/d5e2a18b-3cf7-4510-bd1a-2b94888dffa0)
 1. Go to `https...../register`
 
 ![image](https://github.com/Beni-25/Moving/assets/105207468/b5fe4602-2405-4e29-bab5-03fbe176688b)
