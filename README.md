@@ -8,19 +8,21 @@ Go to [index](https://beni-25.github.io/Moving/)
 Go to [register](https://beni-25.github.io/Moving/register.html)
 ## 3. Login Page
 Go to [login](https://beni-25.github.io/Moving/login.html)
-## 4. Profile Page
-Go to [Profile]()
-## 5. Edit Profile Page
+## 4. Booking Page
+Go to [booking](https://beni-25.github.io/Moving/booking.html)
+## 5. Profile Page
+Go to [Profile](https://beni-25.github.io/profile.html)
+## 6. Edit Profile Page
+Go to [ProfileEdit](https://beni-25.github.io/profileEdit.html)
+## 7. Summary Page
+Go to [summary](https://beni-25.github.io/Moving/summary.html)
+## 8. Booking List Page
+Go to [bookingList](https://beni-25.github.io/Moving/bookingList.html)
+## 9. Modify Booking Page
+Go to [Modify](https://beni-25.github.io/Moving/modify.html)
+## 10. Tracking Page
+Go to [tracking](https://beni-25.github.io/Moving/tracking.html)
 
-## 6. Booking Page
-
-## 7. Modify Booking Page
-
-## 8. Summary Page
-
-## 9. Tracking Page
-
-## 10. Booking List Page
 
 ![image](https://github.com/Beni-25/Moving/assets/105207468/d5e2a18b-3cf7-4510-bd1a-2b94888dffa0)
 1. Go to `https...../register`
