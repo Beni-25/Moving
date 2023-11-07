@@ -29,16 +29,8 @@ Go to [tracking](https://beni-25.github.io/Moving/tracking.html)
 
 ![image](https://github.com/Beni-25/Moving/assets/105207468/b5fe4602-2405-4e29-bab5-03fbe176688b)
 
-  ![image](https://github.com/Beni-25/Moving/assets/105207468/3798658e-97a7-4725-8165-d78d80026b48)
-
 3. Create username and password
-
-<img src="https://github.com/Beni-25/Moving/assets/105207468/3798658e-97a7-4725-8165-d78d80026b48" alt="Your image title" width="250"/>
   
-5.  Go to `https...../`
-6.  dsz
-7.  Go to `https...../createBooking`
-5.  
 
 ### sub sub title
 
