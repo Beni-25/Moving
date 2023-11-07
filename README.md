@@ -5,7 +5,7 @@
 Go to [index](https://beni-25.github.io/Moving/)
 This is the home page for the website. General information about the company and its contact details are provided here.
 Top right corner, Sign-in button is provided <img src="https://github.com/Beni-25/Moving/assets/105207468/0fca30fa-9772-4d3c-9644-f4cf5f58792d" alt="Home Page" width="80"/>
-Note: Create Booking button will only work if user logged in.
+Note: Create Booking button will only work if the user logged in.
 
 ## 2. Login Page
 Go to [login](https://beni-25.github.io/Moving/login.html)
