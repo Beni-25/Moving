@@ -25,16 +25,32 @@ $(document).ready(function () {
       e.preventDefault(); // Stops <form> from reloading the page
       const date = $("input#date").val(); //get the value of date
       const time = $("input#time").val(); //get the value of time
-      if (time.trim() === "") {
-        alert("Please enter the time for booking");
-        return;
-      }
 
       const P_address1 = $("input#P_address1").val(); //get the value of P_address1
       const P_address2 = $("input#P_address2").val(); //get the value of P_address2
       const P_city = $("input#P_city").val(); //get the value of P_city
       const P_province = $("input#P_province").val(); //get the value of P_province
       const P_zipcode = $("input#P_zipcode").val(); //get the value of P_zipcode
+
+      const D_address1 = $("input#D_address1").val(); //get the value of D_address1
+      const D_address2 = $("input#D_address2").val(); //get the value of D_address2
+      const D_city = $("input#D_city").val(); //get the value of D_city
+      const D_province = $("input#D_province").val(); //get the value of D_province
+      const D_zipcode = $("input#D_zipcode").val(); //get the value of D_zipcode
+
+      const distance = $("input#distance").val(); //get the value of distance
+      const load = $("input[name='load']:checked").val(); //get the value of load
+      const instructions = $("textarea#instructions").val(); //get the value of instructions
+
+      const parking = $("input[name='parking']:checked").val(); //get the value of parking
+      const stairs = $("input[name='stairs']:checked").val(); //get the value of stairs
+      const notification = $("#notification").val(); //get the value of notification
+
+      //Mandatory fields alert
+      if (time.trim() === "") {
+        alert("Please enter the time for booking");
+        return;
+      }
       if (
         P_address1.trim() === "" ||
         P_city.trim() === "" ||
@@ -44,12 +60,6 @@ $(document).ready(function () {
         alert("Please enter the correct Pickup address for booking");
         return;
       }
-
-      const D_address1 = $("input#D_address1").val(); //get the value of D_address1
-      const D_address2 = $("input#D_address2").val(); //get the value of D_address2
-      const D_city = $("input#D_city").val(); //get the value of D_city
-      const D_province = $("input#D_province").val(); //get the value of D_province
-      const D_zipcode = $("input#D_zipcode").val(); //get the value of D_zipcode
       if (
         D_address1.trim() === "" ||
         D_city.trim() === "" ||
@@ -59,27 +69,19 @@ $(document).ready(function () {
         alert("Please enter the correct Drop address for booking");
         return;
       }
-
-      const distance = $("input#distance").val(); //get the value of distance
-      const load = $("input[name='load']:checked").val(); //get the value of load
       if (load == null) {
         alert("please select the load type");
         return;
       }
-      const instructions = $("textarea#instructions").val(); //get the value of instructions
-
-      const parking = $("input[name='parking']:checked").val(); //get the value of parking
       if (parking == null) {
         alert("please select the parking challenges");
         return;
       }
-      const stairs = $("input[name='stairs']:checked").val(); //get the value of stairs
       if (stairs == null) {
         alert("please select whether stairs are there");
         return;
       }
-      const notification = $("#notification").val(); //get the value of notification
-
+      //save the details in booking
       let booking = saveDetails(
         date,
         time,
