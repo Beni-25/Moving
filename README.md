@@ -9,7 +9,7 @@
 
 Go to [index](https://beni-25.github.io/Moving/) `https://beni-25.github.io/Moving/index.html`
 
-This is the home page for the website. General information about the company and its contact details are provided here.
+This is the home page for the website. General information about the company and its services, contact details are provided here.
 Top right corner, Sign-in button is provided <img src="https://github.com/Beni-25/Moving/assets/105207468/0fca30fa-9772-4d3c-9644-f4cf5f58792d" width="80"/>
 > **Note** 
 > Create Booking button will only work if the user logged in.
@@ -19,28 +19,28 @@ Top right corner, Sign-in button is provided <img src="https://github.com/Beni-2
 
 Go to [login](https://beni-25.github.io/Moving/login.html) `https://beni-25.github.io/Moving/login.html`
 
-Here user can provide the username and password to login if user details are already registered. For new user, <img src="https://github.com/Beni-25/Moving/assets/105207468/12e28244-7629-4bb6-a8f2-1fd9a910fef8" width="100"/> Click Sign Up button to go to the register page.
+Here user can provide the username and password to login if user details are already registered. For new users, click  <img src="https://github.com/Beni-25/Moving/assets/105207468/12e28244-7629-4bb6-a8f2-1fd9a910fef8" width="100"/> Sign Up button to go to the register page.
 
 ## 3. Register Page
 <img src="https://github.com/Beni-25/Moving/assets/105207468/fede549b-1085-4ed0-993d-ac03f11676f6" width="400"/>
 
 Go to [register](https://beni-25.github.io/Moving/register.html) `https://beni-25.github.io/Moving/register.html`
 
-In register Page, user can register the details, username should be unique (should not be used before). Password and confirm password should match. 
+In register Page, user can register the details, username should be unique (should not be used before). Password and confirm password should match. After entering the details, user can click sign up button to register.
 
 ## 4. Booking Page
 <img src="https://github.com/Beni-25/Moving/assets/105207468/f760a432-f22a-4b44-a5c3-024dc1685a5a" width="400"/>
 
 Go to [booking](https://beni-25.github.io/Moving/booking.html) `https://beni-25.github.io/Moving/booking.html`
 
-After logged in, user can click create booking <img src="https://github.com/Beni-25/Moving/assets/105207468/2f78b139-0523-413b-8d80-470f73aef042" width="100"/> to create a new booking order. User can navigate through <img src="https://github.com/Beni-25/Moving/assets/105207468/dd387dff-0d33-4c6e-b5e4-a1f1ca714f28" width="250"/> tabs or through next/previous buttons in the bottom. After entering all the mandatory details, user can click submit at the final tab <img src="https://github.com/Beni-25/Moving/assets/105207468/8cb3b96e-6e57-4404-abf5-5229a0a15bf2" width="80"/> to submit the booking details. 
+After logged in, user can click create booking <img src="https://github.com/Beni-25/Moving/assets/105207468/2f78b139-0523-413b-8d80-470f73aef042" width="100"/> to create a new booking order. User can navigate through <img src="https://github.com/Beni-25/Moving/assets/105207468/dd387dff-0d33-4c6e-b5e4-a1f1ca714f28" width="250"/> tabs or through next/previous buttons in the bottom. After entering all the mandatory details, user can click submit at the final tab (other info) <img src="https://github.com/Beni-25/Moving/assets/105207468/8cb3b96e-6e57-4404-abf5-5229a0a15bf2" width="80"/> to submit the booking details. 
 
 ## 5. Profile Page
 <img src="https://github.com/Beni-25/Moving/assets/105207468/5e963c41-d3cd-4cef-ba66-6a218bd60e98" width="400"/>
 
 Go to [Profile](https://beni-25.github.io/profile.html) `https://beni-25.github.io/profile.html`
 
-At the top right corner, click the user icon <img src="https://github.com/Beni-25/Moving/assets/105207468/331521d1-fbac-4965-91f5-4de0aa68db0f" width="100"/> to view the user details such as username, email address and contact number. You can also see the number of bookings you made.
+At the top right corner, click the user icon <img src="https://github.com/Beni-25/Moving/assets/105207468/331521d1-fbac-4965-91f5-4de0aa68db0f" width="100"/> to view the user details such as username, email address and contact number. User can also see the number of bookings user made.
 
 ## 6. Edit Profile Page
 <img src="https://github.com/Beni-25/Moving/assets/105207468/3870f3de-dcfd-4d61-a5cf-0ab4c8691e67" width="400"/>
@@ -55,7 +55,7 @@ icon next to  email address or contact number to modify the corresponding detail
 
 Go to [summary](https://beni-25.github.io/Moving/summary.html) `https://beni-25.github.io/Moving/summary.html`
 
-Once the booking form submitted successfully, it will b redirected to the summary page to view all the details. Users can check the list of their bookings through view bookings button 
+Once the booking form submitted successfully, it will be redirected to the summary page to view all the details. Users can check the list of their bookings through view bookings button 
 <img src="https://github.com/Beni-25/Moving/assets/105207468/826604db-6f42-4723-966a-484b71ef56b3" width="150"/> at the bottom of summary. 
 
 ## 8. Booking List Page
