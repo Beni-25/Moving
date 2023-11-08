@@ -1,7 +1,7 @@
 # Project
 <img src="https://github.com/Beni-25/Moving/assets/105207468/d5e2a18b-3cf7-4510-bd1a-2b94888dffa0" alt="Home Page" width="600"/>
 
-It is a moving company website with user login and create booking. User can create a booking, see their bookings, modify and track the bookings
+It is a moving company website with user login feature and create booking option. Users can create a booking, see their booking List, modify and track the bookings
 ## 1. Home Page
 <img src="https://github.com/Beni-25/Moving/assets/105207468/d54d3107-eaca-48ec-bdb0-af96de3d08de" width="400"/>
 
