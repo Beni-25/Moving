@@ -1,7 +1,9 @@
-# Project
-<img src="https://github.com/Beni-25/Moving/assets/105207468/d5e2a18b-3cf7-4510-bd1a-2b94888dffa0" alt="Home Page" width="600"/>
+# About the Project
+<h1 align="center"><img src="https://github.com/Beni-25/Moving/assets/105207468/d5e2a18b-3cf7-4510-bd1a-2b94888dffa0" alt="Home Page" width="600"/>
+<br> Moving Company Website <br> </h1>
 
-It is a moving company website with user login feature and create booking option. Users can create a booking, see their booking List, modify and track the bookings
+<h4 align="center">It has the user login and create booking options. Users can create a booking, see their booking List, modify and track the bookings. It is built with HTML,CSS, JS and JQuery.</h4>
+
 ## 1. Home Page
 <img src="https://github.com/Beni-25/Moving/assets/105207468/d54d3107-eaca-48ec-bdb0-af96de3d08de" width="400"/>
 
@@ -9,7 +11,8 @@ Go to [index](https://beni-25.github.io/Moving/) `https://beni-25.github.io/Movi
 
 This is the home page for the website. General information about the company and its contact details are provided here.
 Top right corner, Sign-in button is provided <img src="https://github.com/Beni-25/Moving/assets/105207468/0fca30fa-9772-4d3c-9644-f4cf5f58792d" width="80"/>
-Note: Create Booking button will only work if the user logged in.
+> **Note** 
+> Create Booking button will only work if the user logged in.
 
 ## 2. Login Page
 <img src="https://github.com/Beni-25/Moving/assets/105207468/7368cf8d-986a-406e-86f3-6004228331d6" width="400"/>
@@ -76,7 +79,9 @@ Go to [tracking](https://beni-25.github.io/Moving/tracking.html) `https://beni-2
 
 In this tracking page, user can see the particular booking's address, booking ID, date and time of the booking. 
 
-Note: Except Home page, Login Page and Register page, remaining all pages will open only if the user is logged in.
+
+> **Note**
+> Except Home page, Login Page and Register page, remaining all pages will open only if the user is logged in.
 
 
 
