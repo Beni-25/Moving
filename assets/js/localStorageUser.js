@@ -81,6 +81,7 @@ function saveUser(username, password, c_password, phone, email) {
     }
   }
 }
+
 function checkUserPassword(username, password) {
   let user = getUser(username); //user= {username:"1", password:"2", phone:"3", email:"3"} or null
   if (user == null) {
