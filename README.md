@@ -1,4 +1,4 @@
-# About the Project
+# Project
 <h1 align="center"><img src="https://github.com/Beni-25/Moving/assets/105207468/d5e2a18b-3cf7-4510-bd1a-2b94888dffa0" alt="Home Page" width="600"/>
 <br> Moving Company Website <br> </h1>
 
