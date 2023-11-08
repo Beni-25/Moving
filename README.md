@@ -75,7 +75,7 @@ Go to [tracking](https://beni-25.github.io/Moving/tracking.html) `https://beni-2
 
 In this tracking page, user can see the particular booking's address, booking ID, date and time of the booking. 
 
-# Note: Except Home page, Login Page and Register page, remaining all pages will open only if the user is logged in.
+Note: Except Home page, Login Page and Register page, remaining all pages will open only if the user is logged in.
 
 
 
