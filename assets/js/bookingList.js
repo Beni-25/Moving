@@ -1,5 +1,5 @@
 // FUNCTIONS
-
+//function to tracck booking using its id
 function trackBooking(bookingObjectId) {
   let booking = searchBooking(bookingObjectId);
   if (booking !== null) {
@@ -10,7 +10,7 @@ function trackBooking(bookingObjectId) {
     alert("Error tracking the booking with this booking ID");
   }
 }
-
+// function to modify booking using its id
 function modifyBooking(bookingObjectId) {
   let booking = searchBooking(bookingObjectId);
   if (booking !== null) {
@@ -21,7 +21,7 @@ function modifyBooking(bookingObjectId) {
     alert("Error in modifying, Please check the booking ID");
   }
 }
-
+//cancel the booking using its id
 function cancelBooking(bookingObjectId) {
   // Confirm with the user before canceling the booking
   if (window.confirm("Are you sure you want to cancel this booking?")) {
@@ -83,7 +83,6 @@ function renderBookings(allBookings, loggedInUser) {
 // IMPLEMENTING FUNCTIONS WHEN PAGE LOADS
 
 $(document).ready(function () {
-
   let loggedInUser = JSON.parse(localStorage.getItem(window.LOGGEDIN_USER_KEY));
   let allBookings = JSON.parse(localStorage.getItem(window.BOOKINGS_KEY));
 
@@ -100,7 +99,7 @@ $(document).ready(function () {
     console.log("No User Logged in, please sign in");
     window.location.href = "login.html";
   }
-
+  //search field onchange to filter the bookings using its ID
   $("#search").on("change", function () {
     const searchText = $(this).val().trim();
     if (searchText) {
@@ -115,14 +114,14 @@ $(document).ready(function () {
       console.log("Using allUserBookings");
     }
   });
-
+  // current loggedin user bookings
   function allLoggedInUserBookings(userName) {
     let loggedInUserBookings = allBookings.filter(function (b) {
       return b["id"].includes(userName);
     });
     return loggedInUserBookings;
   }
-
+  //search filtered booking
   function searchBookingUsingId(searchText) {
     const searchArray = allBookings.filter(function (b) {
       let idName = b["id"].toLowerCase();

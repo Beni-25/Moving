@@ -1,3 +1,4 @@
+//get all the users from local storage
 function getAllUsers() {
   console.log("Inside getALLUSERS");
   let allUsers = localStorage.getItem(window.USER_LIST_KEY); // get the values from window.USER_LIST_KEY
@@ -11,7 +12,7 @@ function getAllUsers() {
     return JSON.parse(allUsers); //return  converted string to Javascript object to saveUser function eg: '{username: "1", password: "2"..}' to {username: "1", password: "2"..}
   }
 }
-
+//get the user using username
 function getUser(username) {
   console.log("Get User");
   let allUsers = localStorage.getItem(window.USER_LIST_KEY); // [ {username: "1", password: "2"..}, {username: "3", password: "4"..} ] or []
@@ -34,7 +35,7 @@ function getUser(username) {
     return null;
   }
 }
-
+//get the current loggedin user
 function getLoggedInUser() {
   let loggedinUser = localStorage.getItem(window.LOGGEDIN_USER_KEY);
   if (loggedinUser == null || loggedinUser == "") {
@@ -43,7 +44,7 @@ function getLoggedInUser() {
     return JSON.parse(loggedinUser);
   }
 }
-
+//function to store/save the user details
 function saveUser(username, password, c_password, phone, email) {
   //saveUser(username:"1", password:"2", c_password:"2", phone:"3", email:"4")
   console.log("Saving user");
@@ -81,7 +82,7 @@ function saveUser(username, password, c_password, phone, email) {
     }
   }
 }
-
+//function to check the password with the username
 function checkUserPassword(username, password) {
   let user = getUser(username); //user= {username:"1", password:"2", phone:"3", email:"3"} or null
   if (user == null) {
@@ -96,7 +97,7 @@ function checkUserPassword(username, password) {
     }
   }
 }
-
+//save the modified user details
 function saveModifiedUser(username, password, phone, email) {
   try {
     // entering inside try to check whether code is executing properly, if not it will go to catch block

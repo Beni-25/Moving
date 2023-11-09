@@ -1,5 +1,5 @@
 // Functions
-
+//render the summary page cards
 function renderSummary(selectedBooking) {
   console.log("selectedBooking", selectedBooking);
 
@@ -39,7 +39,7 @@ function renderSummary(selectedBooking) {
   </div>`);
   });
 }
-
+// function to show the selected booking details in summary
 function createSummaryList(selectedBooking) {
   let summaryList = [
     {

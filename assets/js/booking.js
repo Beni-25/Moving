@@ -21,6 +21,7 @@ function showStep(stepNumber) {
 $(document).ready(function () {
   let loggedInUser = getLoggedInUser();
   if (loggedInUser !== null) {
+    // on click submit button to get the values from all the fields
     $("button#submit").on("click", function (e) {
       e.preventDefault(); // Stops <form> from reloading the page
       const date = $("input#date").val(); //get the value of date

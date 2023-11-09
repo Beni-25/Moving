@@ -1,4 +1,4 @@
-//toggle password
+//toggle password using eye icon
 const togglePassword = document.querySelector("#togglePassword");
 const password = document.querySelector("#password");
 togglePassword.addEventListener("click", function () {
