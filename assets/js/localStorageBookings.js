@@ -1,3 +1,4 @@
+//save the booking details
 function saveDetails(
   date,
   time,
@@ -19,7 +20,6 @@ function saveDetails(
   notification
 ) {
   try {
-    // entering inside try to check whether code is executing properly, if not it will go to catch block
     let allBookings =
       JSON.parse(localStorage.getItem(window.BOOKINGS_KEY)) || []; // check whether any existing bookings there or not
     let loggedInUser = JSON.parse(
@@ -66,7 +66,7 @@ function saveDetails(
     return false;
   }
 }
-
+//get the current selected booking
 function getSelectedBooking() {
   let selectedBooking = localStorage.getItem(window.SELECTED_BOOKING_KEY);
   if (selectedBooking == null || selectedBooking == "") {
@@ -75,7 +75,7 @@ function getSelectedBooking() {
     return JSON.parse(selectedBooking);
   }
 }
-
+//save the modified booking details
 function saveModifiedDetails(
   id,
   date,
@@ -98,7 +98,7 @@ function saveModifiedDetails(
   notification
 ) {
   try {
-    // entering inside try to check whether code is executing properly, if not it will go to catch block
+    // entering inside try block to check whether the code is executing properly, if not it will go to catch block
     let allBookings =
       JSON.parse(localStorage.getItem(window.BOOKINGS_KEY)) || []; // check whether any existing bookings there or not
     console.log("allBookings|saveModifiedDetails", allBookings);
@@ -149,20 +149,18 @@ function saveModifiedDetails(
     return false;
   }
 }
-
+//set the current booking as selected booking
 function setNewSelectedBooking(newSelectedBooking) {
-  // alert("set Booking");
   console.log("bookingObject", newSelectedBooking);
   localStorage.setItem(
     window.SELECTED_BOOKING_KEY,
     JSON.stringify(newSelectedBooking)
   );
 }
-
+//function to cancel the current booking using its ID
 function cancelBookingUsingId(bookingObjectId) {
-  // let selectedBooking =newSelectedBooking;
-  let allBookings = JSON.parse(localStorage.getItem(window.BOOKINGS_KEY)); //
-  let allBookingsWithoutSelected = allBookings.filter(function (b) {
+  let allBookings = JSON.parse(localStorage.getItem(window.BOOKINGS_KEY)); // get allBookings
+  let allBookingsWithoutSelected = allBookings.filter(function (b) { 
     return b["id"] != bookingObjectId;
   });
   localStorage.setItem(
@@ -170,7 +168,7 @@ function cancelBookingUsingId(bookingObjectId) {
     JSON.stringify(allBookingsWithoutSelected)
   );
 }
-
+//function to search the booking using booking Id
 function searchBooking(bookingId) {
   console.log("Get Booking");
   let allBookings = localStorage.getItem(window.BOOKINGS_KEY); // [ {username: "1", password: "2"..}, {username: "3", password: "4"..} ] or []
