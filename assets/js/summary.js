@@ -44,7 +44,7 @@ function createSummaryList(selectedBooking) {
   let summaryList = [
     {
       container: "container-booking",
-      image: "/assets/css/images/booking.png",
+      image: "assets/css/images/booking.png",
       title: "Booking Details",
       imagename: "Booking icon",
       textline1: "BOOKING ID: " + selectedBooking["id"],
@@ -53,7 +53,7 @@ function createSummaryList(selectedBooking) {
     },
     {
       container: "container-location",
-      image: "/assets/css/images/location.png",
+      image: "assets/css/images/location.png",
       title: "Location Details",
       imagename: "Location icon",
       textline1:
@@ -80,7 +80,7 @@ function createSummaryList(selectedBooking) {
     },
     {
       container: "container-estimation",
-      image: "/assets/css/images/estimation.png",
+      image: "assets/css/images/estimation.png",
       title: "Estimation Details",
       imagename: "Estimation icon",
       textline1: "TOTAL DISTANCE IN KILOMETERS: " + selectedBooking["distance"],
@@ -89,7 +89,7 @@ function createSummaryList(selectedBooking) {
     },
     {
       container: "container-details",
-      image: "/assets/css/images/info.png",
+      image: "assets/css/images/info.png",
       title: "Additional Details",
       imagename: "Additional Info icon",
       textline1:
